@@ -1,0 +1,49 @@
+:root {
+  --bg: #0a0e0d;
+  --surface: #121815;
+  --surface-2: #171f1b;
+  --border: #232b27;
+  --text: #eef2ef;
+  --text-muted: #8fa199;
+  --accent: #3ddc97;
+  --accent-soft: #163027;
+  --gold: #d4af6a;
+  --gold-soft: #2b2417;
+  --danger: #e2735a;
+  --danger-soft: #2c1a16;
+  --radius: 10px;
+  --font-sans: -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic",
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, "Cascadia Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: #06120d;
+}
