@@ -17,6 +17,7 @@ export type IngredientRow = {
   functionRole: string;
   dermalAbsorptionPercent: string; // DAp, default "100" (konservativ)
   noael: string; // mg/kg bw/day — bo'sh bo'lishi mumkin ("검토필요")
+  cramerClass: "" | "I" | "II" | "III"; // NOAEL yo'q bo'lganda TTC skrining uchun
 };
 
 export type ExposureParams = {
@@ -58,6 +59,7 @@ export function newIngredientRow(): IngredientRow {
     functionRole: "",
     dermalAbsorptionPercent: "100",
     noael: "",
+    cramerClass: "",
   };
 }
 

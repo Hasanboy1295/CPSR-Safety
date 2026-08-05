@@ -8,6 +8,9 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { chunkText } from "./chunk";
 import type { RagResult, RetrievedChunk } from "./rag";
+import type { ProductInfo } from "./wizard-types";
+import type { CalcRow } from "./calc";
+import type { CPSRDraft } from "./claude";
 
 const DATA_DIR = join(process.cwd(), "data");
 
@@ -45,23 +48,27 @@ function scoreChunk(questionWords: string[], chunk: string): number {
   return questionWords.length === 0 ? 0 : hits / questionWords.length;
 }
 
-export function mockAnswerWithRag(question: string, matchCount = 3): RagResult {
-  const questionWords = tokenize(question);
+/** Faqat qidiruv qismi — report.ts kabi boshqa joylardan ham qayta ishlatiladi. */
+export function mockRetrieveChunks(query: string, matchCount = 3): RetrievedChunk[] {
+  const queryWords = tokenize(query);
   const allChunks = loadLocalChunks();
 
   const scored = allChunks
-    .map((c) => ({ ...c, similarity: scoreChunk(questionWords, c.content) }))
+    .map((c) => ({ ...c, similarity: scoreChunk(queryWords, c.content) }))
     .sort((a, b) => b.similarity - a.similarity)
     .slice(0, matchCount);
 
-  const sources: RetrievedChunk[] = scored.map((c, i) => ({
+  return scored.map((c, i) => ({
     id: i,
     source_name: c.source_name,
     content: c.content,
     metadata: { mode: "demo-keyword-match" },
     similarity: c.similarity,
   }));
+}
 
+export function mockAnswerWithRag(question: string, matchCount = 3): RagResult {
+  const sources = mockRetrieveChunks(question, matchCount);
   const best = sources[0];
   const answer = best
     ? [
@@ -80,4 +87,36 @@ export function mockAnswerWithRag(question: string, matchCount = 3): RagResult {
     : `[DEMO REJIMI] data/ papkasida hech qanday .txt fayl topilmadi.`;
 
   return { answer, sources, model: "demo-mock (real LLM emas)" };
+}
+
+/** Part A/B qoralamasining demo (LLM'siz) versiyasi. */
+export function mockDraftCPSRSections(
+  productInfo: ProductInfo,
+  calcRows: CalcRow[]
+): CPSRDraft {
+  const partA = [
+    `[DEMO REJIMI — bu Claude emas, shablon matn]`,
+    ``,
+    `Mahsulot: ${productInfo.productName || "검토필요"} (${productInfo.productType || "검토필요"})`,
+    `Foydalanuvchi: ${productInfo.targetUser || "검토필요"} · Qo'llash: ${productInfo.rinseType}`,
+    `Ishlab chiqaruvchi: ${productInfo.manufacturer || "검토필요"}`,
+    ``,
+    `Tarkib (${calcRows.length} ta ingredient):`,
+    ...calcRows.map((r) => `- ${r.inciName || "검토필요"} — ${r.percentInProduct}%`),
+  ].join("\n");
+
+  const partBReasoning = [
+    `[DEMO REJIMI]`,
+    ``,
+    ...calcRows.map(
+      (r) =>
+        `- ${r.inciName || "검토필요"}: MoS=${r.mos === null ? "검토필요 (NOAEL yo'q)" : r.mos.toFixed(1)} → ${
+          r.judgment === "pass" ? "hisob-kitob bo'yicha ≥100" : r.judgment === "review" ? "검토필요 (<100)" : "검토필요 (ma'lumot yetarli emas)"
+        }`
+    ),
+    ``,
+    `Yakuniy xulosa: 검토필요 — bu qism xavfsizlik baholovchisi tomonidan yoziladi (avtomatik emas).`,
+  ].join("\n");
+
+  return { partA, partBReasoning, model: "demo-mock (real LLM emas)" };
 }

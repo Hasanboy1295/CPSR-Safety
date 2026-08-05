@@ -161,6 +161,11 @@ const wizardDict = {
     judgmentReview: "NEEDS REVIEW (<100)",
     judgmentInsufficient: "NOAEL missing",
     formula: "SED = (A × 1000 × RF × C × DAp) / BW · MoS = NOAEL / SED",
+    cramerClass: "Cramer class (if NOAEL unknown)",
+    cramerNone: "— not selected —",
+    ttcResult: "TTC screening",
+    ttcWithin: "SED below TTC threshold — low concern",
+    ttcExceeded: "SED exceeds TTC threshold — needs review",
     // Step 4
     assessorName: "Safety assessor name",
     reviewDate: "Review date",
@@ -169,6 +174,16 @@ const wizardDict = {
     statusDraftBody:
       "Software does not auto-generate the final safety conclusion. A licensed safety assessor must review every section and sign before this document is submission-ready.",
     summaryTitle: "Summary",
+    generateDraft: "Generate CPSR draft (AI)",
+    generatingDraft: "Generating…",
+    partATitle: "Part A — Product & composition (AI-drafted)",
+    partBTitle: "Part B — Weight of Evidence (AI-drafted)",
+    dataIntegrityTitle: "Data integrity",
+    runId: "Run ID",
+    inputHash: "Input hash (SHA-256)",
+    configHash: "Config hash (SHA-256)",
+    generatedAt: "Generated at",
+    demoNotice: "DEMO MODE — no real API keys, this is template text, not Claude.",
   },
   ko: {
     wizardTitle: "CPSR 안전성 평가 마법사",
@@ -218,6 +233,11 @@ const wizardDict = {
     judgmentReview: "검토필요 (<100)",
     judgmentInsufficient: "NOAEL 없음",
     formula: "SED = (A × 1000 × RF × C × DAp) / BW · MoS = NOAEL / SED",
+    cramerClass: "Cramer class (NOAEL 모를 때)",
+    cramerNone: "— 선택 안 됨 —",
+    ttcResult: "TTC 스크리닝",
+    ttcWithin: "SED가 TTC 이하 — 우려 낮음",
+    ttcExceeded: "SED가 TTC 초과 — 검토필요",
     // Step 4
     assessorName: "안전성 평가자 성명",
     reviewDate: "검토일",
@@ -226,6 +246,16 @@ const wizardDict = {
     statusDraftBody:
       "소프트웨어는 최종 안전성 결론을 자동 생성하지 않습니다. 자격을 갖춘 안전성 평가자가 모든 항목을 검토하고 서명해야 제출 가능 상태가 됩니다.",
     summaryTitle: "요약",
+    generateDraft: "CPSR 초안 생성 (AI)",
+    generatingDraft: "생성 중…",
+    partATitle: "Part A — 제품·조성 (AI 초안)",
+    partBTitle: "Part B — Weight of Evidence (AI 초안)",
+    dataIntegrityTitle: "데이터 무결성",
+    runId: "Run ID",
+    inputHash: "입력 해시 (SHA-256)",
+    configHash: "설정 해시 (SHA-256)",
+    generatedAt: "생성 시각",
+    demoNotice: "DEMO 모드 — 실제 API 키 없음, Claude가 아닌 템플릿 텍스트입니다.",
   },
 } as const;
 

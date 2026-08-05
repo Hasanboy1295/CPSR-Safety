@@ -1,5 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { RetrievedChunk } from "./rag";
+import type { ProductInfo } from "./wizard-types";
+import type { CalcRow } from "./calc";
 
 const MODEL = "claude-sonnet-4-5";
 
@@ -50,6 +52,94 @@ export async function generateGroundedAnswer(
   const textBlock = response.content.find((b) => b.type === "text");
   return {
     answer: textBlock && textBlock.type === "text" ? textBlock.text : "",
+    model: MODEL,
+  };
+}
+
+// ---- CPSR Part A / Part B qoralama yozuvchi (report.ts orqali chaqiriladi) ----
+
+const CPSR_DRAFT_SYSTEM_PROMPT = `Sen CPSR (화장품 안전성 평가 자료) hujjatining FAQAT ikki bo'limini yozasan:
+- Part A: mahsulot va tarkib haqida OBYEKTIV TAVSIF matni (berilgan ma'lumotlarni tartibli bayon qilish)
+- Part B "Weight-of-Evidence" MULOHAZA: berilgan MoS/hisob-kitob natijalaridan qanday xulosaga
+  yaqinlashish mumkinligi haqidagi muhokama (dalil -> mulohaza yo'li, lekin YAKUNIY QAROR emas)
+
+QAT'IY TAQIQLAR (CPSR_KR_dossier original hujjatidan, so'zma-so'z amal qil):
+1. Yakuniy "안전성 결론" (xavfsiz/xavfsiz emas degan tugal xulosa) YOZMA. Bu inson
+   (xavfsizlik baholovchisi) vazifasi. Buning o'rniga "검토필요 — 평가자 확인 필요" deb yoz.
+2. "SAFE" / "적합" / "xavfsiz" degan tasdiqловчи so'zlarni avtomatik yozma.
+3. Baholovchi ismi, imzo, sertifikat raqamini TO'QIMA.
+4. Mavjud bo'lmagan test raqami, DOI, sertifikat raqamini O'YLAB TOPMA. Manba yo'q
+   bo'lsa "검토필요" deb belgila.
+5. Har bir raqamli da'vo (MoS, SED va h.k.) berilgan hisob-kitob natijasidan olinishi
+   kerak — o'zing raqam to'qima.
+6. Har bir reglament/ilmiy da'voning yonida [manba: <source_name>] ko'rsat, faqat
+   pastdagi "Kontekst" bo'limidagi manbalardan foydalanib.
+7. Kontekstda yo'q narsani "검토필요" deb qoldir, o'ylab topma.
+
+Chiqishni ANIQ shu formatda ber (ikkita bo'lim, boshqa hech narsa qo'shma):
+### PART A
+<matn>
+
+### PART B — WEIGHT OF EVIDENCE
+<matn>`;
+
+export type CPSRDraft = {
+  partA: string;
+  partBReasoning: string;
+  model: string;
+};
+
+export async function draftCPSRSections(
+  productInfo: ProductInfo,
+  calcRows: CalcRow[],
+  context: RetrievedChunk[]
+): Promise<CPSRDraft> {
+  const client = getClient();
+
+  const contextText = context
+    .map((c, i) => `[${i + 1}] manba: ${c.source_name}\n${c.content}`)
+    .join("\n\n---\n\n");
+
+  const calcText = calcRows
+    .map(
+      (r) =>
+        `- ${r.inciName || "(nomsiz)"} (CAS ${r.cas || "검토필요"}, ${r.percentInProduct}%): ` +
+        `SED=${r.sed.toFixed(6)} mg/kg/gün, NOAEL=${r.noael ?? "검토필요"}, ` +
+        `MoS=${r.mos === null ? "검토필요" : r.mos.toFixed(1)}, holat=${r.judgment}`
+    )
+    .join("\n");
+
+  const userMessage = [
+    `Mahsulot ma'lumoti:`,
+    `- Nomi: ${productInfo.productName || "검토필요"}`,
+    `- Turi: ${productInfo.productType || "검토필요"}`,
+    `- Foydalanuvchi: ${productInfo.targetUser || "검토필요"}`,
+    `- Qo'llash: ${productInfo.rinseType}`,
+    `- Ishlab chiqaruvchi: ${productInfo.manufacturer || "검토필요"}`,
+    ``,
+    `Hisob-kitob natijalari (deterministik, sen bularni o'zgartirmaysan):`,
+    calcText || "(tarkib kiritilmagan)",
+    ``,
+    `Kontekst (faqat shundan foydalan):`,
+    contextText || "(manba topilmadi — barchasini 검토필요 deb belgila)",
+  ].join("\n");
+
+  const response = await client.messages.create({
+    model: MODEL,
+    max_tokens: 1536,
+    system: CPSR_DRAFT_SYSTEM_PROMPT,
+    messages: [{ role: "user", content: userMessage }],
+  });
+
+  const textBlock = response.content.find((b) => b.type === "text");
+  const full = textBlock && textBlock.type === "text" ? textBlock.text : "";
+
+  const partAMatch = full.match(/### PART A\s*([\s\S]*?)(?=### PART B|$)/i);
+  const partBMatch = full.match(/### PART B.*?\n([\s\S]*)$/i);
+
+  return {
+    partA: partAMatch?.[1]?.trim() || full,
+    partBReasoning: partBMatch?.[1]?.trim() || "",
     model: MODEL,
   };
 }

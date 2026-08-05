@@ -1,7 +1,7 @@
 import { getSupabaseServerClient } from "./supabase";
 import { embedQuery } from "./embeddings";
 import { generateGroundedAnswer } from "./claude";
-import { mockAnswerWithRag } from "./mock";
+import { mockAnswerWithRag, mockRetrieveChunks } from "./mock";
 
 export type RetrievedChunk = {
   id: number;
@@ -19,13 +19,39 @@ export type RagResult = {
 };
 
 /** .env'da 4 ta kalit ham to'ldirilganmi — bo'lmasa demo rejimga o'tamiz. */
-function hasRealCredentials(): boolean {
+export function hasRealCredentials(): boolean {
   return Boolean(
     process.env.ANTHROPIC_API_KEY &&
       process.env.VOYAGE_API_KEY &&
       process.env.NEXT_PUBLIC_SUPABASE_URL &&
       process.env.SUPABASE_SERVICE_ROLE_KEY
   );
+}
+
+/**
+ * Faqat qidiruv qismi (RAG'ning "R"i) — generatsiyasiz. lib/report.ts kabi
+ * boshqa joylardan (LLM'ga context tayyorlash uchun) qayta ishlatiladi.
+ */
+export async function retrieveChunks(
+  query: string,
+  matchCount = 5
+): Promise<{ chunks: RetrievedChunk[]; demo: boolean }> {
+  if (!hasRealCredentials()) {
+    return { chunks: mockRetrieveChunks(query, matchCount), demo: true };
+  }
+
+  const queryEmbedding = await embedQuery(query);
+  const supabase = getSupabaseServerClient();
+  const { data, error } = await supabase.rpc("match_documents", {
+    query_embedding: queryEmbedding,
+    match_count: matchCount,
+  });
+
+  if (error) {
+    throw new Error(`Supabase qidiruv xatosi: ${error.message}`);
+  }
+
+  return { chunks: (data ?? []) as RetrievedChunk[], demo: false };
 }
 
 /**
@@ -44,19 +70,7 @@ export async function answerWithRag(
     return { ...mockAnswerWithRag(question, matchCount), demo: true };
   }
 
-  const queryEmbedding = await embedQuery(question);
-
-  const supabase = getSupabaseServerClient();
-  const { data, error } = await supabase.rpc("match_documents", {
-    query_embedding: queryEmbedding,
-    match_count: matchCount,
-  });
-
-  if (error) {
-    throw new Error(`Supabase qidiruv xatosi: ${error.message}`);
-  }
-
-  const chunks = (data ?? []) as RetrievedChunk[];
+  const { chunks } = await retrieveChunks(question, matchCount);
   const { answer, model } = await generateGroundedAnswer(question, chunks);
 
   return { answer, sources: chunks, model };

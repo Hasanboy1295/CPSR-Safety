@@ -3,7 +3,8 @@
 import { useWizardText } from "@/lib/i18n";
 import type { ExposureParams, IngredientRow } from "@/lib/wizard-types";
 import { calcSED, calcMoS, judge } from "@/lib/calc";
-import { field, label, input, card, badge } from "@/lib/wizard-ui";
+import { ttcScreen, type CramerClass } from "@/lib/ttc";
+import { field, label, input, select as selectStyle, card, badge } from "@/lib/wizard-ui";
 
 export function StepToxicology({
   ingredients,
@@ -151,6 +152,54 @@ export function StepToxicology({
                 </div>
               </div>
             </div>
+
+            {!row.noael && (
+              <div
+                style={{
+                  marginTop: 4,
+                  paddingTop: 14,
+                  borderTop: "1px dashed var(--border)",
+                }}
+              >
+                <div style={field}>
+                  <label style={label}>{t("cramerClass")}</label>
+                  <select
+                    style={selectStyle}
+                    value={row.cramerClass}
+                    onChange={(e) =>
+                      updateRow(row.id, { cramerClass: e.target.value as IngredientRow["cramerClass"] })
+                    }
+                  >
+                    <option value="">{t("cramerNone")}</option>
+                    <option value="I">Cramer I</option>
+                    <option value="II">Cramer II</option>
+                    <option value="III">Cramer III</option>
+                  </select>
+                </div>
+
+                {row.cramerClass && (
+                  (() => {
+                    const ttc = ttcScreen(row.cramerClass as CramerClass, sed);
+                    return (
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 10,
+                          fontSize: 13,
+                        }}
+                      >
+                        <span style={{ color: "var(--text-muted)" }}>{t("ttcResult")}:</span>
+                        <span style={badge(ttc.withinTTC ? "pass" : "review")}>
+                          {ttc.sedUgKgDay.toFixed(3)} / {ttc.thresholdUgKgDay} µg/kg/day —{" "}
+                          {ttc.withinTTC ? t("ttcWithin") : t("ttcExceeded")}
+                        </span>
+                      </div>
+                    );
+                  })()
+                )}
+              </div>
+            )}
           </div>
         );
       })}

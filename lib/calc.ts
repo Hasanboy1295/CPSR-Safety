@@ -34,3 +34,14 @@ export function judge(mos: number | null): Judgment {
   if (mos === null) return "insufficient";
   return mos >= 100 ? "pass" : "review";
 }
+
+/** Har bir ingredient uchun hisoblangan yakuniy qator — LLM'ga kontekst sifatida beriladi. */
+export type CalcRow = {
+  inciName: string;
+  cas: string;
+  percentInProduct: number;
+  noael?: number;
+  sed: number;
+  mos: number | null;
+  judgment: Judgment;
+};
