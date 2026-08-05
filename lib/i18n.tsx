@@ -240,6 +240,16 @@ const wizardDict = {
     reviewedBy: "Reviewed by",
     approveAndSign: "Approve & sign",
     finalConclusion: "Final safety conclusion (assessor only)",
+    // Shelf-life
+    shelfLifeTitle: "Shelf-life calculator (Arrhenius)",
+    shelfLifeSubtitle: "Predicts PAO/shelf-life from accelerated + long-term stability data — deterministic, not AI.",
+    acceleratedTemp: "Accelerated temperature (°C)",
+    longTermTemp: "Long-term temperature (°C)",
+    shelfLifeResult: "Result",
+    shelfLifeInsufficient: "Need at least 2 valid points per temperature",
+    halfLife: "Half-life (t½)",
+    months: "months",
+    shelfLifeNote: "Method: GBCY2616 §2-2 — Arrhenius equation k=A·exp(-Ea/RT), fitted from first-order degradation at two temperatures.",
   },
   ko: {
     wizardTitle: "CPSR 안전성 평가 마법사",
@@ -356,6 +366,16 @@ const wizardDict = {
     reviewedBy: "검토자",
     approveAndSign: "승인 및 서명",
     finalConclusion: "최종 안전성 결론 (평가자 전용)",
+    // Shelf-life
+    shelfLifeTitle: "유효기한 계산기 (Arrhenius)",
+    shelfLifeSubtitle: "가속·장기 안정성 데이터로 PAO/유효기한 예측 — 결정론적, AI 아님.",
+    acceleratedTemp: "가속 온도 (°C)",
+    longTermTemp: "장기 보존 온도 (°C)",
+    shelfLifeResult: "결과",
+    shelfLifeInsufficient: "각 온도에 최소 2개의 유효한 데이터점이 필요합니다",
+    halfLife: "반감기 (t½)",
+    months: "개월",
+    shelfLifeNote: "방법론: GBCY2616 §2-2 — Arrhenius 방정식 k=A·exp(-Ea/RT), 두 온도의 1차 분해 반응으로부터 산출.",
   },
 } as const;
 

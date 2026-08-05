@@ -56,9 +56,27 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <button style={{ ...btnPrimary, marginBottom: 20 }} onClick={createProject} disabled={creating}>
-        {t("newProject")}
-      </button>
+      <div style={{ display: "flex", gap: 10, marginBottom: 20 }}>
+        <button style={btnPrimary} onClick={createProject} disabled={creating}>
+          {t("newProject")}
+        </button>
+        <Link
+          href="/dashboard/shelf-life"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            padding: "10px 20px",
+            fontSize: 14,
+            fontWeight: 600,
+            color: "var(--text-muted)",
+            border: "1px solid var(--border)",
+            borderRadius: 8,
+            textDecoration: "none",
+          }}
+        >
+          {t("shelfLifeTitle")}
+        </Link>
+      </div>
 
       <div style={{ display: "grid", gap: 12 }}>
         {list?.length === 0 && <p style={{ color: "var(--text-muted)" }}>{t("noProjectsYet")}</p>}
