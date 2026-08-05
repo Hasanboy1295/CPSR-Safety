@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useLanguage, useWizardText } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { AuthStatus } from "@/components/AuthStatus";
 import {
   emptyWizardData,
   WIZARD_STORAGE_KEY,
@@ -22,16 +24,39 @@ const STEP_KEYS = [
   "stepCertification",
 ] as const;
 
-export default function WizardPage() {
+function WizardInner() {
   const { t: tBrand } = useLanguage();
   const t = useWizardText();
+  const projectId = useSearchParams().get("project");
 
   const [data, setData] = useState<WizardData>(emptyWizardData);
   const [step, setStep] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Sahifa ochilganda localStorage'dan tiklaydi
+  // Yuklash: agar ?project=<id> bo'lsa — Supabase'dan (login+RLS himoyasi
+  // ostida, "auto to'ldirish" shu yerda sodir bo'ladi — server profildan
+  // manufacturer/responsibleSeller'ni oldindan to'ldirib yuboradi).
+  // Bo'lmasa — eski localStorage (anonim/demo foydalanish, o'zgarmagan).
   useEffect(() => {
+    if (projectId) {
+      fetch(`/api/projects/${projectId}`)
+        .then((r) => r.json())
+        .then((json) => {
+          if (json.project) {
+            setData({
+              productInfo: json.project.product_info,
+              ingredients: json.project.ingredients,
+              exposure: json.project.exposure,
+              certification: json.project.certification,
+            });
+          }
+          setLoaded(true);
+        })
+        .catch(() => setLoaded(true));
+      return;
+    }
+
     const raw = window.localStorage.getItem(WIZARD_STORAGE_KEY);
     if (raw) {
       try {
@@ -41,13 +66,35 @@ export default function WizardPage() {
       }
     }
     setLoaded(true);
-  }, []);
+  }, [projectId]);
 
-  // Har o'zgarishda avtomatik saqlaydi ("uto qoldiriladigon ma'lumot")
+  // Avtomatik saqlash: project bo'lsa Supabase'ga (debounce bilan), bo'lmasa localStorage.
   useEffect(() => {
     if (!loaded) return;
-    window.localStorage.setItem(WIZARD_STORAGE_KEY, JSON.stringify(data));
-  }, [data, loaded]);
+
+    if (!projectId) {
+      window.localStorage.setItem(WIZARD_STORAGE_KEY, JSON.stringify(data));
+      return;
+    }
+
+    if (saveTimer.current) clearTimeout(saveTimer.current);
+    saveTimer.current = setTimeout(() => {
+      fetch(`/api/projects/${projectId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          product_info: data.productInfo,
+          ingredients: data.ingredients,
+          exposure: data.exposure,
+          certification: data.certification,
+        }),
+      }).catch(() => {});
+    }, 600);
+
+    return () => {
+      if (saveTimer.current) clearTimeout(saveTimer.current);
+    };
+  }, [data, loaded, projectId]);
 
   function resetAll() {
     setData(emptyWizardData);
@@ -58,15 +105,18 @@ export default function WizardPage() {
     <main style={{ maxWidth: 880, margin: "0 auto", padding: "40px 24px 80px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: 8 }}>
         <div>
-          <Link href="/" style={{ fontSize: 13, color: "var(--text-muted)", textDecoration: "none" }}>
-            ← {tBrand("brand")}
+          <Link href={projectId ? "/dashboard" : "/"} style={{ fontSize: 13, color: "var(--text-muted)", textDecoration: "none" }}>
+            ← {projectId ? t("myProjects") : tBrand("brand")}
           </Link>
           <h1 style={{ fontSize: 24, margin: "10px 0 4px" }}>{t("wizardTitle")}</h1>
           <p style={{ fontSize: 13.5, color: "var(--text-muted)", margin: 0 }}>
-            {t("wizardSubtitle")}
+            {projectId ? t("autoFilledNote") : t("wizardSubtitle")}
           </p>
         </div>
-        <LanguageToggle />
+        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <LanguageToggle />
+          <AuthStatus />
+        </div>
       </div>
 
       {/* Step indikator */}
@@ -118,6 +168,7 @@ export default function WizardPage() {
         <StepCertification
           data={data}
           onChange={(certification) => setData((d) => ({ ...d, certification }))}
+          projectId={projectId}
         />
       )}
 
@@ -143,5 +194,13 @@ export default function WizardPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function WizardPage() {
+  return (
+    <Suspense fallback={null}>
+      <WizardInner />
+    </Suspense>
   );
 }

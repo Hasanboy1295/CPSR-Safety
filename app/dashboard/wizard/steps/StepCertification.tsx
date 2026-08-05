@@ -18,17 +18,21 @@ type ReportResult = {
 export function StepCertification({
   data,
   onChange,
+  projectId,
 }: {
   data: WizardData;
   onChange: (next: Certification) => void;
+  projectId: string | null;
 }) {
   const t = useWizardText();
   const [report, setReport] = useState<ReportResult | null>(null);
   const [generating, setGenerating] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   async function generateDraft() {
     setGenerating(true);
     setReport(null);
+    setSubmitted(false);
     try {
       const res = await fetch("/api/generate-report", {
         method: "POST",
@@ -41,6 +45,17 @@ export function StepCertification({
       });
       const json = (await res.json()) as ReportResult;
       setReport(json);
+
+      // Login qilingan bo'lsa — natijani saqlab, baholovchi navbatiga qo'shadi
+      // (status: draft -> draft_generated). Demo rejimda buni qilmaymiz.
+      if (projectId && !json.error && !json.demo) {
+        await fetch(`/api/projects/${projectId}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ report_result: json, status: "draft_generated" }),
+        });
+        setSubmitted(true);
+      }
     } catch (err) {
       setReport({ error: err instanceof Error ? err.message : String(err) });
     } finally {
@@ -151,6 +166,22 @@ export function StepCertification({
 
         {report?.error && (
           <p style={{ color: "var(--danger)", fontSize: 13.5, marginTop: 14 }}>Error: {report.error}</p>
+        )}
+
+        {submitted && (
+          <p
+            style={{
+              marginTop: 14,
+              padding: "10px 14px",
+              background: "var(--accent-soft)",
+              border: "1px solid var(--accent)",
+              borderRadius: 8,
+              fontSize: 13,
+              color: "var(--accent)",
+            }}
+          >
+            ✓ {t("submitForReview")}
+          </p>
         )}
 
         {report?.demo && (

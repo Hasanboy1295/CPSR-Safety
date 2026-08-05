@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { AuthStatus } from "@/components/AuthStatus";
 
 type Source = {
   source_name: string;
@@ -136,6 +137,7 @@ export default function Home() {
               {t("navCompliance")}
             </a>
             <LanguageToggle />
+            <AuthStatus />
           </nav>
         </div>
       </header>
