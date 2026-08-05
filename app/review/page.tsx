@@ -6,6 +6,7 @@ import { useLanguage, useWizardText } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { AuthStatus } from "@/components/AuthStatus";
 import type { WizardData } from "@/lib/wizard-types";
+import { flattenIngredients } from "@/lib/wizard-types";
 import { calcSED, calcMoS, judge } from "@/lib/calc";
 import { card, badge, field, label, input, btnPrimary } from "@/lib/wizard-ui";
 
@@ -118,22 +119,21 @@ export default function ReviewPage() {
         <div style={card}>
           <h3 style={{ fontSize: 16, marginBottom: 4 }}>{selected.product_info.productName}</h3>
           <p style={{ fontSize: 12.5, color: "var(--text-muted)", marginBottom: 18 }}>
-            {selected.ingredients.length} ingredients
+            {flattenIngredients(selected.ingredients).length} ingredients
           </p>
 
-          {selected.ingredients.map((row) => {
+          {flattenIngredients(selected.ingredients).map((c) => {
             const A = parseFloat(selected.exposure.amountG) || 0;
             const RF = parseFloat(selected.exposure.retentionFactor) || 0;
             const BW = parseFloat(selected.exposure.bodyWeightKg) || 1;
-            const C = parseFloat(row.percentInProduct) || 0;
-            const DAp = parseFloat(row.dermalAbsorptionPercent) || 0;
-            const noael = row.noael ? parseFloat(row.noael) : undefined;
-            const sed = calcSED({ amountG: A, retentionFactor: RF, bodyWeightKg: BW }, C, DAp);
+            const DAp = parseFloat(c.dermalAbsorptionPercent) || 0;
+            const noael = c.noael ? parseFloat(c.noael) : undefined;
+            const sed = calcSED({ amountG: A, retentionFactor: RF, bodyWeightKg: BW }, c.percentInProduct, DAp);
             const mos = calcMoS(noael, sed);
             const verdict = judge(mos);
             return (
-              <div key={row.id} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, padding: "6px 0", borderBottom: "1px dashed var(--border)" }}>
-                <span>{row.inciName}</span>
+              <div key={c.id} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, padding: "6px 0", borderBottom: "1px dashed var(--border)" }}>
+                <span>{c.inciName}</span>
                 <span style={badge(verdict === "pass" ? "pass" : verdict === "review" ? "review" : "insufficient")}>
                   MoS {mos === null ? "—" : mos.toFixed(1)}
                 </span>

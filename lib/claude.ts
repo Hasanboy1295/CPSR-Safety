@@ -105,7 +105,8 @@ export async function draftCPSRSections(
       (r) =>
         `- ${r.inciName || "(nomsiz)"} (CAS ${r.cas || "검토필요"}, ${r.percentInProduct}%): ` +
         `SED=${r.sed.toFixed(6)} mg/kg/gün, NOAEL=${r.noael ?? "검토필요"}, ` +
-        `MoS=${r.mos === null ? "검토필요" : r.mos.toFixed(1)}, holat=${r.judgment}`
+        `MoS=${r.mos === null ? "검토필요" : r.mos.toFixed(1)}, holat=${r.judgment}` +
+        (r.toxSummary ? ` | 독성 프로필: ${r.toxSummary}` : "")
     )
     .join("\n");
 

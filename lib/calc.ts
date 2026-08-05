@@ -44,4 +44,5 @@ export type CalcRow = {
   sed: number;
   mos: number | null;
   judgment: Judgment;
+  toxSummary?: string; // "acuteToxicity: available, ..." — Weight-of-Evidence uchun qo'shimcha kontekst
 };

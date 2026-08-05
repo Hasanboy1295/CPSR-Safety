@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useWizardText } from "@/lib/i18n";
 import type { WizardData, Certification } from "@/lib/wizard-types";
+import { flattenIngredients } from "@/lib/wizard-types";
 import { calcSED, calcMoS, judge } from "@/lib/calc";
 import { field, label, input, card, badge, btnPrimary } from "@/lib/wizard-ui";
 
@@ -71,11 +72,11 @@ export function StepCertification({
   const RF = parseFloat(data.exposure.retentionFactor) || 0;
   const BW = parseFloat(data.exposure.bodyWeightKg) || 1;
 
-  const worstMoS = data.ingredients.reduce<number | null>((worst, row) => {
-    const C = parseFloat(row.percentInProduct) || 0;
-    const DAp = parseFloat(row.dermalAbsorptionPercent) || 0;
-    const NOAEL = row.noael ? parseFloat(row.noael) : undefined;
-    const sed = calcSED({ amountG: A, retentionFactor: RF, bodyWeightKg: BW }, C, DAp);
+  const flatComponents = flattenIngredients(data.ingredients);
+  const worstMoS = flatComponents.reduce<number | null>((worst, c) => {
+    const DAp = parseFloat(c.dermalAbsorptionPercent) || 0;
+    const NOAEL = c.noael ? parseFloat(c.noael) : undefined;
+    const sed = calcSED({ amountG: A, retentionFactor: RF, bodyWeightKg: BW }, c.percentInProduct, DAp);
     const mos = calcMoS(NOAEL, sed);
     if (mos === null) return worst;
     if (worst === null || mos < worst) return mos;

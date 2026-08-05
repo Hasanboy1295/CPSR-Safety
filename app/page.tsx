@@ -406,9 +406,38 @@ export default function Home() {
             </span>
           ))}
         </div>
-        <p style={{ fontSize: 12.5, color: "var(--text-muted)", maxWidth: 640 }}>
+        <p style={{ fontSize: 12.5, color: "var(--text-muted)", maxWidth: 640, marginBottom: 32 }}>
           {t("complianceNote")}
         </p>
+
+        <h3 style={{ fontSize: 15, margin: "0 0 6px" }}>{t("timelineTitle")}</h3>
+        <p style={{ color: "var(--text-muted)", fontSize: 13.5, margin: "0 0 16px", maxWidth: 640 }}>
+          {t("timelineBody")}
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 10 }}>
+          {(
+            [
+              { year: "2026", key: "timeline2026", tone: "var(--accent)" },
+              { year: "2027–2030", key: "timeline2027", tone: "var(--gold)" },
+              { year: "2031", key: "timeline2031", tone: "var(--danger)" },
+            ] as const
+          ).map((phase) => (
+            <div
+              key={phase.year}
+              style={{
+                borderLeft: `3px solid ${phase.tone}`,
+                background: "var(--surface-2)",
+                borderRadius: "0 8px 8px 0",
+                padding: "12px 14px",
+              }}
+            >
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 12.5, fontWeight: 700, color: phase.tone }}>
+                {phase.year}
+              </div>
+              <div style={{ fontSize: 12.5, color: "var(--text-muted)", marginTop: 4 }}>{t(phase.key)}</div>
+            </div>
+          ))}
+        </div>
       </Section>
 
       {/* Footer */}

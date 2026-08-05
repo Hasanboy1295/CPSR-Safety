@@ -3,6 +3,7 @@
 // Bu — "real yo'l"ning to'liq amalga oshirilishi.
 
 import type { ProductInfo, IngredientRow, ExposureParams } from "./wizard-types";
+import { flattenIngredients } from "./wizard-types";
 import { calcSED, calcMoS, judge, type CalcRow } from "./calc";
 import { retrieveChunks, hasRealCredentials, type RetrievedChunk } from "./rag";
 import { draftCPSRSections } from "./claude";
@@ -26,22 +27,32 @@ function toCalcRows(ingredients: IngredientRow[], exposure: ExposureParams): Cal
   const retentionFactor = parseFloat(exposure.retentionFactor) || 0;
   const bodyWeightKg = parseFloat(exposure.bodyWeightKg) || 1;
 
-  return ingredients.map((row) => {
-    const percentInProduct = parseFloat(row.percentInProduct) || 0;
-    const dermalAbsorptionPercent = parseFloat(row.dermalAbsorptionPercent) || 0;
-    const noael = row.noael ? parseFloat(row.noael) : undefined;
+  // Har INCI substansiya (xomashyo ichidagi har komponent) alohida hisoblanadi —
+  // Kosili misolidagi kabi bitta xomashyoda bir nechta INCI bo'lishi mumkin.
+  return flattenIngredients(ingredients).map((c) => {
+    const dermalAbsorptionPercent = parseFloat(c.dermalAbsorptionPercent) || 0;
+    const noael = c.noael ? parseFloat(c.noael) : undefined;
 
-    const sed = calcSED({ amountG, retentionFactor, bodyWeightKg }, percentInProduct, dermalAbsorptionPercent);
+    const sed = calcSED({ amountG, retentionFactor, bodyWeightKg }, c.percentInProduct, dermalAbsorptionPercent);
     const mos = calcMoS(noael, sed);
 
+    const toxLines = Object.entries(c.tox)
+      .filter(([key, val]) => key !== "notes" && val === "available")
+      .map(([key]) => key);
+    const toxSummary =
+      toxLines.length > 0
+        ? `${toxLines.join(", ")} 확보${c.tox.notes ? ` (${c.tox.notes})` : ""}`
+        : undefined;
+
     return {
-      inciName: row.inciName,
-      cas: row.cas,
-      percentInProduct,
+      inciName: c.inciName,
+      cas: c.cas,
+      percentInProduct: c.percentInProduct,
       noael,
       sed,
       mos,
       judgment: judge(mos),
+      toxSummary,
     };
   });
 }
@@ -63,7 +74,7 @@ export async function generateCPSRReport(input: {
   const query = [
     input.productInfo.productType,
     input.productInfo.rinseType,
-    ...input.ingredients.map((i) => i.inciName).filter(Boolean),
+    ...flattenIngredients(input.ingredients).map((c) => c.inciName).filter(Boolean),
   ]
     .filter(Boolean)
     .join(" ");
