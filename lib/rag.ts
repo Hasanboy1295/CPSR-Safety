@@ -1,6 +1,6 @@
 import { getSupabaseServerClient } from "./supabase";
 import { embedQuery } from "./embeddings";
-import { generateGroundedAnswer } from "./claude";
+import { generateGroundedAnswer } from "./llm";
 import { mockAnswerWithRag, mockRetrieveChunks } from "./mock";
 
 export type RetrievedChunk = {
@@ -21,7 +21,7 @@ export type RagResult = {
 /** .env'da 4 ta kalit ham to'ldirilganmi — bo'lmasa demo rejimga o'tamiz. */
 export function hasRealCredentials(): boolean {
   return Boolean(
-    process.env.ANTHROPIC_API_KEY &&
+    process.env.OPENAI_API_KEY &&
       process.env.VOYAGE_API_KEY &&
       process.env.NEXT_PUBLIC_SUPABASE_URL &&
       process.env.SUPABASE_SERVICE_ROLE_KEY

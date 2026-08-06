@@ -1,16 +1,16 @@
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 import type { RetrievedChunk } from "./rag";
 import type { ProductInfo } from "./wizard-types";
 import type { CalcRow } from "./calc";
 
-const MODEL = "claude-sonnet-4-5";
+const MODEL = "gpt-4o";
 
 function getClient() {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
-    throw new Error("ANTHROPIC_API_KEY topilmadi (.env faylni tekshiring)");
+    throw new Error("OPENAI_API_KEY topilmadi (.env faylni tekshiring)");
   }
-  return new Anthropic({ apiKey });
+  return new OpenAI({ apiKey });
 }
 
 const SYSTEM_PROMPT = `Sen kosmetika xavfsizligi (CPSR) bo'yicha yordamchisan.
@@ -42,16 +42,17 @@ export async function generateGroundedAnswer(
 
   const userMessage = `Kontekst:\n${context || "(hech narsa topilmadi)"}\n\nSavol: ${question}`;
 
-  const response = await client.messages.create({
+  const response = await client.chat.completions.create({
     model: MODEL,
     max_tokens: 1024,
-    system: SYSTEM_PROMPT,
-    messages: [{ role: "user", content: userMessage }],
+    messages: [
+      { role: "system", content: SYSTEM_PROMPT },
+      { role: "user", content: userMessage },
+    ],
   });
 
-  const textBlock = response.content.find((b) => b.type === "text");
   return {
-    answer: textBlock && textBlock.type === "text" ? textBlock.text : "",
+    answer: response.choices[0]?.message?.content ?? "",
     model: MODEL,
   };
 }
@@ -129,15 +130,16 @@ export async function draftCPSRSections(
     contextText || "(manba topilmadi — barchasini 검토필요 deb belgila)",
   ].join("\n");
 
-  const response = await client.messages.create({
+  const response = await client.chat.completions.create({
     model: MODEL,
     max_tokens: 1536,
-    system: CPSR_DRAFT_SYSTEM_PROMPT,
-    messages: [{ role: "user", content: userMessage }],
+    messages: [
+      { role: "system", content: CPSR_DRAFT_SYSTEM_PROMPT },
+      { role: "user", content: userMessage },
+    ],
   });
 
-  const textBlock = response.content.find((b) => b.type === "text");
-  const full = textBlock && textBlock.type === "text" ? textBlock.text : "";
+  const full = response.choices[0]?.message?.content ?? "";
 
   const partAMatch = full.match(/### PART A\s*([\s\S]*?)(?=### PART B|$)/i);
   const partBMatch = full.match(/### PART B.*?\n([\s\S]*)$/i);

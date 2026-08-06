@@ -1,12 +1,13 @@
-# auto-cpsr — RAG + LLM (real ishlaydigan versiya)
+# auto-cpsr — AI-drafted, evidence-grounded cosmetic safety reports (CPSR)
 
-Bu — Claude bilan suhbatimizda chizilgan arxitekturaning (User → Client → Server → Database / AI Model) haqiqiy kod ko'rinishi. Hozircha faqat **RAG+LLM yadrosi** qurilgan (CPSR wizard'ning to'liq UI'si emas) — savol berasiz, tizim `work` papkangizdagi hujjatlardan (MFDS reglament, CPSR namuna) tegishli qismni topib, faqat o'sha manbaga asoslanib javob beradi va manbani ko'rsatadi (XAI/citation).
+`work` papkasidagi haqiqiy hujjatlarga (GBCY2616 grant, ATOM brifing, CPSR_KR_dossier, MFDS reglament) asoslangan, real ishlaydigan loyiha: RAG+LLM, deterministik SED/MoS hisob-kitobi, login/rol tizimi, PDF/Evidence Pack generatsiyasi.
 
 ## Ishlatilgan texnologiyalar
 - **Next.js (App Router, TypeScript)** — Client + Server/API
-- **Claude (Anthropic API)** — javob yozadigan LLM
-- **Voyage AI** — embedding (matnni vektorga aylantirish; Anthropic tavsiya qiladi, Claude'ning o'zida embedding yo'q)
-- **Supabase + pgvector** — vector baza (RAG'ning qidiruv qismi)
+- **OpenAI API (GPT-4o)** — Part A/B matnini yozadigan LLM
+- **Voyage AI** — embedding (matnni vektorga aylantirish)
+- **Supabase** — Postgres + pgvector (RAG) + Auth (login/rol) + Storage (PDF/ZIP)
+- **pdf-lib** — haqiqiy CPSR PDF (Noto Sans KR shrifti bilan, koreys+ingliz matn)
 
 ## O'rnatish (birinchi marta)
 
@@ -16,59 +17,69 @@ Bu — Claude bilan suhbatimizda chizilgan arxitekturaning (User → Client → 
    ```
 
 2. **Supabase loyihasi**
-   - https://supabase.com/dashboard → "New project" (bepul reja yetarli)
-   - Project tayyor bo'lgach: **SQL Editor** → `supabase/schema.sql` faylining
-     to'liq matnini joylashtirib, **Run** bosing (bu `documents` jadvali va
-     RAG qidiruv funksiyasini yaratadi)
-   - **Project Settings → API** dan `Project URL` va `service_role` kalitni oling
+   - https://supabase.com/dashboard → "New project"
+   - **SQL Editor**da 3 ta faylni **ketma-ket** ishga tushiring:
+     1. `supabase/schema.sql` — RAG (`documents`, pgvector)
+     2. `supabase/auth_schema.sql` — login/rol (`profiles`, `cpsr_projects`, RLS)
+     3. `supabase/storage_schema.sql` — PDF/ZIP doimiy saqlash (`cpsr-artifacts` bucket)
+   - **Project Settings → API** dan `Project URL`, `anon` va `service_role` kalitlarni oling
 
 3. **API kalitlar**
    ```bash
    cp .env.example .env
    ```
-   `.env` faylini oching va to'ldiring:
-   - `ANTHROPIC_API_KEY` — https://console.anthropic.com/settings/keys
-   - `VOYAGE_API_KEY` — https://dash.voyageai.com (bepul reja bor)
-   - `NEXT_PUBLIC_SUPABASE_URL` va `SUPABASE_SERVICE_ROLE_KEY` — Supabase'dan (2-qadam)
+   `.env` faylini to'ldiring:
+   - `OPENAI_API_KEY` — https://platform.openai.com/api-keys
+   - `VOYAGE_API_KEY` — https://dash.voyageai.com
+   - `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` — Supabase'dan (2-qadam)
 
-4. **Bilim bazasini yuklash (ingest)**
+4. **Bilim bazasini yuklash**
    ```bash
    npm run ingest
    ```
-   Bu `data/` papkasidagi matnlarni (hozircha MFDS reglament va CPSR namunasi,
-   `work` papkangizdan chiqarilgan) bo'laklab, Supabase'ga yozadi.
-   Yangi hujjat qo'shmoqchi bo'lsangiz — `data/` papkasiga `.txt` fayl sifatida
-   qo'ying va `npm run ingest`ni qayta ishga tushiring.
+   `data/*.txt` fayllarni (MFDS reglament, CPSR namuna) Supabase'ga yozadi.
 
 5. **Ishga tushirish**
    ```bash
    npm run dev
    ```
-   http://localhost:3000 ni oching, savol yozing, "So'rash" bosing.
-   Javob ostida qaysi hujjatdan olinganini ("manbalar") ham ko'rasiz.
+   http://localhost:3000 — API kalitlarsiz ham **DEMO rejimda** ishlaydi (aniq belgilangan, hech qachon jim yolg'on javob bermaydi).
 
 ## Loyiha tuzilishi
 
 ```
 app/
-  page.tsx           <- Client: sinov sahifasi (User shu yerda so'raydi)
-  api/rag/route.ts   <- Server/API: kalitlar shu yerda, Client ularni ko'rmaydi
+  page.tsx                          <- Bosh sahifa (EN/한국어), jonli RAG demo
+  dashboard/
+    page.tsx                        <- Foydalanuvchining loyihalari
+    wizard/                         <- 4-bosqichli CPSR forma (Product Info→Certification)
+    shelf-life/                     <- Arrhenius muddat kalkulyatori
+  review/                           <- Baholovchi (assessor) ko'rib chiqish paneli
+  login/ signup/                    <- Supabase Auth
+  api/
+    rag/                            <- Savol-javob (RAG+LLM)
+    generate-report/                <- To'liq CPSR qoralamasi (hisob+RAG+LLM)
+    projects/[id]/                  <- Loyiha CRUD, PDF, evidence-pack yuklab olish
+    review/[id]/                    <- Baholovchi imzosi (server-side, taqlid qilib bo'lmaydi)
 lib/
-  embeddings.ts       <- Voyage AI chaqiruvi
-  claude.ts           <- Claude chaqiruvi (grounded prompt, XAI/citation qoidasi)
-  rag.ts              <- hammasini birlashtiradi: savol -> qidiruv -> javob
-  supabase.ts          <- Supabase server-side klient
-scripts/ingest.ts      <- data/*.txt fayllarni bilim bazasiga yozadi
-supabase/schema.sql     <- Supabase'da bir marta ishga tushiriladigan SQL
-data/                   <- bilim bazasi manbalari (matn)
+  llm.ts                            <- OpenAI chaqiruvi (grounded prompt, Part A/B faqat)
+  embeddings.ts                     <- Voyage AI
+  rag.ts                            <- qidiruv (real + demo fallback)
+  calc.ts / ttc.ts                  <- SED/MoS/TTC — deterministik, LLM emas
+  shelf-life.ts                     <- Arrhenius muddat formulasi
+  restricted-list.ts                <- cheklangan moddalar tekshiruvi
+  report.ts                         <- hammasini birlashtiruvchi orkestratsiya
+  pdf-report.ts / evidence-pack.ts  <- yakuniy PDF va ZIP generatsiyasi
+  auth-guard.ts / storage.ts        <- server-side himoya va doimiy saqlash
+supabase/
+  schema.sql / auth_schema.sql / storage_schema.sql  <- 3 ta SQL, shu tartibda
+data/                                <- RAG bilim bazasi manbalari (matn)
+assets/fonts/                        <- Noto Sans KR (PDF uchun)
 ```
 
-## Keyingi qadamlar (hali qilinmagan)
+## Xavfsizlik tamoyillari
 
-- CPSR wizard'ning 4 bosqichini (Product Info/Ingredients/Toxicology/
-  Certification) shu backend'ga ulash
-- MoS = NOAEL/SED hisob-kitobini alohida deterministik funksiya sifatida qo'shish
-  (bu LLM'ga ishonib topshirilmaydi — arxitektura hujjatidagi eslatmaga qarang)
-- Xavfsizlik baholovchisi (inson) uchun ko'rib chiqish/imzolash oqimi
-- `work` papkangizdagi qolgan PDF'larni (taqiqlangan ro'yxat, EWG va h.k.)
-  `data/`ga qo'shish
+- API kalitlar faqat serverda (Client hech qachon ko'rmaydi)
+- Rol: `user` (o'z loyihasi) / `assessor` (faqat `draft_generated` loyihalarni ko'radi) — bazaning o'zida RLS orqali cheklangan
+- LLM yakuniy xavfsizlik xulosasi va imzo yoza olmaydi — bu faqat inson vazifasi
+- Evidence Pack/PDF **bir marta** yaratilib, o'zgarmas holda saqlanadi (ALCOA+)

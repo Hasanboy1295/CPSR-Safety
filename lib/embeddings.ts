@@ -1,6 +1,7 @@
 // Voyage AI embedding — Anthropic'ning rasman tavsiya qiladigan embedding provayderi.
-// Claude'ning o'zida embedding endpoint yo'q, shuning uchun matnni vektorga
-// aylantirish uchun alohida (lekin Claude bilan yaxshi ishlaydigan) servis kerak.
+// LLM'larning ko'pchiligida (jumladan OpenAI chat modellari) alohida
+// embedding endpoint yo'q, shuning uchun matnni vektorga aylantirish uchun
+// mustaqil (lekin yaxshi ishlaydigan) servis — Voyage AI — tanlandi.
 // https://docs.voyageai.com/reference/embeddings-api
 
 const VOYAGE_URL = "https://api.voyageai.com/v1/embeddings";

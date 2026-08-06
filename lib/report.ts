@@ -7,7 +7,7 @@ import { flattenIngredients } from "./wizard-types";
 import { calcSED, calcMoS, judge, type CalcRow } from "./calc";
 import { checkRestricted } from "./restricted-list";
 import { retrieveChunks, hasRealCredentials, type RetrievedChunk } from "./rag";
-import { draftCPSRSections } from "./claude";
+import { draftCPSRSections } from "./llm";
 import { mockDraftCPSRSections } from "./mock";
 import { stampIntegrity, type IntegrityStamp } from "./integrity";
 

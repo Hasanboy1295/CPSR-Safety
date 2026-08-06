@@ -10,7 +10,7 @@ import { chunkText } from "./chunk";
 import type { RagResult, RetrievedChunk } from "./rag";
 import type { ProductInfo } from "./wizard-types";
 import type { CalcRow } from "./calc";
-import type { CPSRDraft } from "./claude";
+import type { CPSRDraft } from "./llm";
 
 const DATA_DIR = join(process.cwd(), "data");
 
@@ -81,7 +81,7 @@ export function mockAnswerWithRag(question: string, matchCount = 3): RagResult {
         `[manba: ${best.source_name}]`,
         ``,
         `Bu haqiqiy Claude javobi emas — real AI+RAG javobi uchun .env fayliga`,
-        `ANTHROPIC_API_KEY, VOYAGE_API_KEY, NEXT_PUBLIC_SUPABASE_URL va`,
+        `OPENAI_API_KEY, VOYAGE_API_KEY, NEXT_PUBLIC_SUPABASE_URL va`,
         `SUPABASE_SERVICE_ROLE_KEY qo'shing (README.md'ga qarang).`,
       ].join("\n")
     : `[DEMO REJIMI] data/ papkasida hech qanday .txt fayl topilmadi.`;

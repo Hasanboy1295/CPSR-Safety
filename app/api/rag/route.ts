@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { answerWithRag } from "@/lib/rag";
 
 // Bu — arxitektura diagrammasidagi "Server / API" qatlami:
-// ANTHROPIC_API_KEY va SUPABASE_SERVICE_ROLE_KEY faqat shu yerda ishlatiladi,
+// OPENAI_API_KEY va SUPABASE_SERVICE_ROLE_KEY faqat shu yerda ishlatiladi,
 // Client (brauzer) hech qachon ularni ko'rmaydi.
 export async function POST(req: NextRequest) {
   let body: unknown;
