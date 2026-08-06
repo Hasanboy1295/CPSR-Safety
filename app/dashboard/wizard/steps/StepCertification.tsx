@@ -185,6 +185,26 @@ export function StepCertification({
           </p>
         )}
 
+        {submitted && projectId && (
+          <a
+            href={`/api/projects/${projectId}/evidence-pack`}
+            style={{
+              display: "inline-block",
+              marginTop: 14,
+              marginLeft: submitted ? 10 : 0,
+              padding: "10px 18px",
+              fontSize: 13.5,
+              fontWeight: 600,
+              color: "var(--text-muted)",
+              border: "1px solid var(--border)",
+              borderRadius: 8,
+              textDecoration: "none",
+            }}
+          >
+            ⬇ {t("downloadEvidencePack")}
+          </a>
+        )}
+
         {report?.demo && (
           <p
             style={{
