@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAuthedUser } from "@/lib/auth-guard";
 import { getSupabaseServerAuthClient } from "@/lib/supabase-server-auth";
-import { buildEvidencePack } from "@/lib/evidence-pack";
+import { buildCPSRPdf } from "@/lib/pdf-report";
 import { downloadArtifact } from "@/lib/storage";
 import type { CPSRReportDraft } from "@/lib/report";
 
@@ -16,7 +16,7 @@ export async function GET(
   const supabase = await getSupabaseServerAuthClient();
   const { data: project, error } = await supabase
     .from("cpsr_projects")
-    .select("product_info, ingredients, exposure, report_result, evidence_pack_path")
+    .select("product_info, ingredients, exposure, certification, report_result, pdf_path")
     .eq("id", id)
     .single();
 
@@ -25,22 +25,25 @@ export async function GET(
     return NextResponse.json({ error: "Hali CPSR qoralamasi yaratilmagan" }, { status: 400 });
   }
 
-  // Avval DOIMIY saqlangan faylni izlaydi (ALCOA+ "Enduring" — hech qachon qayta
-  // yaratilmaydi). Faqat u topilmasa (eski/demo ma'lumot) — on-the-fly yasaydi.
   let bytes: Uint8Array;
-  if (project.evidence_pack_path) {
-    bytes = await downloadArtifact(supabase, project.evidence_pack_path);
+  if (project.pdf_path) {
+    bytes = await downloadArtifact(supabase, project.pdf_path);
   } else {
-    bytes = await buildEvidencePack(
-      { productInfo: project.product_info, ingredients: project.ingredients, exposure: project.exposure },
+    bytes = await buildCPSRPdf(
+      {
+        productInfo: project.product_info,
+        ingredients: project.ingredients,
+        exposure: project.exposure,
+        certification: project.certification,
+      },
       project.report_result as CPSRReportDraft
     );
   }
 
   return new NextResponse(Buffer.from(bytes), {
     headers: {
-      "Content-Type": "application/zip",
-      "Content-Disposition": `attachment; filename="evidence_pack_${id.slice(0, 8)}.zip"`,
+      "Content-Type": "application/pdf",
+      "Content-Disposition": `attachment; filename="CPSR_${id.slice(0, 8)}.pdf"`,
     },
   });
 }

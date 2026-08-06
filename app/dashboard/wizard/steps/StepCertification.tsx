@@ -186,23 +186,41 @@ export function StepCertification({
         )}
 
         {submitted && projectId && (
-          <a
-            href={`/api/projects/${projectId}/evidence-pack`}
-            style={{
-              display: "inline-block",
-              marginTop: 14,
-              marginLeft: submitted ? 10 : 0,
-              padding: "10px 18px",
-              fontSize: 13.5,
-              fontWeight: 600,
-              color: "var(--text-muted)",
-              border: "1px solid var(--border)",
-              borderRadius: 8,
-              textDecoration: "none",
-            }}
-          >
-            ⬇ {t("downloadEvidencePack")}
-          </a>
+          <>
+            <a
+              href={`/api/projects/${projectId}/pdf`}
+              style={{
+                display: "inline-block",
+                marginTop: 14,
+                padding: "10px 18px",
+                fontSize: 13.5,
+                fontWeight: 600,
+                color: "#06120d",
+                background: "var(--accent)",
+                borderRadius: 8,
+                textDecoration: "none",
+              }}
+            >
+              ⬇ {t("downloadPdf")}
+            </a>
+            <a
+              href={`/api/projects/${projectId}/evidence-pack`}
+              style={{
+                display: "inline-block",
+                marginTop: 14,
+                marginLeft: 10,
+                padding: "10px 18px",
+                fontSize: 13.5,
+                fontWeight: 600,
+                color: "var(--text-muted)",
+                border: "1px solid var(--border)",
+                borderRadius: 8,
+                textDecoration: "none",
+              }}
+            >
+              ⬇ {t("downloadEvidencePack")}
+            </a>
+          </>
         )}
 
         {report?.demo && (
