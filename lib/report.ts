@@ -5,6 +5,7 @@
 import type { ProductInfo, IngredientRow, ExposureParams } from "./wizard-types";
 import { flattenIngredients } from "./wizard-types";
 import { calcSED, calcMoS, judge, type CalcRow } from "./calc";
+import { checkRestricted } from "./restricted-list";
 import { retrieveChunks, hasRealCredentials, type RetrievedChunk } from "./rag";
 import { draftCPSRSections } from "./claude";
 import { mockDraftCPSRSections } from "./mock";
@@ -44,6 +45,8 @@ function toCalcRows(ingredients: IngredientRow[], exposure: ExposureParams): Cal
         ? `${toxLines.join(", ")} 확보${c.tox.notes ? ` (${c.tox.notes})` : ""}`
         : undefined;
 
+    const restricted = checkRestricted(c.cas);
+
     return {
       inciName: c.inciName,
       cas: c.cas,
@@ -53,6 +56,7 @@ function toCalcRows(ingredients: IngredientRow[], exposure: ExposureParams): Cal
       mos,
       judgment: judge(mos),
       toxSummary,
+      restrictedNote: restricted ? `${restricted.severity.toUpperCase()}: ${restricted.reason}` : undefined,
     };
   });
 }

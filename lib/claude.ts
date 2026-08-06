@@ -75,6 +75,9 @@ QAT'IY TAQIQLAR (CPSR_KR_dossier original hujjatidan, so'zma-so'z amal qil):
 6. Har bir reglament/ilmiy da'voning yonida [manba: <source_name>] ko'rsat, faqat
    pastdagi "Kontekst" bo'limidagi manbalardan foydalanib.
 7. Kontekstda yo'q narsani "검토필요" deb qoldir, o'ylab topma.
+8. Agar hisob-kitob natijasida biror ingredient yonida "⚠ 제한성분" belgisi
+   bo'lsa, buni Part A tavsifida va Part B mulohazasida ALOHIDA, ANIQ ta'kidla —
+   bu eng muhim xavfsizlik signali, uni yashirma yoki yumshatma.
 
 Chiqishni ANIQ shu formatda ber (ikkita bo'lim, boshqa hech narsa qo'shma):
 ### PART A
@@ -106,7 +109,8 @@ export async function draftCPSRSections(
         `- ${r.inciName || "(nomsiz)"} (CAS ${r.cas || "검토필요"}, ${r.percentInProduct}%): ` +
         `SED=${r.sed.toFixed(6)} mg/kg/gün, NOAEL=${r.noael ?? "검토필요"}, ` +
         `MoS=${r.mos === null ? "검토필요" : r.mos.toFixed(1)}, holat=${r.judgment}` +
-        (r.toxSummary ? ` | 독성 프로필: ${r.toxSummary}` : "")
+        (r.toxSummary ? ` | 독성 프로필: ${r.toxSummary}` : "") +
+        (r.restrictedNote ? ` | ⚠ 제한성분: ${r.restrictedNote}` : "")
     )
     .join("\n");
 

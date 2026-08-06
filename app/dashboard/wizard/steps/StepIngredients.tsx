@@ -8,7 +8,9 @@ import {
   type IngredientRow,
   type INCIComponent,
 } from "@/lib/wizard-types";
-import { field, label, input, card, btnPrimary, btnGhost, btnDanger } from "@/lib/wizard-ui";
+import { field, label, input, card, btnPrimary, btnGhost, btnDanger, badge } from "@/lib/wizard-ui";
+import { checkRestricted } from "@/lib/restricted-list";
+import { nmnSilisomeFormula } from "@/lib/sample-formulas";
 
 export function StepIngredients({
   value,
@@ -118,60 +120,80 @@ export function StepIngredients({
               {t("inciComponents")} {row.components.length > 1 && `(${t("compositeHint")})`}
             </div>
 
-            {row.components.map((c) => (
-              <div
-                key={c.id}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "2fr 1.2fr 1fr 1.5fr auto",
-                  gap: 8,
-                  alignItems: "end",
-                  marginBottom: 10,
-                }}
-              >
-                <div style={field}>
-                  <label style={label}>{t("inciName")}</label>
-                  <input
-                    style={input}
-                    value={c.inciName}
-                    onChange={(e) => updateComponent(row.id, c.id, { inciName: e.target.value })}
-                  />
-                </div>
-                <div style={field}>
-                  <label style={label}>{t("cas")}</label>
-                  <input
-                    style={input}
-                    value={c.cas}
-                    onChange={(e) => updateComponent(row.id, c.id, { cas: e.target.value })}
-                  />
-                </div>
-                <div style={field}>
-                  <label style={label}>{t("percentInRaw")}</label>
-                  <input
-                    style={input}
-                    type="number"
-                    value={c.percentActiveInRaw}
-                    onChange={(e) => updateComponent(row.id, c.id, { percentActiveInRaw: e.target.value })}
-                  />
-                </div>
-                <div style={field}>
-                  <label style={label}>{t("functionRole")}</label>
-                  <input
-                    style={input}
-                    value={c.functionRole}
-                    onChange={(e) => updateComponent(row.id, c.id, { functionRole: e.target.value })}
-                  />
-                </div>
-                {row.components.length > 1 && (
-                  <button
-                    style={{ ...btnDanger, marginBottom: 18 }}
-                    onClick={() => removeComponent(row.id, c.id)}
+            {row.components.map((c) => {
+              const restricted = checkRestricted(c.cas);
+              return (
+                <div key={c.id} style={{ marginBottom: 10 }}>
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "2fr 1.2fr 1fr 1.5fr auto",
+                      gap: 8,
+                      alignItems: "end",
+                    }}
                   >
-                    ×
-                  </button>
-                )}
-              </div>
-            ))}
+                    <div style={field}>
+                      <label style={label}>{t("inciName")}</label>
+                      <input
+                        style={input}
+                        value={c.inciName}
+                        onChange={(e) => updateComponent(row.id, c.id, { inciName: e.target.value })}
+                      />
+                    </div>
+                    <div style={field}>
+                      <label style={label}>{t("cas")}</label>
+                      <input
+                        style={input}
+                        value={c.cas}
+                        onChange={(e) => updateComponent(row.id, c.id, { cas: e.target.value })}
+                      />
+                    </div>
+                    <div style={field}>
+                      <label style={label}>{t("percentInRaw")}</label>
+                      <input
+                        style={input}
+                        type="number"
+                        value={c.percentActiveInRaw}
+                        onChange={(e) => updateComponent(row.id, c.id, { percentActiveInRaw: e.target.value })}
+                      />
+                    </div>
+                    <div style={field}>
+                      <label style={label}>{t("functionRole")}</label>
+                      <input
+                        style={input}
+                        value={c.functionRole}
+                        onChange={(e) => updateComponent(row.id, c.id, { functionRole: e.target.value })}
+                      />
+                    </div>
+                    {row.components.length > 1 && (
+                      <button
+                        style={{ ...btnDanger, marginBottom: 18 }}
+                        onClick={() => removeComponent(row.id, c.id)}
+                      >
+                        ×
+                      </button>
+                    )}
+                  </div>
+                  {restricted && (
+                    <div
+                      style={{
+                        marginTop: 6,
+                        padding: "8px 12px",
+                        borderRadius: 6,
+                        background: "var(--danger-soft)",
+                        border: "1px solid var(--danger)",
+                        fontSize: 12,
+                      }}
+                    >
+                      <span style={badge(restricted.severity === "high" ? "insufficient" : "review")}>
+                        {t("restrictedWarning")}
+                      </span>{" "}
+                      <span style={{ color: "var(--danger)" }}>{restricted.reason}</span>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
 
             <button style={{ ...btnGhost, fontSize: 12.5, padding: "6px 12px" }} onClick={() => addComponent(row.id)}>
               {t("addComponent")}
@@ -180,9 +202,14 @@ export function StepIngredients({
         </div>
       ))}
 
-      <button style={btnPrimary} onClick={addRow}>
-        {t("addIngredient")}
-      </button>
+      <div style={{ display: "flex", gap: 10 }}>
+        <button style={btnPrimary} onClick={addRow}>
+          {t("addIngredient")}
+        </button>
+        <button style={btnGhost} onClick={() => onChange([...value, ...nmnSilisomeFormula()])}>
+          {t("loadSampleFormula")}
+        </button>
+      </div>
 
       {value.length > 0 && (
         <div
