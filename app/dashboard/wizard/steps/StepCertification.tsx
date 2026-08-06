@@ -5,13 +5,17 @@ import { useWizardText } from "@/lib/i18n";
 import type { WizardData, Certification } from "@/lib/wizard-types";
 import { flattenIngredients } from "@/lib/wizard-types";
 import { calcSED, calcMoS, judge } from "@/lib/calc";
-import { field, label, input, card, badge, btnPrimary } from "@/lib/wizard-ui";
+import type { CalcRow } from "@/lib/calc";
+import type { RetrievedChunk } from "@/lib/rag";
+import { field, label, input, card, badge, btnPrimary, btnGradient } from "@/lib/wizard-ui";
 
 type ReportResult = {
   partA?: string;
   partBReasoning?: string;
   demo?: boolean;
   model?: string;
+  calcRows?: CalcRow[];
+  sources?: RetrievedChunk[];
   integrity?: { runId: string; createdAt: string; inputCsvSha: string; configHash: string };
   error?: string;
 };
@@ -142,6 +146,22 @@ export function StepCertification({
           />
         </div>
         <div style={field}>
+          <label style={label}>{t("assessorPosition")}</label>
+          <input
+            style={input}
+            value={data.certification.assessorPosition}
+            onChange={(e) => set("assessorPosition", e.target.value)}
+          />
+        </div>
+        <div style={field}>
+          <label style={label}>{t("assessorQualification")}</label>
+          <input
+            style={input}
+            value={data.certification.assessorQualification}
+            onChange={(e) => set("assessorQualification", e.target.value)}
+          />
+        </div>
+        <div style={field}>
           <label style={label}>{t("reviewDate")}</label>
           <input
             style={input}
@@ -159,6 +179,39 @@ export function StepCertification({
           onChange={(e) => set("draftNotes", e.target.value)}
         />
       </div>
+
+      <label style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 13, color: "var(--text-muted)", marginBottom: 20, cursor: "pointer" }}>
+        <input
+          type="checkbox"
+          checked={data.certification.selfCertified}
+          onChange={(e) => set("selfCertified", e.target.checked)}
+          style={{ marginTop: 2 }}
+        />
+        {t("selfCertifyLabel")}
+      </label>
+
+      {data.certification.selfCertified && report?.integrity && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "10px 14px",
+            marginBottom: 20,
+            background: "var(--success-soft)",
+            border: "1px solid var(--success)",
+            borderRadius: 8,
+            fontSize: 12,
+          }}
+        >
+          <span style={{ color: "var(--success)" }}>
+            ✓ {t("integrityVerified")}: SHA256 {report.integrity.inputCsvSha.slice(0, 8)}...{report.integrity.inputCsvSha.slice(-6)}
+          </span>
+          <span style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
+            {t("issuedOn")}: {new Date(report.integrity.createdAt).toLocaleDateString()}
+          </span>
+        </div>
+      )}
 
       <div style={{ borderTop: "1px dashed var(--border)", paddingTop: 20, marginTop: 4 }}>
         <button style={btnPrimary} onClick={generateDraft} disabled={generating || data.ingredients.length === 0}>
@@ -195,10 +248,11 @@ export function StepCertification({
                 padding: "10px 18px",
                 fontSize: 13.5,
                 fontWeight: 600,
-                color: "#06120d",
-                background: "var(--accent)",
-                borderRadius: 8,
                 textDecoration: "none",
+                borderRadius: 8,
+                pointerEvents: data.certification.selfCertified ? "auto" : "none",
+                opacity: data.certification.selfCertified ? 1 : 0.5,
+                ...(data.certification.selfCertified ? btnGradient : { ...btnPrimary, background: "var(--surface-2)", color: "var(--text-muted)" }),
               }}
             >
               ⬇ {t("downloadPdf")}
@@ -216,6 +270,8 @@ export function StepCertification({
                 border: "1px solid var(--border)",
                 borderRadius: 8,
                 textDecoration: "none",
+                pointerEvents: data.certification.selfCertified ? "auto" : "none",
+                opacity: data.certification.selfCertified ? 1 : 0.5,
               }}
             >
               ⬇ {t("downloadEvidencePack")}
@@ -237,6 +293,51 @@ export function StepCertification({
           >
             ⚠ {t("demoNotice")}
           </p>
+        )}
+
+        {report?.calcRows && report.calcRows.length > 0 && (
+          <div style={{ marginTop: 20 }}>
+            <h4 style={{ fontSize: 13.5, marginBottom: 8 }}>{t("resultsTableTitle")}</h4>
+            <div style={{ overflowX: "auto", border: "1px solid var(--border)", borderRadius: 8 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>
+                <thead>
+                  <tr style={{ background: "var(--surface-2)", textAlign: "left" }}>
+                    <th style={{ padding: "9px 12px" }}>{t("inciCol")}</th>
+                    <th style={{ padding: "9px 12px" }}>{t("sedCol")}</th>
+                    <th style={{ padding: "9px 12px" }}>{t("noaelCol")}</th>
+                    <th style={{ padding: "9px 12px" }}>{t("mosCol")}</th>
+                    <th style={{ padding: "9px 12px" }}>{t("judgmentCol")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {report.calcRows.map((r, i) => (
+                    <tr key={i} style={{ borderTop: "1px solid var(--border)" }}>
+                      <td style={{ padding: "9px 12px", fontWeight: 600 }}>
+                        {r.inciName || "—"}
+                        {r.restrictedNote && (
+                          <div style={{ marginTop: 3 }}>
+                            <span style={badge("insufficient")}>⚠ {r.restrictedNote}</span>
+                          </div>
+                        )}
+                      </td>
+                      <td style={{ padding: "9px 12px", fontFamily: "var(--font-mono)" }}>{r.sed.toFixed(4)}</td>
+                      <td style={{ padding: "9px 12px", fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>
+                        {r.noael ?? "검토필요"}
+                      </td>
+                      <td style={{ padding: "9px 12px", fontFamily: "var(--font-mono)" }}>
+                        {r.mos === null ? "—" : r.mos.toFixed(1)}
+                      </td>
+                      <td style={{ padding: "9px 12px" }}>
+                        <span style={badge(r.judgment === "pass" ? "pass" : r.judgment === "review" ? "review" : "insufficient")}>
+                          {r.judgment === "pass" ? t("judgmentPass") : r.judgment === "review" ? t("judgmentReview") : t("judgmentInsufficient")}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         )}
 
         {report?.partA && (
@@ -268,6 +369,31 @@ export function StepCertification({
             >
               {report.partBReasoning}
             </div>
+
+            {report.sources && report.sources.length > 0 && (
+              <div style={{ marginTop: 18 }}>
+                <h4 style={{ fontSize: 13.5, marginBottom: 8 }}>{t("sourcesTitle")}</h4>
+                <div style={{ display: "grid", gap: 6 }}>
+                  {report.sources.map((s) => (
+                    <div
+                      key={s.id}
+                      style={{
+                        fontSize: 12,
+                        color: "var(--text-muted)",
+                        border: "1px solid var(--border)",
+                        borderRadius: 6,
+                        padding: "6px 10px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <span>{s.source_name}</span>
+                      <span style={{ fontFamily: "var(--font-mono)" }}>{(s.similarity * 100).toFixed(0)}%</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {report.integrity && (
               <>

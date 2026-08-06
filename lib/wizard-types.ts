@@ -116,8 +116,11 @@ export type ExposureParams = {
 
 export type Certification = {
   assessorName: string;
+  assessorPosition: string;
+  assessorQualification: string;
   reviewDate: string;
   draftNotes: string;
+  selfCertified: boolean;
 };
 
 export type WizardData = {
@@ -145,8 +148,11 @@ export const emptyExposure: ExposureParams = {
 
 export const emptyCertification: Certification = {
   assessorName: "",
+  assessorPosition: "",
+  assessorQualification: "",
   reviewDate: "",
   draftNotes: "",
+  selfCertified: false,
 };
 
 export const emptyWizardData: WizardData = {

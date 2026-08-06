@@ -182,6 +182,13 @@ export async function buildCPSRPdf(
   cur = sectionTitle(cur, "PART B · 안전성 평가 결론 (Assessment Conclusion)");
   if (data.certification.assessorName && data.certification.draftNotes) {
     cur = text(cur, `평가자 (Safety Assessor): ${data.certification.assessorName}`, { size: 10.5 });
+    if (data.certification.assessorPosition || data.certification.assessorQualification) {
+      cur = text(
+        cur,
+        `${data.certification.assessorPosition || "—"} · ${data.certification.assessorQualification || "—"}`,
+        { size: 9.5, color: muted, gap: 4 }
+      );
+    }
     cur = text(cur, `검토일 (Review date): ${data.certification.reviewDate || "—"}`, { size: 9.5, color: muted, gap: 10 });
     cur = paragraph(cur, data.certification.draftNotes);
   } else {

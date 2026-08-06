@@ -6,6 +6,9 @@ import type { ExposureParams, IngredientRow, INCIComponent, ToxicologyProfile, T
 import { calcSED, calcMoS, judge } from "@/lib/calc";
 import { ttcScreen, type CramerClass } from "@/lib/ttc";
 import { field, label, input, select as selectStyle, card, badge, btnGhost } from "@/lib/wizard-ui";
+import { FileDropzone } from "@/components/FileDropzone";
+import { flattenIngredients } from "@/lib/wizard-types";
+import type { ToxExtractUpdate } from "@/lib/extract-llm";
 
 const TOX_ENDPOINTS: { key: keyof ToxicologyProfile; labelKey: string }[] = [
   { key: "acuteToxicity", labelKey: "toxAcute" },
@@ -53,6 +56,34 @@ export function StepToxicology({
     updateComponent(rowId, compId, { tox: { ...comp.tox, [key]: v } });
   }
 
+  async function handleToxUpload(file: File) {
+    const knownComponents = flattenIngredients(ingredients).map((c) => ({ inciName: c.inciName, cas: c.cas }));
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("knownComponents", JSON.stringify(knownComponents));
+    const res = await fetch("/api/extract/toxicology", { method: "POST", body: formData });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || t("extractFailed"));
+
+    const updates: ToxExtractUpdate[] = json.updates ?? [];
+    onIngredientsChange(
+      ingredients.map((row) => ({
+        ...row,
+        components: row.components.map((c) => {
+          const match = updates.find(
+            (u) => (u.cas && u.cas === c.cas) || (!u.cas && u.inciName === c.inciName)
+          );
+          if (!match) return c;
+          return {
+            ...c,
+            noael: match.noael || c.noael,
+            tox: { ...c.tox, ...(match.tox ?? {}), notes: match.notes || c.tox.notes },
+          };
+        }),
+      }))
+    );
+  }
+
   const A = parseFloat(exposure.amountG) || 0;
   const RF = parseFloat(exposure.retentionFactor) || 0;
   const BW = parseFloat(exposure.bodyWeightKg) || 1;
@@ -64,6 +95,13 @@ export function StepToxicology({
       <p style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-muted)", marginTop: 0, marginBottom: 20 }}>
         {t("formula")}
       </p>
+
+      <FileDropzone
+        title={t("uploadTox")}
+        hint={t("uploadToxHint")}
+        loadingLabel={t("extracting")}
+        onFile={handleToxUpload}
+      />
 
       <h3 style={{ fontSize: 14, marginBottom: 12 }}>{t("exposureParams")}</h3>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "0 16px", marginBottom: 24 }}>

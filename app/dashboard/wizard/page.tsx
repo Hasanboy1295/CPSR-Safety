@@ -4,8 +4,6 @@ import { useEffect, useRef, useState, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useLanguage, useWizardText } from "@/lib/i18n";
-import { LanguageToggle } from "@/components/LanguageToggle";
-import { AuthStatus } from "@/components/AuthStatus";
 import {
   emptyWizardData,
   WIZARD_STORAGE_KEY,
@@ -102,22 +100,14 @@ function WizardInner() {
   }
 
   return (
-    <main style={{ maxWidth: 880, margin: "0 auto", padding: "40px 24px 80px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: 8 }}>
-        <div>
-          <Link href={projectId ? "/dashboard" : "/"} style={{ fontSize: 13, color: "var(--text-muted)", textDecoration: "none" }}>
-            ← {projectId ? t("myProjects") : tBrand("brand")}
-          </Link>
-          <h1 style={{ fontSize: 24, margin: "10px 0 4px" }}>{t("wizardTitle")}</h1>
-          <p style={{ fontSize: 13.5, color: "var(--text-muted)", margin: 0 }}>
-            {projectId ? t("autoFilledNote") : t("wizardSubtitle")}
-          </p>
-        </div>
-        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <LanguageToggle />
-          <AuthStatus />
-        </div>
-      </div>
+    <div style={{ maxWidth: 880 }}>
+      <Link href={projectId ? "/dashboard" : "/"} style={{ fontSize: 13, color: "var(--text-muted)", textDecoration: "none" }}>
+        ← {projectId ? t("myProjects") : tBrand("brand")}
+      </Link>
+      <h1 style={{ fontSize: 24, margin: "10px 0 4px" }}>{t("wizardTitle")}</h1>
+      <p style={{ fontSize: 13.5, color: "var(--text-muted)", margin: 0 }}>
+        {projectId ? t("autoFilledNote") : t("wizardSubtitle")}
+      </p>
 
       {/* Step indikator */}
       <div style={{ display: "flex", gap: 6, margin: "28px 0 24px" }}>
@@ -193,7 +183,7 @@ function WizardInner() {
           )}
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 

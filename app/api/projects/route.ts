@@ -10,7 +10,7 @@ export async function GET() {
   const supabase = await getSupabaseServerAuthClient();
   const { data, error } = await supabase
     .from("cpsr_projects")
-    .select("id, product_info, status, updated_at")
+    .select("id, product_info, ingredients, status, updated_at")
     .eq("user_id", user.id)
     .order("updated_at", { ascending: false });
 

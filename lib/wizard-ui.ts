@@ -38,8 +38,8 @@ export const grid2: CSSProperties = {
 
 export const badge = (tone: "pass" | "review" | "insufficient"): CSSProperties => {
   const colors = {
-    pass: { bg: "var(--accent-soft)", fg: "var(--accent)", border: "var(--accent)" },
-    review: { bg: "var(--gold-soft)", fg: "var(--gold)", border: "var(--gold)" },
+    pass: { bg: "var(--success-soft)", fg: "var(--success)", border: "var(--success)" },
+    review: { bg: "var(--accent-soft)", fg: "var(--accent-2)", border: "var(--accent)" },
     insufficient: { bg: "var(--danger-soft)", fg: "var(--danger)", border: "var(--danger)" },
   }[tone];
   return {
@@ -60,10 +60,39 @@ export const btnPrimary: CSSProperties = {
   fontSize: 14,
   fontWeight: 600,
   background: "var(--accent)",
+  color: "#ffffff",
+  border: "none",
+  borderRadius: 8,
+  cursor: "pointer",
+};
+
+export const btnGradient: CSSProperties = {
+  padding: "12px 20px",
+  fontSize: 14,
+  fontWeight: 700,
+  background: "linear-gradient(90deg, var(--success), var(--accent))",
   color: "#06120d",
   border: "none",
   borderRadius: 8,
   cursor: "pointer",
+};
+
+export const dropzone: CSSProperties = {
+  border: "1.5px dashed var(--border)",
+  borderRadius: 10,
+  padding: "28px 20px",
+  textAlign: "center",
+  background: "var(--surface-2)",
+  cursor: "pointer",
+};
+
+export const statCard: CSSProperties = {
+  flex: 1,
+  background: "var(--surface)",
+  border: "1px solid var(--border)",
+  borderLeft: "3px solid var(--accent)",
+  borderRadius: "var(--radius)",
+  padding: "18px 20px",
 };
 
 export const btnGhost: CSSProperties = {

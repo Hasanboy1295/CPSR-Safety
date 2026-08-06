@@ -11,6 +11,7 @@ import {
 import { field, label, input, card, btnPrimary, btnGhost, btnDanger, badge } from "@/lib/wizard-ui";
 import { checkRestricted } from "@/lib/restricted-list";
 import { nmnSilisomeFormula } from "@/lib/sample-formulas";
+import { FileDropzone } from "@/components/FileDropzone";
 
 export function StepIngredients({
   value,
@@ -54,6 +55,15 @@ export function StepIngredients({
     );
   }
 
+  async function handleUpload(file: File) {
+    const formData = new FormData();
+    formData.append("file", file);
+    const res = await fetch("/api/extract/ingredients", { method: "POST", body: formData });
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || t("extractFailed"));
+    onChange([...value, ...json.rows]);
+  }
+
   function removeComponent(rowId: string, compId: string) {
     onChange(
       value.map((row) =>
@@ -69,6 +79,13 @@ export function StepIngredients({
 
   return (
     <div style={card}>
+      <FileDropzone
+        title={t("uploadBom")}
+        hint={t("uploadBomHint")}
+        loadingLabel={t("extracting")}
+        onFile={handleUpload}
+      />
+
       {value.length === 0 && (
         <p style={{ color: "var(--text-muted)", fontSize: 14 }}>{t("noIngredientsYet")}</p>
       )}

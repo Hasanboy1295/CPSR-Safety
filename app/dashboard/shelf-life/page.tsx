@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useLanguage, useWizardText } from "@/lib/i18n";
-import { LanguageToggle } from "@/components/LanguageToggle";
-import { AuthStatus } from "@/components/AuthStatus";
+import { useWizardText } from "@/lib/i18n";
 import { calcShelfLife, type StabilityPoint } from "@/lib/shelf-life";
 import { field, label, input, card, badge, btnPrimary, btnGhost } from "@/lib/wizard-ui";
 
@@ -49,7 +47,6 @@ function PointsEditor({
 }
 
 export default function ShelfLifePage() {
-  const { t: tBrand } = useLanguage();
   const t = useWizardText();
 
   const [accelTemp, setAccelTemp] = useState(40);
@@ -71,20 +68,12 @@ export default function ShelfLifePage() {
   const result = calcShelfLife({ temperatureC: accelTemp, points: accelPoints }, { temperatureC: longTemp, points: longPoints });
 
   return (
-    <main style={{ maxWidth: 880, margin: "0 auto", padding: "40px 24px 80px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: 8 }}>
-        <div>
-          <Link href="/dashboard" style={{ fontSize: 13, color: "var(--text-muted)", textDecoration: "none" }}>
-            ← {t("myProjects")}
-          </Link>
-          <h1 style={{ fontSize: 24, margin: "10px 0 4px" }}>{t("shelfLifeTitle")}</h1>
-          <p style={{ fontSize: 13.5, color: "var(--text-muted)", margin: 0, maxWidth: 560 }}>{t("shelfLifeSubtitle")}</p>
-        </div>
-        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <LanguageToggle />
-          <AuthStatus />
-        </div>
-      </div>
+    <div style={{ maxWidth: 880 }}>
+      <Link href="/dashboard" style={{ fontSize: 13, color: "var(--text-muted)", textDecoration: "none" }}>
+        ← {t("myProjects")}
+      </Link>
+      <h1 style={{ fontSize: 24, margin: "10px 0 4px" }}>{t("shelfLifeTitle")}</h1>
+      <p style={{ fontSize: 13.5, color: "var(--text-muted)", margin: 0, maxWidth: 560 }}>{t("shelfLifeSubtitle")}</p>
 
       <p style={{ fontFamily: "var(--font-mono)", fontSize: 11.5, color: "var(--text-muted)", margin: "24px 0 20px" }}>
         k = A·exp(−Ea/RT) · t½ = ln(2)/k · t90 = ln(10/9)/k
@@ -136,6 +125,6 @@ export default function ShelfLifePage() {
         )}
         <p style={{ fontSize: 11.5, color: "var(--text-muted)", marginTop: 16 }}>{t("shelfLifeNote")}</p>
       </div>
-    </main>
+    </div>
   );
 }

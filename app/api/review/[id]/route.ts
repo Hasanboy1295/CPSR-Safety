@@ -35,8 +35,11 @@ export async function PUT(
 
   const certification = {
     assessorName: profile?.full_name ?? assessor.email ?? "assessor",
+    assessorPosition: "",
+    assessorQualification: "",
     reviewDate: new Date().toISOString().slice(0, 10),
     draftNotes: body.finalConclusion,
+    selfCertified: true,
   };
 
   // RLS (projects_assessor_update) bu yozuvni faqat status='draft_generated'
