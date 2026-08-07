@@ -3,7 +3,7 @@ import { getAuthedUser } from "@/lib/auth-guard";
 import { parseDocumentToText } from "@/lib/document-parse";
 import { extractIngredientsFromText } from "@/lib/extract-llm";
 
-const MAX_BYTES = 10 * 1024 * 1024; // 10MB
+const MAX_BYTES = 4 * 1024 * 1024; // 4MB — Vercel serverless funksiyalarining qattiq chegarasi (4.5MB) dan past
 
 export async function POST(req: NextRequest) {
   const user = await getAuthedUser();
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "'file' maydoni shart" }, { status: 400 });
   }
   if (file.size > MAX_BYTES) {
-    return NextResponse.json({ error: "Fayl hajmi 10MB dan katta" }, { status: 400 });
+    return NextResponse.json({ error: "Fayl hajmi 4MB dan katta" }, { status: 400 });
   }
 
   try {

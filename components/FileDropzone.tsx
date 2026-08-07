@@ -19,8 +19,17 @@ export function FileDropzone({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const MAX_BYTES = 4 * 1024 * 1024; // 4MB — Vercel serverless funksiyalarining qattiq chegarasidan (4.5MB) past
+
   async function handleFile(file: File | undefined) {
     if (!file) return;
+    // Katta faylni serverga umuman yubormaymiz — Vercel bunday so'rovni
+    // bizning kodimizga yetkazmasdan, JSON bo'lmagan xato bilan rad etadi.
+    if (file.size > MAX_BYTES) {
+      setError(`Fayl hajmi ${(file.size / 1024 / 1024).toFixed(1)}MB — 4MB dan kichik fayl tanlang.`);
+      if (inputRef.current) inputRef.current.value = "";
+      return;
+    }
     setBusy(true);
     setError(null);
     try {
