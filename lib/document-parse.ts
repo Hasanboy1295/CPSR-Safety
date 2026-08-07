@@ -17,8 +17,18 @@ export async function parseDocumentToText(buffer: Buffer, filename: string): Pro
     return parsePdf(buffer);
   }
 
+  if (ext === "docx") {
+    return parseDocx(buffer);
+  }
+
   // csv/txt — to'g'ridan-to'g'ri tekst
   return buffer.toString("utf-8");
+}
+
+async function parseDocx(buffer: Buffer): Promise<string> {
+  const mammoth = await import("mammoth");
+  const result = await mammoth.extractRawText({ buffer });
+  return result.value;
 }
 
 async function parseExcel(buffer: Buffer): Promise<string> {

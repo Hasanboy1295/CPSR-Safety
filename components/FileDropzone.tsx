@@ -71,7 +71,7 @@ export function FileDropzone({
         <input
           ref={inputRef}
           type="file"
-          accept=".xlsx,.xls,.pdf,.csv,.txt"
+          accept=".xlsx,.xls,.pdf,.docx,.csv,.txt"
           style={{ display: "none" }}
           onChange={(e) => handleFile(e.target.files?.[0])}
         />
