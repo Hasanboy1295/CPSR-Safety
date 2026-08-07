@@ -10,7 +10,7 @@
 
 import OpenAI from "openai";
 import { randomUUID } from "crypto";
-import type { IngredientRow, ToxEndpointStatus } from "./wizard-types";
+import type { IngredientRow, ToxEndpointStatus, ProductQuality } from "./wizard-types";
 
 const MODEL = "gpt-4o";
 
@@ -150,5 +150,47 @@ QOIDALAR:
     return parsed.updates ?? [];
   } catch {
     return [];
+  }
+}
+
+// ---- Mahsulot sifat hujjatidan (spec/CoA/barqarorlik hisoboti) maydonlarni chiqarish ----
+
+const PRODUCT_QUALITY_EXTRACT_PROMPT = `Senga mahsulot spetsifikatsiyasi, CoA yoki barqarorlik/mikrobiologiya
+sinov hisobotidan chiqarilgan xom tekst beriladi. Vazifang: shu tekstdan quyidagi
+JSON maydonlarini to'ldirish:
+
+{
+  "physicalForm": "mahsulotning tashqi ko'rinishi (masalan: 반투명한 백색의 에멀젼)",
+  "ph": "pH qiymati",
+  "viscosityRange": "yopishqoqlik diapazoni (cPs)",
+  "stabilityResult": "barqarorlik sinovi natijasi (uzoq muddatli/tezlashtirilgan)",
+  "paoMonths": "ochilgandan keyingi ishlatish muddati, faqat son (oy)",
+  "microbialLimitResult": "mikroblar chegarasi sinovi natijasi",
+  "challengeTestResult": "saqlanuvchanlik (challenge) sinovi natijasi",
+  "heavyMetalsResult": "og'ir metall (Pb/As/Hg/Sb/Cd) natijasi",
+  "packagingMaterial": "birlamchi idish materiali",
+  "packagingSafetyNote": "idish moslik/migratsiya sinovi natijasi",
+  "allergenNote": "atir tarkibidagi allergen tekshiruvi natijasi"
+}
+
+QOIDALAR: faqat tekstda ANIQ mavjud ma'lumotni ko'chir, yo'q maydonni bo'sh string "" qil, hech narsa o'ylab topma. Faqat JSON qaytar.`;
+
+export async function extractProductQualityFromText(rawText: string): Promise<Partial<ProductQuality>> {
+  const client = getClient();
+  const response = await client.chat.completions.create({
+    model: MODEL,
+    max_tokens: 1024,
+    response_format: { type: "json_object" },
+    messages: [
+      { role: "system", content: PRODUCT_QUALITY_EXTRACT_PROMPT },
+      { role: "user", content: rawText.slice(0, 20000) },
+    ],
+  });
+
+  const raw = response.choices[0]?.message?.content ?? "{}";
+  try {
+    return JSON.parse(raw) as Partial<ProductQuality>;
+  } catch {
+    return {};
   }
 }

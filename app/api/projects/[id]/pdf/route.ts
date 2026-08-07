@@ -16,7 +16,7 @@ export async function GET(
   const supabase = await getSupabaseServerAuthClient();
   const { data: project, error } = await supabase
     .from("cpsr_projects")
-    .select("product_info, ingredients, exposure, certification, report_result, pdf_path")
+    .select("product_info, ingredients, product_quality, exposure, certification, report_result, pdf_path")
     .eq("id", id)
     .single();
 
@@ -33,6 +33,7 @@ export async function GET(
       {
         productInfo: project.product_info,
         ingredients: project.ingredients,
+        productQuality: project.product_quality,
         exposure: project.exposure,
         certification: project.certification,
       },

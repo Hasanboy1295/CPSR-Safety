@@ -2,7 +2,7 @@
 // 1(Hisob-kitob) -> 2(RAG) -> 3(LLM) -> 7(Data Integrity) qadamlari.
 // Bu — "real yo'l"ning to'liq amalga oshirilishi.
 
-import type { ProductInfo, IngredientRow, ExposureParams } from "./wizard-types";
+import type { ProductInfo, IngredientRow, ExposureParams, ProductQuality } from "./wizard-types";
 import { flattenIngredients } from "./wizard-types";
 import { calcSED, calcMoS, judge, type CalcRow } from "./calc";
 import { checkRestricted } from "./restricted-list";
@@ -69,6 +69,7 @@ function toCalcRows(ingredients: IngredientRow[], exposure: ExposureParams): Cal
 export async function generateCPSRReport(input: {
   productInfo: ProductInfo;
   ingredients: IngredientRow[];
+  productQuality: ProductQuality;
   exposure: ExposureParams;
 }): Promise<CPSRReportDraft> {
   // 1-QADAM: deterministik hisob-kitob (AI EMAS)
@@ -87,7 +88,7 @@ export async function generateCPSRReport(input: {
   // 3-QADAM: LLM — FAQAT Part A tavsif + Part B mulohaza
   const draft = demo
     ? mockDraftCPSRSections(input.productInfo, calcRows)
-    : await draftCPSRSections(input.productInfo, calcRows, chunks);
+    : await draftCPSRSections(input.productInfo, input.productQuality, calcRows, chunks);
 
   // 7-QADAM: Data Integrity (ALCOA+) — input_csv_sha, config_hash, run_id
   const integrity = stampIntegrity(

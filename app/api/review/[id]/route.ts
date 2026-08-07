@@ -64,7 +64,7 @@ export async function PUT(
   try {
     const { data: full } = await supabase
       .from("cpsr_projects")
-      .select("product_info, ingredients, exposure, report_result")
+      .select("product_info, ingredients, product_quality, exposure, report_result")
       .eq("id", id)
       .single();
 
@@ -73,6 +73,7 @@ export async function PUT(
       const projectData = {
         productInfo: full.product_info,
         ingredients: full.ingredients,
+        productQuality: full.product_quality,
         exposure: full.exposure,
         certification,
       };

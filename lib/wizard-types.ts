@@ -108,6 +108,39 @@ export function flattenIngredients(rows: IngredientRow[]): FlatComponent[] {
   });
 }
 
+// Real CPSR namunasi (CPSR_고보습_영유아_로션.docx, 4-6-bo'lim) asosida —
+// fizik-kimyoviy xususiyat, barqarorlik, mikrobiologiya, qadoqlash.
+// AI EMAS — foydalanuvchi laboratoriya natijasini shu yerga kiritadi.
+export type ProductQuality = {
+  physicalForm: string; // 성상 — masalan "반투명한 백색의 에멀젼"
+  ph: string;
+  viscosityRange: string; // 점도 (cPs)
+  stabilityResult: string; // 장기보존/가속시험 natijasi
+  paoMonths: string; // 개봉 후 사용기간 (oy)
+  microbialLimitResult: string; // 미생물한도 시험natijasi
+  challengeTestResult: string; // 보존력 시험 (Challenge Test, ISO 11930)
+  heavyMetalsResult: string; // og'ir metall (Pb/As/Hg/Sb/Cd) natijasi
+  packagingMaterial: string; // birlamchi idish materiali
+  packagingSafetyNote: string; // moslik/migratsiya testi
+  allergenNote: string; // atir tarkibidagi allergen tekshiruvi
+};
+
+export function emptyProductQuality(): ProductQuality {
+  return {
+    physicalForm: "",
+    ph: "",
+    viscosityRange: "",
+    stabilityResult: "",
+    paoMonths: "",
+    microbialLimitResult: "",
+    challengeTestResult: "",
+    heavyMetalsResult: "",
+    packagingMaterial: "",
+    packagingSafetyNote: "",
+    allergenNote: "",
+  };
+}
+
 export type ExposureParams = {
   amountG: string; // A, default "0.8"
   retentionFactor: string; // RF, default "1.0" (leave-on) / "0.01" (rinse-off)
@@ -126,6 +159,7 @@ export type Certification = {
 export type WizardData = {
   productInfo: ProductInfo;
   ingredients: IngredientRow[];
+  productQuality: ProductQuality;
   exposure: ExposureParams;
   certification: Certification;
 };
@@ -158,8 +192,9 @@ export const emptyCertification: Certification = {
 export const emptyWizardData: WizardData = {
   productInfo: emptyProductInfo,
   ingredients: [],
+  productQuality: emptyProductQuality(),
   exposure: emptyExposure,
   certification: emptyCertification,
 };
 
-export const WIZARD_STORAGE_KEY = "auto-cpsr:wizard-data:v2";
+export const WIZARD_STORAGE_KEY = "auto-cpsr:wizard-data:v3";

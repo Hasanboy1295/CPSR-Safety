@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateCPSRReport } from "@/lib/report";
-import type { ProductInfo, IngredientRow, ExposureParams } from "@/lib/wizard-types";
+import type { ProductInfo, IngredientRow, ExposureParams, ProductQuality } from "@/lib/wizard-types";
+import { emptyProductQuality } from "@/lib/wizard-types";
 
 // Bu — diagrammadagi to'liq "real yo'l" endpoint'i: Hisob-kitob + RAG + LLM +
 // Data Integrity. API kalitlar shu yerda ishlatiladi, Client ularni ko'rmaydi.
@@ -12,9 +13,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "JSON body noto'g'ri" }, { status: 400 });
   }
 
-  const { productInfo, ingredients, exposure } = body as {
+  const { productInfo, ingredients, productQuality, exposure } = body as {
     productInfo?: ProductInfo;
     ingredients?: IngredientRow[];
+    productQuality?: ProductQuality;
     exposure?: ExposureParams;
   };
 
@@ -26,7 +28,12 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const report = await generateCPSRReport({ productInfo, ingredients, exposure });
+    const report = await generateCPSRReport({
+      productInfo,
+      ingredients,
+      productQuality: productQuality ?? emptyProductQuality(),
+      exposure,
+    });
     return NextResponse.json(report);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Noma'lum xato";

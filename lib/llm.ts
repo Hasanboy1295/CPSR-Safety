@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 import type { RetrievedChunk } from "./rag";
-import type { ProductInfo } from "./wizard-types";
+import type { ProductInfo, ProductQuality } from "./wizard-types";
 import type { CalcRow } from "./calc";
 
 const MODEL = "gpt-4o";
@@ -60,7 +60,10 @@ export async function generateGroundedAnswer(
 // ---- CPSR Part A / Part B qoralama yozuvchi (report.ts orqali chaqiriladi) ----
 
 const CPSR_DRAFT_SYSTEM_PROMPT = `Sen CPSR (화장품 안전성 평가 자료) hujjatining FAQAT ikki bo'limini yozasan:
-- Part A: mahsulot va tarkib haqida OBYEKTIV TAVSIF matni (berilgan ma'lumotlarni tartibli bayon qilish)
+- Part A: mahsulot, tarkib, HAMDA fizik-kimyoviy/mikrobiologiya/qadoqlash xususiyatlari
+  haqida OBYEKTIV TAVSIF matni (berilgan ma'lumotlarni tartibli bayon qilish — bu real CPSR
+  hujjatining 2-6-bo'limlariga mos: mahsulot, tarkib, fizik-kimyoviy barqarorlik, mikrobiologik
+  sifat, ifloslik/qadoqlash)
 - Part B "Weight-of-Evidence" MULOHAZA: berilgan MoS/hisob-kitob natijalaridan qanday xulosaga
   yaqinlashish mumkinligi haqidagi muhokama (dalil -> mulohaza yo'li, lekin YAKUNIY QAROR emas)
 
@@ -95,6 +98,7 @@ export type CPSRDraft = {
 
 export async function draftCPSRSections(
   productInfo: ProductInfo,
+  productQuality: ProductQuality,
   calcRows: CalcRow[],
   context: RetrievedChunk[]
 ): Promise<CPSRDraft> {
@@ -122,6 +126,18 @@ export async function draftCPSRSections(
     `- Foydalanuvchi: ${productInfo.targetUser || "검토필요"}`,
     `- Qo'llash: ${productInfo.rinseType}`,
     `- Ishlab chiqaruvchi: ${productInfo.manufacturer || "검토필요"}`,
+    ``,
+    `Fizik-kimyoviy/mikrobiologiya/qadoqlash ma'lumoti (laboratoriya natijasi, foydalanuvchi kiritgan — o'zgartirma, faqat bayon qil):`,
+    `- 성상 (ko'rinish): ${productQuality.physicalForm || "검토필요"}`,
+    `- pH: ${productQuality.ph || "검토필요"}`,
+    `- 점도 (yopishqoqlik): ${productQuality.viscosityRange || "검토필요"}`,
+    `- 안정성 시험 (barqarorlik): ${productQuality.stabilityResult || "검토필요"}`,
+    `- PAO: ${productQuality.paoMonths ? `${productQuality.paoMonths}개월` : "검토필요"}`,
+    `- 미생물한도: ${productQuality.microbialLimitResult || "검토필요"}`,
+    `- 보존력 시험: ${productQuality.challengeTestResult || "검토필요"}`,
+    `- 중금속 등: ${productQuality.heavyMetalsResult || "검토필요"}`,
+    `- 포장재: ${productQuality.packagingMaterial || "검토필요"} (${productQuality.packagingSafetyNote || "검토필요"})`,
+    `- 알레르기 성분: ${productQuality.allergenNote || "검토필요"}`,
     ``,
     `Hisob-kitob natijalari (deterministik, sen bularni o'zgartirmaysan):`,
     calcText || "(tarkib kiritilmagan)",

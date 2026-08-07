@@ -6,18 +6,21 @@ import { useSearchParams } from "next/navigation";
 import { useLanguage, useWizardText } from "@/lib/i18n";
 import {
   emptyWizardData,
+  emptyProductQuality,
   WIZARD_STORAGE_KEY,
   type WizardData,
 } from "@/lib/wizard-types";
 import { btnPrimary, btnGhost } from "@/lib/wizard-ui";
 import { StepProductInfo } from "./steps/StepProductInfo";
 import { StepIngredients } from "./steps/StepIngredients";
+import { StepProductQuality } from "./steps/StepProductQuality";
 import { StepToxicology } from "./steps/StepToxicology";
 import { StepCertification } from "./steps/StepCertification";
 
 const STEP_KEYS = [
   "stepProductInfo",
   "stepIngredients",
+  "stepProductQuality",
   "stepToxicology",
   "stepCertification",
 ] as const;
@@ -45,6 +48,7 @@ function WizardInner() {
             setData({
               productInfo: json.project.product_info,
               ingredients: json.project.ingredients,
+              productQuality: json.project.product_quality || emptyProductQuality(),
               exposure: json.project.exposure,
               certification: json.project.certification,
             });
@@ -83,6 +87,7 @@ function WizardInner() {
         body: JSON.stringify({
           product_info: data.productInfo,
           ingredients: data.ingredients,
+          product_quality: data.productQuality,
           exposure: data.exposure,
           certification: data.certification,
         }),
@@ -147,6 +152,12 @@ function WizardInner() {
         />
       )}
       {step === 2 && (
+        <StepProductQuality
+          value={data.productQuality}
+          onChange={(productQuality) => setData((d) => ({ ...d, productQuality }))}
+        />
+      )}
+      {step === 3 && (
         <StepToxicology
           ingredients={data.ingredients}
           onIngredientsChange={(ingredients) => setData((d) => ({ ...d, ingredients }))}
@@ -154,7 +165,7 @@ function WizardInner() {
           onExposureChange={(exposure) => setData((d) => ({ ...d, exposure }))}
         />
       )}
-      {step === 3 && (
+      {step === 4 && (
         <StepCertification
           data={data}
           onChange={(certification) => setData((d) => ({ ...d, certification }))}

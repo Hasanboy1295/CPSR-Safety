@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAuthedUser } from "@/lib/auth-guard";
 import { getSupabaseServerAuthClient } from "@/lib/supabase-server-auth";
-import { emptyProductInfo, emptyExposure, emptyCertification } from "@/lib/wizard-types";
+import { emptyProductInfo, emptyExposure, emptyCertification, emptyProductQuality } from "@/lib/wizard-types";
 
 export async function GET() {
   const user = await getAuthedUser();
@@ -44,6 +44,7 @@ export async function POST(req: NextRequest) {
       user_id: user.id,
       product_info: productInfo,
       ingredients: [],
+      product_quality: emptyProductQuality(),
       exposure: emptyExposure,
       certification: emptyCertification,
       status: "draft",

@@ -43,7 +43,7 @@ export async function PUT(
   // Faqat ruxsat etilgan maydonlar yangilanadi — user o'zining status'ini
   // to'g'ridan-to'g'ri "submission_ready" qila olmaydi (bu assessor ishi,
   // /api/review orqali).
-  const allowed = ["product_info", "ingredients", "exposure", "certification", "report_result", "status"];
+  const allowed = ["product_info", "ingredients", "product_quality", "exposure", "certification", "report_result", "status"];
   const patch: Record<string, unknown> = {};
   for (const key of allowed) {
     if (key in body) patch[key] = body[key];
@@ -65,15 +65,16 @@ export async function PUT(
     try {
       const { data: full } = await supabase
         .from("cpsr_projects")
-        .select("product_info, ingredients, exposure, certification")
+        .select("product_info, ingredients, product_quality, exposure, certification")
         .eq("id", id)
         .single();
 
       if (full) {
         const report = patch.report_result as CPSRReportDraft;
-        const projectData: Pick<WizardData, "productInfo" | "ingredients" | "exposure" | "certification"> = {
+        const projectData: Pick<WizardData, "productInfo" | "ingredients" | "productQuality" | "exposure" | "certification"> = {
           productInfo: full.product_info,
           ingredients: full.ingredients,
+          productQuality: full.product_quality,
           exposure: full.exposure,
           certification: full.certification,
         };

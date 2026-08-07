@@ -7,7 +7,7 @@ import type { WizardData } from "./wizard-types";
 import type { CPSRReportDraft } from "./report";
 
 export async function buildEvidencePack(
-  data: Pick<WizardData, "productInfo" | "ingredients" | "exposure">,
+  data: Pick<WizardData, "productInfo" | "ingredients" | "productQuality" | "exposure">,
   report: CPSRReportDraft
 ): Promise<Uint8Array> {
   const zip = new JSZip();
@@ -16,6 +16,7 @@ export async function buildEvidencePack(
   // o'rnini bosadi (CPSR_KR_dossier'dagi haqiqiy pipeline shu nomlarni ishlatadi)
   zip.file("input/product_info.json", JSON.stringify(data.productInfo, null, 2));
   zip.file("input/ingredients.json", JSON.stringify(data.ingredients, null, 2));
+  zip.file("input/product_quality.json", JSON.stringify(data.productQuality, null, 2));
   zip.file("input/exposure_params.json", JSON.stringify(data.exposure, null, 2));
 
   // 2) Deterministik hisob-kitob natijalari (AI aralashuvisiz)

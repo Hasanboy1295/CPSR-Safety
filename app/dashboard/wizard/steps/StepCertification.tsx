@@ -45,6 +45,7 @@ export function StepCertification({
         body: JSON.stringify({
           productInfo: data.productInfo,
           ingredients: data.ingredients,
+          productQuality: data.productQuality,
           exposure: data.exposure,
         }),
       });
