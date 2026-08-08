@@ -31,9 +31,22 @@ function WizardInner() {
   const projectId = useSearchParams().get("project");
 
   const [data, setData] = useState<WizardData>(emptyWizardData);
+  const [projectStatus, setProjectStatus] = useState<string>("draft");
   const [step, setStep] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Loyiha holatini serverdan qayta o'qiydi — assessor /review orqali
+  // tasdiqlagach ("submission_ready"), tayyorlovchi shu yerda ko'rishi kerak.
+  function refreshProjectStatus() {
+    if (!projectId) return;
+    fetch(`/api/projects/${projectId}`)
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.project) setProjectStatus(json.project.status);
+      })
+      .catch(() => {});
+  }
 
   // Yuklash: agar ?project=<id> bo'lsa — Supabase'dan (login+RLS himoyasi
   // ostida, "auto to'ldirish" shu yerda sodir bo'ladi — server profildan
@@ -52,6 +65,7 @@ function WizardInner() {
               exposure: json.project.exposure,
               certification: json.project.certification,
             });
+            setProjectStatus(json.project.status);
           }
           setLoaded(true);
         })
@@ -171,6 +185,8 @@ function WizardInner() {
           data={data}
           onChange={(certification) => setData((d) => ({ ...d, certification }))}
           projectId={projectId}
+          projectStatus={projectStatus}
+          onStatusChange={setProjectStatus}
         />
       )}
 

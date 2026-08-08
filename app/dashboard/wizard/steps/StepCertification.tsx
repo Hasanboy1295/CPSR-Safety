@@ -24,20 +24,27 @@ export function StepCertification({
   data,
   onChange,
   projectId,
+  projectStatus,
+  onStatusChange,
 }: {
   data: WizardData;
   onChange: (next: Certification) => void;
   projectId: string | null;
+  projectStatus: string;
+  onStatusChange: (next: string) => void;
 }) {
   const t = useWizardText();
   const [report, setReport] = useState<ReportResult | null>(null);
   const [generating, setGenerating] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(projectStatus !== "draft");
+
+  // "submission_ready" — /api/review orqali, HAQIQIY baholovchi tasdiqlagan
+  // holat. Bu yerda bo'lmasa, hozircha faqat qoralama (not_reviewed).
+  const isSigned = projectStatus === "submission_ready";
 
   async function generateDraft() {
     setGenerating(true);
     setReport(null);
-    setSubmitted(false);
     try {
       const res = await fetch("/api/generate-report", {
         method: "POST",
@@ -54,6 +61,8 @@ export function StepCertification({
 
       // Login qilingan bo'lsa — natijani saqlab, baholovchi navbatiga qo'shadi
       // (status: draft -> draft_generated). Demo rejimda buni qilmaymiz.
+      // MUHIM: bu yerda hech qachon "submission_ready" o'rnatilmaydi — bu
+      // faqat /api/review orqali, haqiqiy baholovchi tomonidan qilinadi.
       if (projectId && !json.error && !json.demo) {
         await fetch(`/api/projects/${projectId}`, {
           method: "PUT",
@@ -61,6 +70,7 @@ export function StepCertification({
           body: JSON.stringify({ report_result: json, status: "draft_generated" }),
         });
         setSubmitted(true);
+        onStatusChange("draft_generated");
       }
     } catch (err) {
       setReport({ error: err instanceof Error ? err.message : String(err) });
@@ -136,62 +146,20 @@ export function StepCertification({
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "0 16px" }}>
-        <div style={field}>
-          <label style={label}>{t("assessorName")}</label>
-          <input
-            style={input}
-            value={data.certification.assessorName}
-            onChange={(e) => set("assessorName", e.target.value)}
-            placeholder="not_reviewed"
-          />
-        </div>
-        <div style={field}>
-          <label style={label}>{t("assessorPosition")}</label>
-          <input
-            style={input}
-            value={data.certification.assessorPosition}
-            onChange={(e) => set("assessorPosition", e.target.value)}
-          />
-        </div>
-        <div style={field}>
-          <label style={label}>{t("assessorQualification")}</label>
-          <input
-            style={input}
-            value={data.certification.assessorQualification}
-            onChange={(e) => set("assessorQualification", e.target.value)}
-          />
-        </div>
-        <div style={field}>
-          <label style={label}>{t("reviewDate")}</label>
-          <input
-            style={input}
-            type="date"
-            value={data.certification.reviewDate}
-            onChange={(e) => set("reviewDate", e.target.value)}
-          />
-        </div>
-      </div>
       <div style={field}>
         <label style={label}>{t("draftNotes")}</label>
         <textarea
           style={{ ...input, minHeight: 90, resize: "vertical" }}
           value={data.certification.draftNotes}
           onChange={(e) => set("draftNotes", e.target.value)}
+          placeholder={t("draftNotesHint")}
         />
       </div>
 
-      <label style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 13, color: "var(--text-muted)", marginBottom: 20, cursor: "pointer" }}>
-        <input
-          type="checkbox"
-          checked={data.certification.selfCertified}
-          onChange={(e) => set("selfCertified", e.target.checked)}
-          style={{ marginTop: 2 }}
-        />
-        {t("selfCertifyLabel")}
-      </label>
-
-      {data.certification.selfCertified && report?.integrity && (
+      {/* Tayyorlovchi bu yerda "baholovchi" maydonlarini o'zi to'ldirmaydi —
+          bu maydonlar (ism/lavozim/malaka/sana) FAQAT /api/review orqali,
+          haqiqiy assessor tomonidan, serverda o'rnatiladi. */}
+      {isSigned ? (
         <div
           style={{
             display: "flex",
@@ -202,16 +170,33 @@ export function StepCertification({
             background: "var(--success-soft)",
             border: "1px solid var(--success)",
             borderRadius: 8,
-            fontSize: 12,
+            fontSize: 12.5,
           }}
         >
           <span style={{ color: "var(--success)" }}>
-            ✓ {t("integrityVerified")}: SHA256 {report.integrity.inputCsvSha.slice(0, 8)}...{report.integrity.inputCsvSha.slice(-6)}
+            ✓ {t("signedByLabel")}: {data.certification.assessorName || "—"}
+            {data.certification.assessorPosition && ` · ${data.certification.assessorPosition}`}
           </span>
           <span style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
-            {t("issuedOn")}: {new Date(report.integrity.createdAt).toLocaleDateString()}
+            {data.certification.reviewDate}
           </span>
         </div>
+      ) : (
+        submitted && (
+          <div
+            style={{
+              padding: "10px 14px",
+              marginBottom: 20,
+              background: "var(--gold-soft)",
+              border: "1px solid var(--gold)",
+              borderRadius: 8,
+              fontSize: 12.5,
+              color: "var(--gold)",
+            }}
+          >
+            ⏳ {t("waitingForAssessor")}
+          </div>
+        )
       )}
 
       <div style={{ borderTop: "1px dashed var(--border)", paddingTop: 20, marginTop: 4 }}>
@@ -241,6 +226,8 @@ export function StepCertification({
 
         {submitted && projectId && (
           <>
+            {/* Qoralama PDF — har doim mavjud, lekin ANIQ "not_reviewed" deb
+                belgilangan (lib/pdf-report.ts cover sahifasida ko'rsatiladi). */}
             <a
               href={`/api/projects/${projectId}/pdf`}
               style={{
@@ -251,12 +238,10 @@ export function StepCertification({
                 fontWeight: 600,
                 textDecoration: "none",
                 borderRadius: 8,
-                pointerEvents: data.certification.selfCertified ? "auto" : "none",
-                opacity: data.certification.selfCertified ? 1 : 0.5,
-                ...(data.certification.selfCertified ? btnGradient : { ...btnPrimary, background: "var(--surface-2)", color: "var(--text-muted)" }),
+                ...(isSigned ? btnGradient : { ...btnPrimary, background: "var(--surface-2)", color: "var(--text-muted)" }),
               }}
             >
-              ⬇ {t("downloadPdf")}
+              ⬇ {isSigned ? t("downloadPdfSigned") : t("downloadPdfDraft")}
             </a>
             <a
               href={`/api/projects/${projectId}/evidence-pack`}
@@ -271,8 +256,6 @@ export function StepCertification({
                 border: "1px solid var(--border)",
                 borderRadius: 8,
                 textDecoration: "none",
-                pointerEvents: data.certification.selfCertified ? "auto" : "none",
-                opacity: data.certification.selfCertified ? 1 : 0.5,
               }}
             >
               ⬇ {t("downloadEvidencePack")}

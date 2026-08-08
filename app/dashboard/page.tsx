@@ -18,7 +18,7 @@ type ProjectListItem = {
 };
 
 function statusTone(status: string): "pass" | "review" | "insufficient" {
-  if (status === "signed") return "pass";
+  if (status === "submission_ready") return "pass";
   if (status === "draft_generated") return "review";
   return "insufficient";
 }
@@ -48,7 +48,7 @@ export default function DashboardPage() {
   }
 
   const total = list?.length ?? 0;
-  const signed = list?.filter((p) => p.status === "signed").length ?? 0;
+  const signed = list?.filter((p) => p.status === "submission_ready").length ?? 0;
   const inDraft = list?.filter((p) => p.status === "draft_generated").length ?? 0;
 
   return (
@@ -114,7 +114,7 @@ export default function DashboardPage() {
                       <td style={{ padding: "12px", color: "var(--text-muted)" }}>{compCount}</td>
                       <td style={{ padding: "12px" }}>
                         <span style={badge(statusTone(p.status))}>
-                          {p.status === "signed"
+                          {p.status === "submission_ready"
                             ? t("statusSigned")
                             : p.status === "draft_generated"
                             ? t("statusDraftGenerated")
