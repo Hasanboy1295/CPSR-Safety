@@ -1,5 +1,5 @@
 // DEMO REJIMI — .env'da haqiqiy API kalitlar bo'lmaganda ishlatiladi.
-// Voyage/Claude/Supabase o'rniga: data/*.txt fayllarni to'g'ridan-to'g'ri
+// OpenAI/Supabase o'rniga: data/*.txt fayllarni to'g'ridan-to'g'ri
 // o'qib, oddiy kalit-so'z mosligi bilan "eng yaqin" bo'lakni topadi va
 // shablon javob qaytaradi. Bu HAQIQIY AI emas — faqat butun quvurning
 // shaklini (savol -> qidiruv -> javob+manba) ko'rsatish uchun.
@@ -80,8 +80,8 @@ export function mockAnswerWithRag(question: string, matchCount = 3): RagResult {
         ``,
         `[manba: ${best.source_name}]`,
         ``,
-        `Bu haqiqiy Claude javobi emas — real AI+RAG javobi uchun .env fayliga`,
-        `OPENAI_API_KEY, VOYAGE_API_KEY, NEXT_PUBLIC_SUPABASE_URL va`,
+        `Bu haqiqiy AI javobi emas — real AI+RAG javobi uchun .env fayliga`,
+        `OPENAI_API_KEY, NEXT_PUBLIC_SUPABASE_URL va`,
         `SUPABASE_SERVICE_ROLE_KEY qo'shing (README.md'ga qarang).`,
       ].join("\n")
     : `[DEMO REJIMI] data/ papkasida hech qanday .txt fayl topilmadi.`;

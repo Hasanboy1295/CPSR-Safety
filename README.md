@@ -4,8 +4,7 @@
 
 ## Ishlatilgan texnologiyalar
 - **Next.js (App Router, TypeScript)** — Client + Server/API
-- **OpenAI API (GPT-4o)** — Part A/B matnini yozadigan LLM
-- **Voyage AI** — embedding (matnni vektorga aylantirish)
+- **OpenAI API (GPT-4o + text-embedding-3-small)** — Part A/B matnini yozadigan LLM va embedding, bitta provayder
 - **Supabase** — Postgres + pgvector (RAG) + Auth (login/rol) + Storage (PDF/ZIP)
 - **pdf-lib** — haqiqiy CPSR PDF (Noto Sans KR shrifti bilan, koreys+ingliz matn)
 
@@ -29,8 +28,7 @@
    cp .env.example .env
    ```
    `.env` faylini to'ldiring:
-   - `OPENAI_API_KEY` — https://platform.openai.com/api-keys
-   - `VOYAGE_API_KEY` — https://dash.voyageai.com
+   - `OPENAI_API_KEY` — https://platform.openai.com/api-keys (LLM + embedding, ikkalasi ham)
    - `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` — Supabase'dan (2-qadam)
 
 4. **Bilim bazasini yuklash**
@@ -63,7 +61,7 @@ app/
     review/[id]/                    <- Baholovchi imzosi (server-side, taqlid qilib bo'lmaydi)
 lib/
   llm.ts                            <- OpenAI chaqiruvi (grounded prompt, Part A/B faqat)
-  embeddings.ts                     <- Voyage AI
+  embeddings.ts                     <- OpenAI embedding (text-embedding-3-small)
   rag.ts                            <- qidiruv (real + demo fallback)
   calc.ts / ttc.ts                  <- SED/MoS/TTC — deterministik, LLM emas
   shelf-life.ts                     <- Arrhenius muddat formulasi

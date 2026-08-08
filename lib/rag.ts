@@ -18,11 +18,11 @@ export type RagResult = {
   demo?: boolean;
 };
 
-/** .env'da 4 ta kalit ham to'ldirilganmi — bo'lmasa demo rejimga o'tamiz. */
+/** .env'da 3 ta kalit ham to'ldirilganmi — bo'lmasa demo rejimga o'tamiz.
+ * (Voyage endi kerak emas — embedding ham OpenAI orqali, bitta provayder.) */
 export function hasRealCredentials(): boolean {
   return Boolean(
     process.env.OPENAI_API_KEY &&
-      process.env.VOYAGE_API_KEY &&
       process.env.NEXT_PUBLIC_SUPABASE_URL &&
       process.env.SUPABASE_SERVICE_ROLE_KEY
   );

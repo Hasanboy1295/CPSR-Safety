@@ -1,56 +1,42 @@
-// Voyage AI embedding — Anthropic'ning rasman tavsiya qiladigan embedding provayderi.
-// LLM'larning ko'pchiligida (jumladan OpenAI chat modellari) alohida
-// embedding endpoint yo'q, shuning uchun matnni vektorga aylantirish uchun
-// mustaqil (lekin yaxshi ishlaydigan) servis — Voyage AI — tanlandi.
-// https://docs.voyageai.com/reference/embeddings-api
+// OpenAI embedding — LLM (GPT-4o) bilan bitta provayderda, alohida Voyage
+// kaliti boshqarishga hojat qoldirmaydi. `dimensions: 1024` — Supabase
+// jadvalimizdagi `vector(1024)` ustuniga mos kelishi uchun aniq belgilangan
+// (text-embedding-3-small'ning tabiiy o'lchami 1536, lekin OpenAI'ning
+// Matryoshka qisqartirish parametri orqali 1024'ga tushirib olamiz).
+// https://platform.openai.com/docs/guides/embeddings
 
-const VOYAGE_URL = "https://api.voyageai.com/v1/embeddings";
-const MODEL = "voyage-3";
+import OpenAI from "openai";
 
-type VoyageResponse = {
-  data: { embedding: number[]; index: number }[];
-};
+const MODEL = "text-embedding-3-small";
+const DIMENSIONS = 1024;
 
-async function callVoyage(
-  texts: string[],
-  inputType: "document" | "query"
-): Promise<number[][]> {
-  const apiKey = process.env.VOYAGE_API_KEY;
+function getClient() {
+  const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
-    throw new Error("VOYAGE_API_KEY topilmadi (.env faylni tekshiring)");
+    throw new Error("OPENAI_API_KEY topilmadi (.env faylni tekshiring)");
   }
+  return new OpenAI({ apiKey });
+}
 
-  const res = await fetch(VOYAGE_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      input: texts,
-      model: MODEL,
-      input_type: inputType,
-    }),
+async function callOpenAIEmbeddings(texts: string[]): Promise<number[][]> {
+  const client = getClient();
+
+  const res = await client.embeddings.create({
+    model: MODEL,
+    input: texts,
+    dimensions: DIMENSIONS,
   });
 
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Voyage embedding so'rovi xato: ${res.status} ${body}`);
-  }
-
-  const json = (await res.json()) as VoyageResponse;
-  return json.data
-    .sort((a, b) => a.index - b.index)
-    .map((d) => d.embedding);
+  return res.data.sort((a, b) => a.index - b.index).map((d) => d.embedding);
 }
 
 /** Bilim bazasiga yoziladigan hujjat bo'laklari uchun embedding. */
 export async function embedDocuments(chunks: string[]): Promise<number[][]> {
-  return callVoyage(chunks, "document");
+  return callOpenAIEmbeddings(chunks);
 }
 
 /** Foydalanuvchi savoli uchun embedding (qidiruv vaqtida). */
 export async function embedQuery(question: string): Promise<number[]> {
-  const [vector] = await callVoyage([question], "query");
+  const [vector] = await callOpenAIEmbeddings([question]);
   return vector;
 }

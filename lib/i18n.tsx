@@ -17,7 +17,7 @@ const dict = {
     navCompliance: "Compliance",
     demoTitle: "Ask a question, get a cited answer",
     demoBody:
-      "This calls the real backend (GPT + Voyage AI + Supabase pgvector). Without API keys configured it falls back to DEMO mode — clearly labeled, never silently fake.",
+      "This calls the real backend (GPT + Supabase pgvector). Without API keys configured it falls back to DEMO mode — clearly labeled, never silently fake.",
     demoPlaceholder: "e.g. Why was Korea's cosmetic safety evaluation system introduced?",
     demoButton: "Ask",
     demoButtonLoading: "Asking…",
@@ -62,7 +62,7 @@ const dict = {
     navCompliance: "규정 준거",
     demoTitle: "질문하면, 출처가 달린 답변을 받습니다",
     demoBody:
-      "실제 백엔드(GPT + Voyage AI + Supabase pgvector)를 호출합니다. API 키가 설정되지 않으면 DEMO 모드로 전환됩니다 — 명확히 표시되며 조용히 속이지 않습니다.",
+      "실제 백엔드(GPT + Supabase pgvector)를 호출합니다. API 키가 설정되지 않으면 DEMO 모드로 전환됩니다 — 명확히 표시되며 조용히 속이지 않습니다.",
     demoPlaceholder: "예: 화장품 안전성 평가 제도는 왜 도입되었나요?",
     demoButton: "질문하기",
     demoButtonLoading: "답변 생성 중…",

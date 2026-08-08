@@ -27,7 +27,7 @@ async function ingestFile(fileName: string) {
   // eski nusxalarni tozalash (qayta ishga tushirilganda dublikat bo'lmasin)
   await supabase.from("documents").delete().eq("source_name", fileName);
 
-  // Voyage'ga bir martada juda ko'p matn yubormaslik uchun kichik guruhlarga bo'lamiz
+  // OpenAI'ga bir martada juda ko'p matn yubormaslik uchun kichik guruhlarga bo'lamiz
   const BATCH = 10;
   for (let i = 0; i < chunks.length; i += BATCH) {
     const batchChunks = chunks.slice(i, i + BATCH);
