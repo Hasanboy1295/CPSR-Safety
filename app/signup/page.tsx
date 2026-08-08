@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useWizardText } from "@/lib/i18n";
 import { getSupabaseBrowserClient } from "@/lib/supabase-browser";
 import { field, label, input, card, btnPrimary } from "@/lib/wizard-ui";
+import { GoogleSignInButton } from "@/components/GoogleSignInButton";
 
 export default function SignupPage() {
   const t = useWizardText();
@@ -73,6 +74,9 @@ export default function SignupPage() {
           {t("signup")}
         </button>
       </form>
+
+      <GoogleSignInButton onError={setError} />
+
       <p style={{ marginTop: 16, fontSize: 13.5 }}>
         <Link href="/login" style={{ color: "var(--accent)" }}>
           {t("alreadyHaveAccount")}
