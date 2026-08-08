@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useWizardText } from "@/lib/i18n";
-import type { ExposureParams, IngredientRow, INCIComponent, ToxicologyProfile, ToxEndpointStatus } from "@/lib/wizard-types";
+import type { ExposureParams, IngredientRow, INCIComponent, ToxicologyProfile, ToxEndpointStatus, ProductInfo } from "@/lib/wizard-types";
 import { calcSED, calcMoS, judge } from "@/lib/calc";
 import { ttcScreen, type CramerClass } from "@/lib/ttc";
 import { field, label, input, select as selectStyle, card, badge, btnGhost } from "@/lib/wizard-ui";
@@ -21,12 +21,26 @@ const TOX_ENDPOINTS: { key: keyof ToxicologyProfile; labelKey: string }[] = [
   { key: "phototoxicity", labelKey: "toxPhototoxicity" },
 ];
 
+// Real CPSR namunalarida (21512.pdf, veneks-safety_report.pdf) 60kg "SCCS
+// 기본" (SCCS standart) qiymati sifatida ishlatiladi — bu to'g'ri, LEKIN
+// bola/chaqaloq mahsulotiga qo'llash XATO (biz CPSR_고보습_영유아_로션.docx
+// namunasida aynan shu xatoni haqiqiy hujjatda ko'rdik — mahsulot "영유아"
+// deb yozilgan, lekin ekspozitsiya "성인 여성 60kg" bilan hisoblangan edi).
+const CHILD_KEYWORDS = ["영유아", "어린이", "소아", "유아", "child", "infant", "baby", "bola", "chaqaloq"];
+
+function isChildTargeted(targetUser: string): boolean {
+  const lower = targetUser.toLowerCase();
+  return CHILD_KEYWORDS.some((kw) => lower.includes(kw.toLowerCase()));
+}
+
 export function StepToxicology({
+  productInfo,
   ingredients,
   onIngredientsChange,
   exposure,
   onExposureChange,
 }: {
+  productInfo: ProductInfo;
   ingredients: IngredientRow[];
   onIngredientsChange: (next: IngredientRow[]) => void;
   exposure: ExposureParams;
@@ -34,6 +48,7 @@ export function StepToxicology({
 }) {
   const t = useWizardText();
   const [expanded, setExpanded] = useState<string | null>(null);
+  const childTargeted = isChildTargeted(productInfo.targetUser);
 
   function setExposureField<K extends keyof ExposureParams>(key: K, v: ExposureParams[K]) {
     onExposureChange({ ...exposure, [key]: v });
@@ -118,6 +133,22 @@ export function StepToxicology({
           <input style={input} type="number" value={exposure.bodyWeightKg} onChange={(e) => setExposureField("bodyWeightKg", e.target.value)} />
         </div>
       </div>
+
+      {childTargeted && (
+        <div
+          style={{
+            marginBottom: 24,
+            padding: "10px 14px",
+            background: "var(--danger-soft)",
+            border: "1px solid var(--danger)",
+            borderRadius: 8,
+            fontSize: 12.5,
+            color: "var(--danger)",
+          }}
+        >
+          ⚠ {t("childBodyWeightWarning")}
+        </div>
+      )}
 
       {!anyComponents && <p style={{ color: "var(--text-muted)", fontSize: 14 }}>{t("noIngredientsYet")}</p>}
 

@@ -111,7 +111,7 @@ export function mockDraftCPSRSections(
     ...calcRows.map(
       (r) =>
         `- ${r.inciName || "검토필요"}: MoS=${r.mos === null ? "검토필요 (NOAEL yo'q)" : r.mos.toFixed(1)} → ${
-          r.judgment === "pass" ? "hisob-kitob bo'yicha ≥100" : r.judgment === "review" ? "검토필요 (<100)" : "검토필요 (ma'lumot yetarli emas)"
+          r.judgment === "pass" ? "hisob-kitob bo'yicha >100" : r.judgment === "review" ? "검토필요 (≤100)" : "검토필요 (ma'lumot yetarli emas)"
         }`
     ),
     ``,

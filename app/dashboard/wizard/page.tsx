@@ -159,6 +159,7 @@ function WizardInner() {
       )}
       {step === 3 && (
         <StepToxicology
+          productInfo={data.productInfo}
           ingredients={data.ingredients}
           onIngredientsChange={(ingredients) => setData((d) => ({ ...d, ingredients }))}
           exposure={data.exposure}
