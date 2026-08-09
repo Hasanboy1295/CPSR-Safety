@@ -1,6 +1,6 @@
 "use client";
 
-import { useWizardText } from "@/lib/i18n";
+import { useLanguage, useWizardText, translateError } from "@/lib/i18n";
 import {
   newIngredientRow,
   newComponent,
@@ -20,6 +20,7 @@ export function StepIngredients({
   value: IngredientRow[];
   onChange: (next: IngredientRow[]) => void;
 }) {
+  const { lang } = useLanguage();
   const t = useWizardText();
 
   function updateRow(id: string, patch: Partial<IngredientRow>) {
@@ -60,7 +61,7 @@ export function StepIngredients({
     formData.append("file", file);
     const res = await fetch("/api/extract/ingredients", { method: "POST", body: formData });
     const json = await res.json();
-    if (!res.ok) throw new Error(json.error || t("extractFailed"));
+    if (!res.ok) throw new Error(translateError(json.error_code, json.error, lang));
     onChange([...value, ...json.rows]);
   }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useWizardText } from "@/lib/i18n";
+import { useLanguage, useWizardText, translateError } from "@/lib/i18n";
 import type { ProductQuality } from "@/lib/wizard-types";
 import { field, label, input, card, grid2 } from "@/lib/wizard-ui";
 import { FileDropzone } from "@/components/FileDropzone";
@@ -12,6 +12,7 @@ export function StepProductQuality({
   value: ProductQuality;
   onChange: (next: ProductQuality) => void;
 }) {
+  const { lang } = useLanguage();
   const t = useWizardText();
 
   function set<K extends keyof ProductQuality>(key: K, v: ProductQuality[K]) {
@@ -23,7 +24,7 @@ export function StepProductQuality({
     formData.append("file", file);
     const res = await fetch("/api/extract/product-quality", { method: "POST", body: formData });
     const json = await res.json();
-    if (!res.ok) throw new Error(json.error || t("extractFailed"));
+    if (!res.ok) throw new Error(translateError(json.error_code, json.error, lang));
     onChange({ ...value, ...json.fields });
   }
 

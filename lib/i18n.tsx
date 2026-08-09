@@ -49,6 +49,25 @@ const dict = {
     timeline2027: "Phased rollout — companies ≥₩1B/yr, new functional cosmetics first",
     timeline2031: "Full enforcement — all companies, all products",
     footerNote: "Prototype — not a submission-ready regulatory document.",
+    // Server errors (error_code -> localized message)
+    errNotAuthenticated: "Please sign in to continue.",
+    errAssessorOnly: "Only a licensed safety assessor can perform this action.",
+    errNotFound: "Project not found.",
+    errInvalidJson: "The request could not be read. Please try again.",
+    errInvalidRequest: "Some required information is missing. Please review the form.",
+    errFileTooLarge: "File is too large (max 4 MB).",
+    errDocParseEmpty:
+      "No text could be extracted from this file. Please upload a readable document or enter the data manually.",
+    errAiMissingKey: "The AI service is not configured. Please contact the administrator.",
+    errAiInvalidKey: "The AI service could not authenticate. Please contact the administrator.",
+    errAiQuota: "The AI service is temporarily busy (usage limit reached). Please try again later.",
+    errAiOverloaded: "The AI service is temporarily overloaded. Please try again.",
+    errAiTimeout: "The AI service took too long to respond. Please try again.",
+    errAiUnknown: "The AI service returned an unexpected error:",
+    errSupabaseEnv: "Server configuration is incomplete. Please contact the administrator.",
+    errSupabaseQuery: "A database error occurred. Please try again.",
+    errGeneric: "Something went wrong. Please try again.",
+    errFileSize: "File size {size} MB — please choose a file smaller than 4 MB.",
   },
   ko: {
     brand: "auto-cpsr",
@@ -93,10 +112,63 @@ const dict = {
     timeline2027: "단계적 시행 — 연 10억 이상 업체·신규 기능성 화장품 우선",
     timeline2031: "전면 시행 — 전체 업체·전체 품목",
     footerNote: "프로토타입 — 제출 가능한 규제 문서가 아닙니다.",
+    // Server errors (error_code -> localized message)
+    errNotAuthenticated: "계속하려면 로그인이 필요합니다.",
+    errAssessorOnly: "자격을 갖춘 안전성 평가자만 이 작업을 수행할 수 있습니다.",
+    errNotFound: "프로젝트를 찾을 수 없습니다.",
+    errInvalidJson: "요청을 읽을 수 없습니다. 다시 시도해 주세요.",
+    errInvalidRequest: "필수 정보가 누락되었습니다. 양식을 확인해 주세요.",
+    errFileTooLarge: "파일이 너무 큽니다 (최대 4MB).",
+    errDocParseEmpty:
+      "이 파일에서 텍스트를 추출할 수 없습니다. 읽을 수 있는 문서를 올리거나 데이터를 수동으로 입력해 주세요.",
+    errAiMissingKey: "AI 서비스가 설정되지 않았습니다. 관리자에게 문의하세요.",
+    errAiInvalidKey: "AI 서비스 인증에 실패했습니다. 관리자에게 문의하세요.",
+    errAiQuota: "AI 서비스 사용량 한도에 도달했습니다. 나중에 다시 시도하세요.",
+    errAiOverloaded: "AI 서비스가 일시적으로 혼잡합니다. 다시 시도하세요.",
+    errAiTimeout: "AI 서비스 응답이 지연되었습니다. 다시 시도하세요.",
+    errAiUnknown: "AI 서비스에서 예기치 않은 오류가 발생했습니다:",
+    errSupabaseEnv: "서버 설정이 완료되지 않았습니다. 관리자에게 문의하세요.",
+    errSupabaseQuery: "데이터베이스 오류가 발생했습니다. 다시 시도하세요.",
+    errGeneric: "문제가 발생했습니다. 다시 시도하세요.",
+    errFileSize: "파일 크기 {size}MB — 4MB보다 작은 파일을 선택해 주세요.",
   },
 } as const;
 
 export type DictKey = keyof (typeof dict)["en"];
+
+const ERROR_CODE_KEY: Record<string, DictKey> = {
+  not_authenticated: "errNotAuthenticated",
+  assessor_only: "errAssessorOnly",
+  not_found: "errNotFound",
+  invalid_json: "errInvalidJson",
+  invalid_request: "errInvalidRequest",
+  file_too_large: "errFileTooLarge",
+  doc_parse_empty: "errDocParseEmpty",
+  ai_missing_key: "errAiMissingKey",
+  ai_invalid_key: "errAiInvalidKey",
+  ai_quota: "errAiQuota",
+  ai_overloaded: "errAiOverloaded",
+  ai_timeout: "errAiTimeout",
+  supabase_env: "errSupabaseEnv",
+  supabase_query: "errSupabaseQuery",
+  generic: "errGeneric",
+};
+
+// Serverdan kelgan error_code'ni saytning joriy tiliga (ko/en) tarjima qiladi.
+// Noma'lum kod bo'lsa — server yuborgan xom matn (yoki generic) ko'rsatiladi.
+export function translateError(
+  code: string | undefined,
+  message: string | undefined,
+  lang: Lang
+): string {
+  const key = code ? ERROR_CODE_KEY[code] : undefined;
+  if (key) {
+    const text = dict[lang][key];
+    if (code === "ai_unknown" && message) return `${text} ${message}`;
+    return text;
+  }
+  return message || dict[lang].errGeneric;
+}
 
 type Ctx = {
   lang: Lang;
@@ -191,7 +263,7 @@ const wizardDict = {
     sed: "SED (mg/kg bw/day)",
     mos: "MoS",
     judgment: "Judgment",
-    judgmentPass: "PASS (>100)",
+    judgmentPass: "PASS (≥100)",
     judgmentReview: "NEEDS REVIEW (<100)",
     judgmentInsufficient: "NOAEL missing",
     formula: "SED = (A × 1000 × RF × C × DAp) / BW · MoS = NOAEL / SED",
@@ -261,7 +333,7 @@ const wizardDict = {
     newProject: "+ New project",
     dashboardOverview: "Dashboard overview",
     totalAssessments: "Total assessments",
-    complianceRate: "Assessments passing MoS > 100",
+    complianceRate: "Assessments passing MoS ≥ 100",
     quickActions: "Quick actions",
     startNewAssessment: "Start new assessment",
     shelfLifeCalc: "Shelf-life calculator",
@@ -378,7 +450,7 @@ const wizardDict = {
     sed: "SED (mg/kg bw/day)",
     mos: "MoS (안전역)",
     judgment: "판정",
-    judgmentPass: "PASS (>100)",
+    judgmentPass: "PASS (≥100)",
     judgmentReview: "검토필요 (<100)",
     judgmentInsufficient: "NOAEL 없음",
     formula: "SED = (A × 1000 × RF × C × DAp) / BW · MoS = NOAEL / SED",
@@ -448,7 +520,7 @@ const wizardDict = {
     newProject: "+ 새 프로젝트",
     dashboardOverview: "대시보드 개요",
     totalAssessments: "총 평가 건수",
-    complianceRate: "MoS > 100 통과 비율",
+    complianceRate: "MoS ≥ 100 통과 비율",
     quickActions: "빠른 작업",
     startNewAssessment: "새 안전성 평가 시작",
     shelfLifeCalc: "유효기한 계산기",

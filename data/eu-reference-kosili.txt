@@ -1,0 +1,1599 @@
+SOURCE: EU reference CPSR #2 - KOSILI body lotion & baby wet wipes safety report. Example of composite raw materials (e.g. Nipaguard SCP = Sorbitan Caprylate + Phenoxyethanol) and infant/rinse-off exposure.
+
+===== PAGE 1/60 =====
+Cosmetic product safety report
+(This safety assessment relates to the formulation & data supplied
+by the customer)
+
+              Name of the product:  KOSILI BEBI VLAŽNE MARAMICE
+              Translated name of the product: KOSILI BABY WET WIPES
+              Type of the product:  Cosmetic product – Clean and care products
+              Packaging: 24/1 ; 72/1
+===== PAGE 2/60 =====
+PART A – Cosmetic product safety information
+
+1.   Quantitative and qualitative composition of the cosmetic product
+
+The chemical names shown below refer to the raw materials used to formulate this product. The identity of
+the raw materials is not necessarily based on the International Nomenclature of Cosmetic Ingredients (INCI)
+and does not represent the INCI listing that must be shown on the product label and is for assessment
+purposes only. An outline INCI label can be prepared on request.
+
+Trade Name
+INCI/Chemical
+Names present in
+the raw material
+
+CAS No.
+% active in
+raw material /
+trade name
+Concentration
+(%) of raw
+material
+
+Function
+
+Nipaguard SCP
+Sorbitan Caprylate  60177-36-8 20-40
+
+0.6
+EMULSIFYING
+Phenoxyethanol  122-99-6 60-80  PRESERVATIVE
+
+EMULGIN B2
+
+Ceteareth-20
+
+68439-49-6
+
+100
+
+0.01
+CLEANSING,
+EMULSIFYING,
+SURFACTANT
+
+EMULGADE SE PF
+
+Cetearyl alcohol
+
+67762-27-0 /
+8005-44-5
+
+5 – 10
+
+0.045
+EMOLLIENT,
+EMULSIFYING,
+EMULSION
+STABILISING,
+OPACIFYING,
+SURFACTANT,
+VISCOSITY
+CONTROLLING
+
+Glyceryl Stearate
+
+31566-31-1
+
+40-70
+EMOLLIENT,
+EMULSIFYING
+
+Ceteareth-12
+
+68439-49-6
+
+5 – 10
+EMULSIFYING,
+SURFACTANT
+
+Cetyl Palmitate
+
+540-10-3
+
+5 – 10
+EMOLLIENT,
+MASKING, SKIN
+CONDITIONING
+
+Ceteareth-20
+
+68439-49-6
+
+10 – 20
+CLEANSING,
+EMULSIFYING,
+SURFACTANT
+
+GLYCERINE
+
+Glycerin
+
+56-81-5
+
+100
+
+0.05
+HUMECTANT,
+PERFUMING,
+SOLVENT
+===== PAGE 3/60 =====
+Trade Name
+INCI/Chemical
+Names present in
+the raw material
+
+CAS No.
+% active in
+raw material /
+trade name
+Concentration
+(%) of raw
+material
+
+Function
+
+SABOSORB MLE
+
+Polysorbate 20
+
+9005-64-5
+
+100
+
+0.1
+EMULSIFYING,
+SURFACTANT
+
+TRILON BD
+
+Disodium Edta
+
+139-33-3 ---
+6381-92-6
+
+100
+
+0.005
+CHELATING,
+VISCOSITY
+CONTROLLING
+
+CITRIC ACID
+
+Citric Acid
+
+77-92-9 /
+5949-29-1
+
+100
+
+0.002
+BUFFERING,
+CHELATING,
+MASKING
+
+SABODERM TCC
+
+Caprylic/Capric
+Triglyceride
+
+73398-61-5 /
+65381-09-1
+
+100
+
+0.05
+EMOLLIENT,
+MASKING,
+PERFUMING,
+SKIN
+CONDITIONING,
+SOLVENT
+
+CEGESOFT C24
+
+Ethylhexyl Palmitate
+
+29806-73-3
+
+100
+
+0.05
+EMOLLIENT,
+PERFUMING
+
+Bioquat -10
+
+Polyquaternium-10
+81859-24-7 /
+53568-66-4 /
+54351-50-7 /
+55353-19-0 /
+68610-92-4 /
+81859-24-7
+
+100
+
+0.0036
+
+ANTISTATIC,
+FILM FORMING
+
+Rajol wp 80
+
+Paraffinum Liquidum
+
+8012-95-1 /
+8042-47-5
+
+100
+
+0.02
+ANTISTATIC,
+EMOLLIENT,
+SKIN
+PROTECTING,
+SOLVENT
+
+Lovely talc CCM00435
+
+Parfum
+
+-
+
+100
+
+0.15
+DEODORANT,
+MASKING,
+PERFUMING
+Water Aqua  7732-18-5 100  98.9144  SOLVENT
+===== PAGE 4/60 =====
+Manufacturer 72/1 Piramida  d.o.o.Šabac   ;   24/1 Markus d.o.o.Valjevo
+
+Commercial Name Kosili Baby Wet Wipes
+Final packaging 72 wipes in a printed foil (PET and LDPE) bags
+24 wipes in a printed foil (PET and LDPE) bags
+Colour of packaging
+Blue and pink
+Type of group Leave on
+Safety assessment
+number 2040 Date issued September 15th,
+2015
+
+2.  Physical/chemical characteristics and stability of the cosmetic product
+
+It is assumed that the responsible person has selected all pertinent criteria required to evaluate the stability of
+this cosmetic product during reasonable foreseeable conditions of storage. The stability report provided by the
+supplier and based upon the conclusions made therein, this cosmetic product appears to be stable under
+reasonably foreseeable storage conditions. The manufacturer has also provided the physical/chemical
+characteristics of the final product.
+
+3.   Microbiological quality
+
+To comply with the Guidelines on the Microbiological Quality (SCCNFP/0004/98), the following maximum limits
+apply:
+
+Category 1: Products specifically intended for children under 3 years, eye area and mucous membranes.
+TVC:- 100 cfu/g or ml in 0.5 g or ml of the product. Pseudomonas aeruginosa, Staphylococcus aureus and Candida
+albicans must not be detectable in 0.5 g or ml of the cosmetic product
+
+Category 2: Other cosmetic products.
+TVC:- 1000 cfu/g or ml  in  0.1 g or ml  of  the product.  Pseudomonas  aeruginosa,    Staphylococcus  aureus  and
+Candida albicans must not be detectable in 0.1 g or ml of the cosmetic product
+
+The microbiological specifications for the product have been supplied and based upon the conclusions therein,
+meet the Industry requirements specified in the Guidelines on the Microbiological Quality of the Cosmetic
+Product, 1999 Edition.
+
+The preservative Challenge test results for this product have been supplied (the test was performed according
+to ISO 11930:2 012) and based upon the conclusions made therein appear to meet the industry requirements
+specified in the Notes of guidance for testing of cosmetic ingredients for their safety evaluation, Anne x 8 -
+Guidelines on the Microbiological Quality of the Cosmetic Product, 1999 Edition.
+
+The statement that confirms that Piramida d.o.o. conceded results of Challenge test to Lomax  Company d.o.o.
+is being attached.
+===== PAGE 5/60 =====
+4.   Impurities, traces, information about the packaging material
+
+It is assumed that the responsible person has identified the most applicable testing required to determine the
+packaging stability and its interaction with the cosmetic product contained within it. Taking into consideration
+the information supplied to the assessor, there appears  to be no immediate health concern due to the
+characteristics of packaging materials in direct contact with the final product.
+
+As far as the analysis of impurities and the packaging material is concerned, data from suppliers should be
+preferred (11/SANCO/COS/56).
+
+         Allergens that must be written in the packaging:
+INCI CAS No Concentration in parfum (%)
+Citronellol 106-22-9 24,62
+Geraniol 106-24-1   5,59
+
+5.   Normal and reasonably foreseeable use
+
+Instruction for use: -
+The name Baby  Wet Wipes Lotion indicates the explicit use of the finished product as a wet wipes for babies.
+The following phrase also indicates that the product should be used on previously mentioned area: »wet wipes«.
+A reasonably foreseeable mistaken use (not a misuse) is not recognisable.
+===== PAGE 6/60 =====
+6.   Exposure to the cosmetic product
+
+Product Class: Leave-on
+
+IFRA Product type:
+
+Baby Wipes
+IFRA Category: 7
+Targeted Population: Babies
+Amount per application/g: 0.523 *
+Skin Surface Area of Application/cm2: 3100*
+Total Amount applied per day/g: 2.092*
+Estimated Daily Exposure mg/kg/day: 354.6 (5.9 kg baby)
+Amount Per Unit Area of Skin per day
+mg/cm2/day:
+0.675
+Retention factor: 1
+Exposure Time Neat: 2min*
+Exposure Time Dilute: Not applicable
+Exposure time Solvent Inhalation: Not applicable
+Exposure time Aerosol Inhalation: Not applicable
+Number of applications per day: 4*
+Physical form: Nonwoven impregnated in lotion
+Part of body exposed to undiluted Body
+Dilution factor Not applicable
+Part of body exposed to diluted product Not applicable
+*'Human hygiene products; wiping event, 4 per day. The skin dries within 2 minutes. The quantity of liquid
+deposited on the skin is proposed as 0.5 ml per event' (TNsG, 2002)
+===== PAGE 7/60 =====
+7.   Exposure to the substances
+
+This product belongs to Baby Wipes IFRA product type, intended for babies . Skin contact is therefore the main
+route of the exposure. Unintended eye and oral exposure is possible but as the amounts are expected to be
+minimum therefore no significant risk to health is expected via these routes of exposure.
+
+The formulation has a relatively low potential of irritation and sensitation. The manufacturer provided relevant
+IFRA certification. Allergen analysis proofed that known allergens, which are present at concentration > 0.001%,
+are all written on the list of ingredients.
+
+This product, which is formulated with ingredients that are widely used with demonstrable safety in human, is
+unlikely to cause any  significant adverse effects. Where it applied, all the ingredients in the product appear
+within the concentration limits restricted in the EU and they should meet the purity specifications set by the
+directive. This has been checked where the purity specification has been supplied during assessment. The
+formulation does not contain impurities that are CMR or residual solvents at a level that would constitute a risk
+for the consumer. Taking into account the existence similar cosmetic marketed formulations, how this product is
+intended to be used, the toxicological profiles of the individual ingredients and the well reported history of safe
+use in cosmetic products, if used as directed, this product is not expected to pose a risk to the health of the
+majority of consumers by means of irritation, allergy, ingestion, inhalation, corrosivity, sensitization nor from
+any known or documented carcinogenic, mutagenic or reprotoxic effects of the ingredients.
+
+The use application suggests that the risk of irritation and skin sensitization would be low in the majority, but a
+few individuals might find it intolerable. This product does not contain any allergens that must be declared on
+the product label: however, these are at concentrations unlikely to elicit an allergic response or induce skin
+sensitization in the majority of the general population. However, the possibility cannot be discounted that a
+small number of users may experience an allergic reaction or other idiosyncratic reaction to an ingredient in the
+formulation if they have been previously sensitized to the ingredient.
+
+If this product is reported to cause significant adverse reactions amongst consumers (such as an abnormally high
+number of undesirable effects), this should be brought to the attention of the Safety Assessor responsible for
+review of this product. Under such circumstances, a new safety assessment will be conducted and a revised
+conclusion may be issued.
+
+The raw materials used to formulate this product are all well known cosmetic product ingr edients. They are
+present at typical concentrations where they are unlikely to cause irritation but may cause allergy in a small
+percentage of the general population. This formulation is typical of this product type. Products of similar
+composition have been widely used and well received in the market place.
+===== PAGE 8/60 =====
+Effects of the product as supplied on the skin:
+The formulation as supplied may cause skin irritation especially if exposure is prolonged and/or repeated.
+However, under normal conditions of use exposure time will be short and the likelihood of causing skin irritation
+will be very low.
+There are low concentrations of substances present in this product, which have allergenic activity. The
+concentrations present are sufficiently low for the level of use to ensure that people do not become sensitised.
+However, people who are already sensitised to a substance may react adversely to any product containing that
+substance even when present at extremely low concentrations.
+Exposure to this product is unlikely to result in phototoxic effects.
+It is unlikely to cause damage to internal organs following absorption through the skin.
+
+Effects on the skin, of the product as diluted for use
+Contact with the dilute solution is unlikely to cause skin irritation even if contact is prolonged and/or repeated.
+
+Effects of the product as supplied on the eye
+Accidental exposure of the eye to the diluted product may result in slight eye irritation.
+
+Effects following ingestion of the product as supplied
+The formulation as supplied if swallowed is likely to cause irritation to the mouth and upper digestive tract.
+
+Effects on ingestion, of the product as diluted for use
+The diluted product if swallowed may cause slight irritation to the mouth and upper digestive tract.
+===== PAGE 9/60 =====
+INCI ingredient name NOAEL SED MoS
+Aqua Not available 344.8812 /
+Phenoxyethanol 500 1.6736 298.76
+Sorbitan Caprylate 1000 0.8368 1195.03
+
+Parfum Not available 0.5230 /
+
+Polysorbate 20 Not available 0.3487 /
+Glycerin 2000 0.1743 11472.28
+Caprylic/Capric Triglyceride 1000 0.1743 5736.14
+Ethylhexyl Palmitate 1000 0.1743 5736.14
+Glyceryl Stearate 2500 0.1098 22762.45
+Paraffinum Liquidum 962 0.0697 13795.41
+
+Ceteareth-20 Not available 0.0662 /
+
+Disodium EDTA Not available 0.0174 /
+Cetearyl alcohol 300 0.0157 19120.46
+
+Ceteareth-12 Not available 0.0157 /
+
+Cetyl Palmitate Not available 0.0157 /
+
+Polyquaternium-10 Not available 0.0126 /
+Citric Acid 1200 0.0070 172084.13
+===== PAGE 10/60 =====
+8.   Toxicological profile of substances
+
+• EU INCI NAME: Aqua
+
+CAS: 7732-18-5
+
+EINECS: 215-185-5
+
+Appearance: Colourless liquid
+
+Water Solubility: Highly soluble at 20oC
+Function: Solvent
+Melting Point: 0oC
+Boiling Point: 100oC
+Structural formula:
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+
+Systemic Exposure Dosage / Margin of Safety:
+
+SED Adult mg/kg bw/day: 1,873
+===== PAGE 11/60 =====
+SED Child mg/kg bw/day: 6,731
+SED Baby mg/kg/day: 19,052
+NOAEL: Not Available
+MoS: /
+
+Toxicological Summary:
+
+Acute toxicity:
+
+•    LD50: [Rat] - Route: oral; Dose: > 90 ml/kg LC50: Not available. (www.sciencelab.com/msds)
+
+Irritation and corrosivity:
+
+•    Non-permeator by skin. (www.sciencelab.com/msds)
+•    Non-hazardous in case of ingestion. (www.sciencelab.com/msds)
+•    Non-hazardous in case of inhalation. (www.sciencelab.com/msds)
+•     Non-irritant for lungs. (www.sciencelab.com/msds)
+•    Non-sensitizer for lungs. (www.sciencelab.com/msds)
+•    Noncorrosive for lungs. (www.sciencelab.com/msds)
+
+Skin irritation and skin corrosivity:
+
+•    Non-corrosive for skin. Non-irritant for skin. (www.sciencelab.com/msds)
+
+Mucous membrane irritation (eye irritation):
+
+•    Non-corrosive to the eyes. (www.sciencelab.com/msds)
+
+Skin sensitisation:
+===== PAGE 12/60 =====
+•    Non-sensitizer for skin. (www.sciencelab.com/msds)
+
+Dermal/percutaneous absorption:
+
+•    Absorbed through skin. (www.sciencelab.com/msds)
+Repeated dose toxicity:
+
+•    Special Remarks on Toxicity to Animals: Not available. (www.sciencelab.com/msds)
+•    Special Remarks on other Toxic Effects on Humans: Not available. (www.sciencelab.com/msds)
+
+Carcinogenicity:
+
+•     Not available. (www.sciencelab.com/msds)
+
+Simply water unlikely to cause irritation, allergy or harm. Used in many cosmetic products as a solvent and
+necessary to sustain biological life. The source of water should be known, monitored to GMP and either a
+deionised or high purity grade free from toxins, pollutants and bacteriological contamination should be used in
+cosmetic products.
+
+No clinical signs of toxicity and significant gross lesion or microscopic findings were seen in either rats or mice.
+The NOAEL for rats was 1500 ppm (ca. 151 -174 mg/kg bw/day) and for mice 1500 ppm (ca. 167 -179 mg/kg
+bw/day). In all dose groups effects on salivary glands were observed, which were regarded as an adaptive and
+reversible response to the sympathomimetic effect of caffeine.  (SIDS INITIAL ASSESSMENT PROFILE: Caffeine
+14th SIAM (Paris, France March 2002))
+===== PAGE 13/60 =====
+• EU INCI NAME: Phenoxyethanol
+
+CAS: 122-99-6
+
+EINECS: 204-589-7
+
+Appearance: Slightly viscous liquid
+Water Solubility: Soluble
+Melting Point: 15°C
+Boiling Point: 244°C
+Specific gravity (25°C): 19.6
+Structural formula:
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): V/29
+===== PAGE 14/60 =====
+Margin of Safety:
+
+NOAEL Adult: 500
+
+Toxicological  Summary:
+
+European Cosmetics Regulation Annex V (Line 29) lists phenoxyethanol as an approved preservative in the EU at
+concentrations up to 1%.
+
+Acute toxicity via relevant routes of exposure: Acute oral LD50 (rats) = 1400 mg/kg bw (CLP: Acute Tox. 4, Harmful
+if swallowed)
+
+Skin irritation and skin corrosivity: Diluted Phenoxyethanol caused slight transient irritation to rabbit skin and
+undiluted Phenoxyethanol caused slight irritation and desquamation. Diluted Phenoxyethanol was not an irritant
+to guinea pig skin, while the undiluted chemical was slightly irritating.
+
+Mucous membrane irritation (eye irritation): Serious eye irritant (CLP: Eye Irrit. Cat. 2)
+Skin sensitisation: Not sensitizing
+Repeated dose toxicity (normally 28 - or 90-day studies): Subchronic systemic toxici ty by dermal exposure was
+evaluated by application of phenoxyethanol to rabbit skin for 6 hours per day/five days per week for 90 days.
+Doses were 0, 50, 150, and 500 mg/kg bw/day. The authors concluded that the dermal NOAEL was 500 mg/kg
+bw/day. Subacute repeated dose inhalation toxicity study in rats provided the NOAEC of 48.2 mg/m³  air,
+whereas a subchronic repeated dose 90-day oral toxicity study in rats provided a NOAEL of 700 mg/kg bw/day.
+
+Mutagenicity/ genotoxicity: Nonmutagenic  in the Ames test (with and without metabolicactivation) and in the
+mouse micronucleus test.
+
+Photo-induced toxicity: Photoallergy potential of a 3% active solution CAPB was investigated. No relevant
+responses to the challenge tests were observed.
+
+Reproduction toxicity: Phenoxyethanol, when administered in the feed to mice, was a reproductive toxicant to
+mice. In addition, there was a dose -dependent decrease in live pup weight. Continuous exposure of the mice to
+Phenoxyethanol resulted in reduced body weights and in mortality in the mid - and high- dose groups.
+Phenoxyethanol in the diet was toxic to newborn and young mice. Dermal treatment of pregnant New    Zealand
+===== PAGE 15/60 =====
+White rabbits with Phenoxyethanol did not result in teratogenicity, embryotoxicity, or fetotoxicity at doses up to
+those which were maternally toxic. In a developmental toxicity assay using Hydra attenuata, it was determined
+that Phenoxyethanol would be toxic to the developing embryo at concentrations below those which w ere toxic
+to the adults.
+
+REFERENCE:
+
+European      Chemicals      Agency      (ECHA).      Retrieved      from http://echa.europa.eu/information -on-
+chemicals/registered-substances (NOAEL)
+
+Breslin et al. Hemolytic activity of ethylene glycol phenyl ether (EGPE) in rabbits. Fund Appl Toxicol 17:466 -481,
+1991. (NOAEL)
+
+CIR. Final Report on the Safety
+
+Assessment of Phenoxyethanol. JACT 9(2):259-277, 1990. Retrieved from http://www.cir-safety.org/ingredients
+===== PAGE 16/60 =====
+• EU INCI NAME: Polysorbate 20
+
+CAS: 9005-64-5
+
+EINECS: Not available
+
+Appearance: Yellowish liquid
+Melting Point: No data available.
+Boiling Point: > 100 °C
+Water Solubility: Soluble in cold water
+Specific gravity: 1.1 (water=1)
+Structural formula:
+
+Cosmetic Regulatory Summary:
+
+EU Cosmetics Status: Not controlled
+
+Systemic Exposure Dosage / Margin of Safety:
+
+SED Adult mg/kg bw/day: 0.08
+SED Child mg/kg bw/day: 0.30
+SED Baby mg/kg/day: 0.85
+NOAEL: Not available
+MoS: /
+===== PAGE 17/60 =====
+Toxicological Summary:
+
+Polysorbate 20 (also known as Tween 20) is used in cosmetics and skin care products as a surfactant, emulsifier,
+and fragrance ingredient. It is derived from Lauric Acid and is also a chemical mixture of sorbitol ethylene oxide,
+according to Wikipedia. It is sometimes derived from fruits and berries as well, leading to its fragrant properties.
+Polysorbate 20 can serve as a dispersing agent and mix oil and water, work as a fragrance solubilizer and
+stabilizer, act as a lubricator, and have a soothing effect on the skin (NatureBath.com).
+
+The Polysorbates are a series of polyoxyethylenated sorbitan esters that differ with respect to the number of
+polymerized oxyethylene subunits and the number and type of fatty acid groups present.
+
+The CIR Expert Panel reviewed data showing that Polysorbates were not mutagens or complete carcinogens. The
+available data indicated that these ingredients were used in numerous preparations without clinical reports of
+significant adverse effects. The safety of Polysorbate 20 has been assessed by the Cosmetic Ingre dient Review
+(CIR) Expert Panel. The CIR Expert Panel evaluated the scientific data and concluded that Polysorbate 20 was
+safe as cosmetic ingredient (can be added in more than 50%)(Int J Toxicol. 2002;21 Suppl 1:93-112).
+
+Skin irritation and skin corrosivity:
+
+•     No irritating effect
+
+Mucous membrane irritation (eye irritation):
+
+•     No irritating effect
+
+Skin sensitisation:
+
+•     No sensitizing effects known
+Acute toxicity:
+
+•     LD 50 oral (rat): > 35000 mg/kg bw
+REFERENCE:
+
+Polysorbate 20 MSDS, http://www.sciencelab.com/msds.php?msdsId=9926640, Date of acces: August 5th, 2013
+===== PAGE 18/60 =====
+• EU INCI NAME: Caprylic/Capric Triglyceride
+
+CAS: 8 73398-61-5 / 65381-09-1
+EINECS: 277-452-2 / 265-724-3
+
+Appearance: Limpid liquid
+Water Solubility: Insoluble at 20°C
+Melting Point: No data available
+Boiling Point: >100°C
+Specific gravity: < 1
+Structural formula:
+
+Cosmetic Regulatory Summary:
+
+Cosmetic restriction (Cosing): None
+
+Systemic Exposure Dosage / Margin of Safety:
+
+SED Adult mg/kg bw/day: 0,001333
+SED Child mg/kg bw/day: 0,004790
+SED Baby mg/kg/day: 0,0135585
+NOAEL Adult: 1000 mg/kg
+MoS Adult 60 kg: 750046,9
+
+MoS Child 16.7 kg: 208763,1
+
+   MoS Baby 5.9 kg: 73754,6
+===== PAGE 19/60 =====
+Toxicological Summary:
+
+Acute toxicity:
+
+•    Neutral oil used as mineral oil substitute.
+•    Acute toxicity by intramuscular route (pure): LD 50 > 10 ml/kg/day
+
+Skin irritation and skin corrosivity:
+
+•    Primary cutaneous irritation (pure): Non irritant.
+
+Mucous membrane irritation (eye irritation):
+
+•    Ocular irritation (pure): Slightly irritant.
+
+Photo-induced toxicity:
+
+•   Phototoxic  properties were tested on hairless mice with 50% substance (applied twice a day for 5 days
+to the skin of the ears). Results show that there were no phototoxic properties found (Henkel KgaA,
+Dusseldorf). Experiences with human volunteers shows, that su bstance was tolerated without effect
+(testing with increasing concentrations of 10, 25, 50 and 100%)( Henkel KgaA, Dusseldorf).
+
+With acute toxicity tests on rats, where six groups of male rats each were injected with singe doses od Caprylyc
+(Capric Triglyceride ranging from 1 -24 ml/kg). There were no deaths, after doses of 8ml/kg and higher, rats
+showed a lack of apetite and decreased mobility during the first two days. Subsequently, the animals became
+normal in these respects. Necroscopy after 14 days revealed some unabsorbed test material in the stomach area
+and slight vascular complications. Though no LD50 could be calculated, but the test shows, that LD50 of this
+
+products in the rat is greater than 24ml/kg (Henkel KgaA Dusseldorf). With repeated  dose toxity (47 weeks) on
+rats it has been shown (Histological Study) that there were no abnormalities in intestine and liver. (Henkel KgaA,
+Dusseldorf). Acute toxicity:
+
+In the rabbit, the highest dose tested, 7.0 mg/kg, was a NOAEL for both dams and offspring. The NOAEL was the
+highest dose tested, 48 tablets of 200 mg each or 9.6 g/dog/day (estimate based on weight of dogs of around 1
+g/kg/day). No toxicity. NOAEL = 1000 mg/kg for rat. (Centre for drug evaluation and research  application
+number: 201699Orig1s000)
+===== PAGE 20/60 =====
+• EU INCI NAME: Glycerin (Glycerol)
+
+CAS: 56-81-5
+
+EINECS: 200-289-5
+
+Appearance: colourless, odourless, viscous liquid
+Water Solubility: miscible
+Function: humectant, viscosity decreasing agent
+Melting Point: 20°C
+Boiling Point: 290°C
+Flash point: 160°C
+Structural formula:
+
+Cosmetic Regulatory Summary:
+EU Cosmetics Status: /
+
+Systemic Exposure Dosage / Margin of Safety:
+
+SED Adult mg/kg bw/day: 0,002666
+===== PAGE 21/60 =====
+SED Child mg/kg bw/day: 0,00958
+SED Baby mg/kg/day: 0,0271169
+NOAEL Adult: 2000 mg/kg
+MoS – Adult 60 kg: 750046,9
+
+MoS – Child 16.7 kg: 208763,1
+
+MoS – Baby 5.9 kg: 73754,6
+
+Toxicological Summary:
+
+Glycerin is a sugar alcohol that can be obtained from natural sources or can be synthesized. In cosmetics and
+personal care products Glycerin may be found in soaps, toothpaste, shaving cream, and skin and hair care
+products. It is also very often used in food industry (solvent, sweetener, preservative) and pharmacy (lubricant,
+humectant). Glycerol is a component of glycerin soap. Essential oils are added for fragrance. This kind of soap is
+used by people with sensitive, easily -irritated skin because it prevents skin dryness with its moisturizing
+properties. It draws moisture up through skin layers and slows or prevents excessive drying and evaporation.
+Glycerol is widely distributed in food as a natural constituent, and it has undergone review and approval for use
+as both a direct and indirect food additive and is generally recognized as safe (GRAS) by FDA.
+
+Acute toxicity:
+
+•  Glycerol is of very low acute toxicity to mammals. The range of acute oral LD50 values derived from
+studies in experimental animals is between 4.000 and 38.000 mg/kg, with the majority of values being
+between 23.000 and 38.000 mg/kg. For acute dermal toxicity a single LD50 of >10.000 mg/kg for rabbits
+is available. Glycerol is more toxic when administered intra venously, intraperitoneally or
+subcutaneously. Ref.: OECD SIDS, Glycerol (56 -81-5). Acute toxicity of the mist LC50 (rat)>570mg/m3,
+1hour. (MSDS safety data sheet glycerin).
+===== PAGE 22/60 =====
+• Not considered as toxic (DL 50 oral/rats > 12600 mg /kg ) but prolonged or repeated ingestion may cause
+affect the blood (hemolysis, changes in white blood cell count), endocrine system (changes in adrenal
+weight), respiratory system, and may cause kidney injury.
+• Animal studies involving single or repeated ex posure by various routes indicated a low order of toxicity,
+the possible target sites (particularly following repeated oral administration) being the kidney and
+gastrointestinal tract. (www.bibra-information.co.uk)
+
+Repeated dose toxicity:
+
+• Chronic toxicity after 2 years studies on Rat (1953, before modern OECD standards) cause damage to the
+following organs: kidneys. For inhalation exposure, irritant effects were observed at 662 mg/m3. The
+NOAEL for local effects on the respiratory tract following exposure by inhalation is 165 mg/m3. When
+large doses are ingested, it can cause gastrointestinal tract irritation with thirst (dehydration), nausea or
+vomiting diarrhea. It also affect behavior/central nervous system/nervous system (central nervous
+system depression, general anesthetic, headache, dizziness, confusion, insomnia, toxic psychosis, muscle
+weakness, urinary system/kidneys. As taken from OECD SIDS, Glycerol (56-81-5).
+
+Reproduction toxicity:
+
+• Glycerin is transferred across the plancenta  in small amounts. May cause some adverse reproductive
+effects based on animal data (Paternal Effects (Rat), but there was no evidence of teratogenicity. As
+taken from OECD SIDS, Glycerol (56-81-5).
+• Not considered as toxic (DL 50 oral/rats > 12600 mg /kg ) but prolonged or repeated ingestion may cause
+adverse reproductive effects.
+• No convincing evidence of reproductive effects have been seen in rats treated orally or dermally, or in
+mice fed glycerol during pregnancy. (www.bibra-information.co.uk)
+
+Mutagenicity:
+
+• Glycerol did not induce mutations in bacteria in an Ames test, which used four Salmonella typhimurium
+strains. In vitro, glycerol was negative (with and without metabolic activation) in Ames tests and did not
+induce chromosomal effects in mammalian cells, there is no in vitro or in vivo data that indicates glycerol
+to have genotoxic potential. As taken from OECD SIDS, Glycerol (56-81-5). Although a Soviet study in rats
+treated orally reported indications of genotoxicity. (www.bibra-information.co.uk)
+===== PAGE 23/60 =====
+Carcinogenicity:
+
+•    Glycerin does not have a carcinogenic potential.
+
+Skin and eye irritation:
+
+• There were no studies conducted to modern OECD guidelines. In a study conducted using contemporary
+protocols but prior to GLP standards it was demonstrated that dermal application of 0.5 -mL glycerol to
+the rabbit's skin for 24 hours did not lead to signs of irritation 24hours and 72 hours after application.
+Irritation scores according to Draize scale were 0 -0.4, compared to a maximum score of 30 (Weil 1971).
+Another test with similar methodology gave a similar outcome (Clark 1979) and there was no evidence
+of irritation in rabbits following repeated applications of 4 mL over 30% of the surface area 8 h/day for
+90 days (Hine 1953). No OECD guideline studies is available, however, the data available indicate that
+glycerol has no irritating potential with skin contact. Ref.: OECD SIDS, Glycerol (56-81-5).
+
+• In a study conducted to a contemporary protocol (prior to GLP standards), 0.1 mL  undiluted glycerol was
+instilled in the eyes of 6 rabbit caused no evidence of irritation after 1, 24 and 72 hours and after 7 days.
+The overall irritation score using the Draize system was 0 -2 on a scale up to a maximum of 110 (Weil
+1971). In an OECD guideline study reported in a secondary source, slight to moderate corneal irritation
+was observed in all rabbits after 1h, however the effects were found to regress after 24h and were fully
+reversed by 48h (Janssen and de Rooy). The data available indicate t hat glycerol is not irritating to the
+eyes. Ref.: OECD SIDS, Glycerol (56-81-5).
+•    May cause skin irritation at full strength.
+• Enough rabbit corneal endothelial cells have survived to maintain normal deturgescence function after
+exposure of the epithe lium to 30% glycerin for 20 min, 50% for 10 min, or 92% for 4 min, but 92% was
+observed to destroy the endothelium if exposure extended to 30 min. Endothelial damage in these
+circumstances can be explained on the basis of an osmotic, rather than a toxic, mechanism. [Grant,
+W.M. Toxicology of the Eye. 3rd ed. Springfield, IL: Charles C. Thomas Publisher, 1986., p. 463]
+
+Toxicokinetics:
+
+• When large doses are ingested, it can cause gastrointestinal tract irritation with dehydration, nausea, or
+vomiting diarrhea. It may also affect behaviour/central nervous system/nervous system (central nervous
+system depression, general anesthetic, headhache, dizziness, confusion, insomnia, toxic psychosis,
+muscle weakness, paralysisconvulsions), urinary system/kidneys (renal failure, hemoglobinuria),
+cardiovascular system (cardiac arrhythmias).
+===== PAGE 24/60 =====
+Sensitization:
+
+• Based on the available information, there is no human or animal data that indicates glycerol to be a skin
+sensitizer. Considering the extensive, widespread dermal exposure to glycerol  in  preparations
+repeatedly applied to the skin, the absence of case reports of humans showing skin reactions is
+consistent with glycerol having a very low skin sensitization potential. As taken from OECD SIDS, Glycerol
+(56-81-5). Glycerol is not generally considered an irritant of human skin, although some reactions have
+been observed. Similarly, a small proportion of individuals have been identified as glycerol sensitized
+(BIBRA, 1993).
+
+Glycerol has widespread use and can be found in industrial, professional and consumer products. There is a
+potential for occupational exposure through inhalation and skin contact. Consumers may be exposed to glycerol
+by the oral and dermal routes of exposure. Smoking may lead to an additional glycerol uptake by inhalation. All
+SIDS health endpoints are fulfilled. It should be noted that much  of the data on glycerol is historic and of rather
+low quality compared to current guideline requirements. Nevertheless, there is an overall consistency within the
+available data that allows conclusions to be drawn. Glycerol is absorbed following ingestion  and incorporated in
+the standard metabolic pathways to form glucose and glycogen. The weight of evidence indicates that glycerol is
+of low toxicity when ingested, inhaled or in contact with the skin.  Ref. OECD SIDS, Glicerol (56-81-5).
+===== PAGE 25/60 =====
+• EU INCI NAME :
+Cetearyl Alcohol
+CAS: 67762-27-0 / 8005-
+44-5 EINECS: 267-008-6 / -
+
+Appearance: Pellets
+
+Water Solubility: Emulsifiable
+
+Function: Emollient, emulsifying, emulsion stabilising, foam boosting, opacifying, surfactant, viscosity controlling
+Melting Point: 61-65°C
+Boiling Point: Not determined
+Structural formula:
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+EU Cosmetics Status: Safe concentration up to 25 % (CIR, 2012).
+
+Systemic Exposure Dosage / Margin of Safety:
+SED Adult mg/kg bw/day: 0,009
+NOAEL Adult: Not Available
+MoS: /
+===== PAGE 26/60 =====
+Toxicological Summary:
+
+Acute oral toxicity:
+
+•     LD/LC50 values that are relevant for classification
+
+After swallowing:
+
+•    Product not classified as dangerous
+
+Acute dermal toxicity:
+
+•    Product not classified as dangerous
+
+Primary irritant effect:
+
+•   No irritant effect (on the skin), no irritating effect (on the eye); HET -CAM test ( in vitro): Non -irritant,
+when tested on the chorio -allantoic membrane of an egg in a 5% active aqueous  solution
+(MONTANOVTM 68 ... , 2005); Patch test (cariied out at increasing concentrations 0,5%, 1,1%, 2,2%, 4,7%
+and 10% on 10 subjects): It`s tolerance is satisfactory (MONTANOVTM 68 ... , 2005)
+
+Skin sensitisation:
+
+• No sensitation on the skin; Hypoallergenic : tested at concentration of 5% in water on an occlusive patch in
+50 healthy volunteers, under conditions: induction phase – 9 consecutive applications by the occlusive
+epicutaneous route for 48 hours in the same zone, rest phase – 15 days with no applications, challenge
+phase – single application by the occlusive epicutaneous route for 48 hours (MONTANOVTM 68 ... , 2005)
+
+Mutagenicity in vitro (Ames test):
+
+•     Non mutagenic
+
+Genotoxicity:
+
+•    Not genotoxic (Chromosome aberration test: Human lymphocytes)
+===== PAGE 27/60 =====
+• EU INCI NAME: Ceteareth-20
+
+CAS: 68439-49-6
+
+EINECS: Not available
+
+Appearance: White solid
+Water Solubility: Soluble
+Melting Point: 40-46°C
+Boiling Point: >100°C
+Flash point: >100°C
+Specific gravity: 1.015 (40°C)
+Structural formula:
+Ceteareth-n (where n=2…100 and m= 15 or 17)
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+===== PAGE 28/60 =====
+Margin of Safety:
+
+NOAEL Adult: Not available
+
+Toxicological Summary:
+
+No adverse health effects expected if the product is handled in accordance with this Safety Data Sheet and the
+product label. Symptoms or effects that may arise if the product is mishandled and overexposure occurs are:
+
+•    Ingestion: Swallowing can result in nausea, vomiting, diarrhoea, and abdominal pain.
+• Eye contact: A severe eye irritant. Contamination of eyes can result in permanent injury.
+•   Skin contact: Contact with skin will result in irritation.
+•    Inhalation: Breathing in dust may result in respiratory irritation.
+
+Toxicological Data:
+
+•    Oral LD50 (rat): 2,000 mg/kg
+•    Skin: Moderate irritant (rabbit).
+•    The actual or estimated LD50 value: 2,000 mg/kg bw.
+
+The CIR Expert Panel has evaluated scientific data and concluded that Ceteareth-20 was safe for use in cosmetics
+and personal car products. Ceteareth  ingredients should not be used on damaged skin or under conditions
+where N-nitroso compound can form.
+
+REFERENCE:
+
+Ceteareth-20, http://msds.orica.com/pdf/shess-en-cds-010-000000035853.pdf, Date of access: October 29th,
+2013
+
+Handbook of Cosmetic Ingredients, Their use, safety and toxicology; Anthony C. Dweck; 3rd Edition 2012
+===== PAGE 29/60 =====
+• EU INCI NAME: Disodium EDTA
+
+CAS: 139-33-3 / 6381-92-6
+
+EINECS: 205-358-3
+
+Appearance: Colourless solid
+Water Solubility: ca.100 g/l at 20 °C
+Melting Point: 248°C
+Boiling Point: Not available
+Flash point: > 100°C
+Relative density: Not available
+Structural formula:
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+===== PAGE 30/60 =====
+Margin of Safety:
+
+NOAEL Adult: Not available
+
+Toxicological Summary:
+
+The Food and Drug Administration (FDA) reviewed the safety of Disodium EDTA and Calcium Disodium EDTA and
+approved the use of these ingredients as food preservatives for direct addition to food.
+
+The safety of Disodium EDTA was assessed by the Cosmetic Ingredient Review (CIR) Expert Panel. The CIR Expert
+Panel evaluated the scientific data and concluded that Disodium EDTA and related ingredients were safe as used
+in cosmetics and personal care products.
+
+•    The actual or estimated LD50 value: 4070 mg/kg body weight.
+•    CIR: Maximum "as used" concentration for safe as used conclusion: less than 1%.
+•     Acute toxicity: LD50 Oral - rat - > 2.000 mg/kg
+•    Skin corrosion/irritation: Skin – rabbit. Result: No skin irritation (OECD Test Guideline 404).
+•    Serious eye damage/eye irritation: Eyes – rabbit. Result: No eye irritation (OECD Test Guideline 405).
+• Carcinogenicity: No component of this product present at levels greater than or equal  to  0.1%  is
+identified as probable, possible or confirmed human carcinogen by IARC.
+
+REFERENCE:
+
+Handbook of Cosmetic Ingredients, Their use, safety and toxicology; Anthony C. Dweck; 3rd Edition 2012
+
+Disodium EDTA MSDS, http://www.sigmaaldrich.com/catalog/product/sial/ed2ss?lang=en&region=SI, Date of
+access: March 7th, 2014
+===== PAGE 31/60 =====
+• EU INCI NAME: Glyceryl Stearate
+
+CAS: 31566-31-1
+
+EINECS: 250-705-4/286-490-9
+
+Appearance: Powder
+Water Solubility: Insoluble
+Melting Point: 58-61°C
+Boiling Point: Not available
+Flash point: 190-220°C
+Density (80°C): 0,900-0,915 g/cm3
+Structural formula:
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+In accordance with CIR, 2012 glyceryl stearate "As used" concentration for safe as used conclusion is up to 50 %.
+===== PAGE 32/60 =====
+Toxicological Summary:
+
+(Material Safety Data Sheet, 06/24/1999, KALICHEM S.r.l., Italy):
+
+Ocular irritation (OI):
+
+•   The product is non irritant (red blod test)
+
+Cutaneous irritation (PCI):
+
+•    The product is non irritant for the skin
+
+Sensibilisation:
+
+•    Not sensitizing
+
+(Olivoil products, New vegetable Lipoproteins, Surfactants and Emulsifiers “PEG FREE” created and patented by
+Kalichem Italia, Kalichem Italia s.r.l.):
+
+Test in-vitro results:
+
+•    Non-irritating (Red Blood Cell Test);
+
+Recommended docage:
+
+•    Between 3 and 10 %. In this cosmetic product is concentration of olivoil emulsifier within limits.
+===== PAGE 33/60 =====
+• EU INCI NAME: Citric acid
+
+CAS: 77-92-9 / 5949-29-1
+
+EINECS: 201-069-1
+
+Appearance: Solid
+Water Solubility: Soluble
+Melting Point: 153°C
+Boiling Point: Decomposes
+Specific gravity: 1.665 (water=1)
+Structural formula:
+
+Cosmetic Regulatory Summary:
+Cosmetics restriction (Cosing): None
+
+Systemic Exposure Dosage / Margin of Safety:
+SED Adult mg/kg bw/day: 0.0000343 – 5.717*10-5
+NOAEL Adult: 1200
+MoS Adult: 34985423 - 20990030
+===== PAGE 34/60 =====
+Toxicological Summary:
+
+No toxicological effect known.
+
+Studies shows  that citric acid is of low acute toxicity at animals and human. The NOAEL for repeated dose
+toxicity for rats is 1200 mg/kg/d. The major, reversible (sub)chronic toxic effects seem to be limited to changes
+in blood chemistry and metalabsorption/excretio n kinetics. Citric acid is not a carcinogen, a reprotoxic or
+teratogenic agent. The NOAEL for reproductive toxicity for rats is 2500 mg/kg/d. It is not mutagenic in vitro and
+in vivo. It has low sensitizing effect. In contrast, irritation, in particular of  the eyes but also of the respiratory
+pathways and the skin, is the major toxicological
+
+hazard presented by citric acid; this conclusion is confirmed by a series of reports relating to eye and skin
+irritation (INCHEM, 2001).
+
+REFERENCE:
+
+• Citric acid MSDS, http://www.sciencelab.com/msds.php?msdsId=9923494, Date of access: September
+26th, 2013
+===== PAGE 35/60 =====
+• EU INCI NAME: Ceteareth-12
+
+CAS: 68439-49-6
+
+EINECS: Not available
+
+Appearance: White solid
+Water Solubility: Soluble
+Melting Point: 34-37°C
+Boiling Point: Not available
+Flash point: > 200°F
+Structural formula (Ceteareth-n):
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+===== PAGE 36/60 =====
+Toxicological Summary:
+
+The CIR Expert Panel evaluated the scientific data and concluded that Ceteareth-2, -3, -4, -5, -6, -7, -8, -9, -10, -
+11, -12, -13, -14, -15, -16, -17, -18, -20, -22, -23, -24, -25, -27, -28, -29, -30, -33, -34, -40, -50, -55, -60, -80 and -
+100 were safe for use in cosmetics and personal care products.
+
+The CIR Expert Panel considered previous findings from the safety assessment of Polyethylene Glycol (PEG),
+several fatty alcohols (Cetearyl Alcohol, Cetyl Alcohol, and Stearyl Alcoh ol), and Steareths to supplement the
+data on the Ceteareth ingredients. These data indicated little evidence of toxicity. Data on the PEG ingredients
+indicated that when used on burn patients, PEGs may result in kidney effects. Therefore, the CIR Expert Pa nel
+also concluded that the Ceteareth ingredients should not be used on damaged skin.
+
+•    Irritancy: Cause eye irritation. May cause irritation to skin, mucous membranes and respiratory tract.
+•    Adverse Effects: May be harmful if swallowed in large quantities. Avoid prolonged or repeated exposure.
+May cause cancer, birth defects and or other reproductive harm.
+•    Toxicity Data: Oral: Rat: LD50: 5g/kg
+•    The actual or estimated LD50 value: 2,000 mg/kg bw.
+•  CIR: Concentration or other limitation on use for safe with qualifications conclusion: Ceteareths should
+not be used on damaged skin or under conditions where N-nitroso compounds can form.
+
+REFERENCE:
+
+Handbook of Cosmetic Ingredients, Their use, safety and toxicology; Anthony C. Dweck; 3rd Edition 2012
+Ceteareth-12, http://cosmeticsinfo.org/ingredient/ceteareth-12, Date of access: January 22nd, 2014
+Ceteareth-12 MSDS, http://www.e-bookspdf.org/download/ceteareth-12-msds.html, Date of access: January
+22nd, 2014
+===== PAGE 37/60 =====
+• EU INCI NAME: Sorbitan Caprylate
+
+CAS: 60177-36-8
+
+EINECS: 262-098-3
+
+Appearance: Bright yellow liquid
+Water Solubility: Soluble
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+===== PAGE 38/60 =====
+NOAEL: 1000
+
+Toxicological Summary:
+
+Sorbitan esters are waxy solids or viscous liquids soluble inorganic solvents. They are stable at pHs ranging from
+2 to 12. Hydrolysis of sorbitan fatty acid esters can occur in the presence of water at excessively high or low pH.
+
+Sorbitan esters are manufactured  by combining sorbitol with the appropriate fatty acid at  elevated
+temperatures.
+
+The results of oral toxicity studies of sorbitan fatty acid esters indicated that these sorbitans in low
+concentration were relatively nontoxic via ingestion. The lowest rat LD50 in the 20 sorbitan ester studies
+reported was 31 g/kg for sorbitan stearate. In subchronic feeding experiments of sorbitan laurate in a variety of
+species (chickens, rats, monkeys, and hamsters), no toxic effects were noticed when the ester concentration in
+the feed was less than 10%.
+
+.
+
+The sorbitan fatty acid esters (concentrations up to 100%) were generally minimal to mild skin irritants in various
+animal studies. n clinical studies, the sorbitan fatty acid esters were generally minimal to mild skin irritants in
+humans and 20% sorbitan sesquioleate increased the incidence of irritation or sensitization reactions produced
+in 709 patients with suspected contact dermatitis.
+
+•     Eye Irritation: not irritant
+===== PAGE 39/60 =====
+• EU INCI NAME: Ethylhexyl Palmitate
+
+CAS: 29806-73-3
+
+EINECS: 249-862-1
+
+Appearance: Liquid
+
+Water Solubility: Insoluble
+Melting Point: Not available
+Boiling Point: Not available
+Flash point: > 150°C
+Density (20°C): 0,86 g/cc
+Structural formula:
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+===== PAGE 40/60 =====
+Toxicological Summary:
+
+Acute toxicity:
+
+•     LD50 oral (rat):  34,240 mg/kg and 5,000 mg/kg
+•     LD50 dermal (rat-rabbit): > 2000 mg/kg
+•     LD50 dermal (rabbit): 5,000 mg/kg
+•     LC50 inhalation aerosols (rat): > 5 mg/l/4h
+•     LC50 inhalation vapours (rat): > 20 mg/l/4h
+
+The CIR Expert Panel has evaluated the scientific data and concluded that Ethylhexyl Palmitate is safe  as  cosmetic
+ingredient. The actual or estimated LD50value is 34240 mg/kg bw. Maximum concentration for safe as used
+conclusion: up to 46%.
+
+REFERENCE:
+
+Handbook of Cosmetic Ingredients, Their use, safety and toxicology; Anthony C. Dweck; 3rd Edition 2012
+===== PAGE 41/60 =====
+• EU INCI NAME: Paraffinum Liquidum
+
+CAS: 8012-95-1 / 8042-47-5
+EINECS: 232-384-2 / 232-455-8
+
+Appearance: Colorless liquid
+Water Solubility: Not soluble
+Melting Point: Undetermined
+Boiling Point: Undetermined
+Specific gravity: Not available
+Structural formula: Not available
+
+Cosmetic Regulatory Summary:
+Cosmetics restriction (Cosing): None
+
+Toxicological Summary:
+
+The Food and Drug Administration (FDA) has reviewed the safety of Mineral Oil and permits its use as a
+multipurpose direct food additive. The FDA also permits its use in Over -the-Counter (OTC) skin protectant drug
+preparations and in ophthalmic emollients.
+
+Irritation Data, rabbit (Std Draize):
+•    Skin = 100 mg/ 24H, mild; eye = 500 mg, moderate. Investigated as a tumorigen.
+
+Oral rat LD50:
+•     22 gm/ kg.
+
+White mineral oils have a long history of safe use by humans in orally ingested and topically applied products. A
+re-evaluation of the use of certain mineral hydrocarbons in the preparation of food items by regulators in the
+UK, however, has prompted addit ional safety studies and a critical assessment of the toxicological effects of
+white mineral oils. As white mineral oils are present in many topically applied drug and non -drug products, it is
+of interest to review the toxicological effects of mineral oil  produced by this route of exposure. Specifically, the
+concern regarding the safety of white mineral oils has arisen, in part, from results of subchronic (e.g 90 day)
+feeding studies that reported the presence of granulomas in liver and histiocytosis in mesenteric lymph nodes of
+Fischer 344 rats after oral ingestion of select white mineral oils. In contrast to these subchronic oral studies,
+===== PAGE 42/60 =====
+repeated topical exposure to white mineral oils has not been found to produce liver granulomas , histiocytosis in
+the mesenteric or other lymph nodes, or any local or systemic toxicity including tumour formation in Fischer 344
+rates, C3H mice, New Zealand White rabbits or beagle dogs at similar or higher exposures (mg/ kg/ day). On the
+basis of thes e findings and reports on negligible epidermal penetration of topically applied white mineral oils,
+there is no evidence of any hazard identified for topical exposure to white mineral oils at any dose in multiple
+species. This conclusion is supported by the long and uneventful human use of white mineral oils in drug and
+non-drug topically applied products. [CAS: 8012-95-1; EINECS: 232-384-2].
+
+Function:
+•    Antistatic/ emollient/ solvent/ skin protecting.
+
+The actual or estimated LD50 value:
+•     22,000 mg/ kg body weight.
+
+AICS status (NICNAS Australia):
+•     AICS Compliant.
+
+Oral LD50 value (rat):
+•     5,000 mg/ kg.
+
+Dermal LD50 value (rabbit):
+•     2,000 mg/ kg.
+
+REFERENCE:
+Dweck, Anthony (2011-09-03). Handbook of Cosmetic Ingredients - their use, safety and toxicology (Dweck Data
+handbooks) (Kindle Locations 17173-17180). Dweck Data. Kindle Edition.)
+===== PAGE 43/60 =====
+• EU INCI NAME: Cetyl Palmitate
+
+CAS: 540-10-3
+
+EINECS: 208-736-6
+
+Appearance: Solid
+
+Water Solubility: Not available
+Melting Point: 54°C
+Boiling Point: 360°C
+
+Specific gravity: 0.989 (water=1)
+Structural formula:
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+===== PAGE 44/60 =====
+Toxicological Summary:
+
+The CIR Expert Panel has evaluated the scientific data and concluded that Cetyl Palmitate was safe as cosmetic
+ingredient.
+
+•   Hazardous in case of ingestion, of inhalation. Slightly hazardous in case of skin contact (irritant).
+•   Draize test, rabbit, skin: 500 mg/24H, mild.
+
+•   The actual or estimated LD50 value: 14,000 mg/kg bw.
+•   Oral LD50 value (rat): 14,400 mg/kg.
+•   CIR: Maximum concentration for safe as used conclusion: up to 11%.
+
+Acute studies with rabbits showed no evidence of dermal of dermal toxicity. Rabbit skin tests with the Palmitates
+showed that they are nonirritating and nonsensitizing. Also, Draize rabbit eye irritation tests on the Palmitates
+produced either no or only very slight ocular irritation. Formulations containing Cetyl Palmitate at concentrations
+of 2.7% were minimally irritating and produced no signs of sensitization, phototoxicity or photo contact
+allergenicity. From the available information, it is concluded that Cetyl Palmitate is saf e as cosmetic ingredient in
+the present practices of use and concentrations.
+
+REFERENCE:
+
+Handbook of Cosmetic Ingredients, Their use, safety and toxicology; Anthony C. Dweck; 3rd Edition 2012
+
+Cetyl Palmitate MSDS, http://www.sciencelab.com/msds.php?msdsId=9923365, Date of access: January 22 nd,
+2014.
+===== PAGE 45/60 =====
+• EU INCI NAME: Polyquaternium-10
+
+CAS: 81859-24-7 / 53568-66-4 / 54351-50-7 / 55353-19-0 /
+ 68610-92-4 / 81859-24-7
+EINECS: *617-262-2 / *611-015-2 / - / - / *614-667-6 / -
+
+Appearance:  Solid
+Water Solubility: Soluble
+Melting Point: Not available
+Boiling Point: Not available
+Structural formula: Not available
+
+Cosmetic Regulatory Summary:
+Cosmetic restriction (Cosing): None
+===== PAGE 46/60 =====
+Margin of Safety:
+
+NOAEL Adult: Not available
+
+Toxicological Summary:
+
+The safety of Polyquaternium -10 has been assessed by the Cosmetic Ingredient Review (CIR) Expert Panel. The
+CIR Expert Panel evaluated the scientific data and concluded that Polyquaternium -10 was safe as a cosmetic
+ingredient. In 2005, the CIR Expert Panel considered available new data on Polyquaternium -10 and reaffirmed
+the above conclusion.
+
+•    The actual or estimated LD50 value: 16,000 mg/kg body weight.
+•    Oral LD50 value (rat): 16,000 mg/kg.
+•    Dermal LD50 value (rabbit): >2000 mg/kg
+•    CIR: Maximum "as used" concentration for safe as used conclusion: up to 5%.
+•   Chronic Effects on Humans: None of the components present in this material at concentrations equal to
+or greater than 0.1% are known carcinogens.
+•    Acute Effects – Skin: Moderately irritating to the skin. Practically non-toxic in contact with skin.
+•    Acute Effects – Eyes: Moderately irritating to the eyes.
+•   Other Toxic Effects on Humans: This product can produce a nuisance dust, which should be maintained
+below a time weighted average of 10 mg/m3.
+
+REFERENCE:
+
+Handbook of Cosmetic Ingredients, Their use, safety and toxicology; Anthony C. Dweck; 3rd Edition 2012
+===== PAGE 47/60 =====
+• EU INCI NAME: PERFUME (FRAGRANCE 431177)
+
+CAS: Not available
+EINECS: Not available
+
+Appearance: Light yellow liquid
+Water Solubility: Not available
+Flash Point: > 61 °C
+Boiling Point: Not available
+Density (20°C): 1.005 g/cm3
+
+Cosmetic Regulatory Summary:
+
+This perfuming compound is in compliance with the Standards of the International Fragrance Association (IFRA –
+47th Amendment of June 2013).
+
+Toxicological Summary:
+
+Liquid and vapour may be irritating to skin, eyes throat and lungs.
+
+9.   Undesirable effects and serious undesirable effects
+
+On request, the supplier has not supplied information of any reports known to him of serious undesirable
+effect or undesirable effects on the cosmetic product, or where relevant, other similar cosmetic products and
+this cannot be commented upon. If the supplier is aware of an abnormally high level of customer complaints
+the supplier must bring this to the attention of the safety assessor and submit this formulation for
+reassessment and notify the competent authorities of corrective actions taken.
+
+10. Information on the cosmetic product
+
+The product, wet wipes, with combination of ingredients that are commonly used in cosmetic prod ucts of
+this type. All ingredients are legally permitted and are in concentrations allowed to be used in cosmetics of
+this type. Concerning the skin tolerance the product is expected to be well tolerated and to have a good
+cosmetic acceptability.
+===== PAGE 48/60 =====
+PART B – Cosmetic product safety assessment
+
+Assessment conclusion
+
+The cosmetic product: Baby Wet Wipes Lotion
+and Baby Wet Wipes
+   can be assessed as
+
+SAFE
+
+for normal and reasonably foreseeable use in accordance with the European Council Directive (76/768/EEC) and
+the European Cosmetics Regulation (EC) No 1223/2009 (as amended) respectively. The ingredients are legally
+permitted as per Cosmetic Regulation (EC) No. 1223/2009 and its amendments and the safety assessment has
+been carried out in accordance to this regulation. They must comply with the relevant purity standards for
+cosmetic ingredients. It is assumed that these ingredients do not contain any undisc losed
+impurities/contaminants that would affect the conclusions reached. The product must be manufactured in
+accordance with EU Guidance on Good Manufacturing Practice.
+
+Labelled warnings and instructions of use
+Specific warnings and instructions of use are written on the primary packaging as follows:
+- DIRECTIONS: -
+- CAUTION:       For external use only. Do not use on mucous membranes and injured skin. Do not use near
+eyes. Keep out of reach of children.
+
+The product labelling and the general description of the product indicate the explicit use of the finished product
+as a leave -on wet wipes for babies intended for daily use. A reasonably foreseeable mistaken use additional to
+this use (not a misuse) is not recognisable.
+There are no ingredients incorporated in the finished product, which require additional directions, specific
+indications or warnings in accordance to the relevant Annexes of the European Council Directive (76/768/EEC)
+and the European Cosmetics Regulation (EC) No 1223/2009 (as amended) respectively.
+There are no ingredients incorporated in the finished product, which require additional indications, specific
+directions or warnings due to their toxicological and/or physical -chemical properties or because of their
+concentration in the finished product.
+===== PAGE 49/60 =====
+Reasoning
+
+Physical/chemical characteristics, stability and microbiological quality of the cosmetic product
+
+The stability data (microbiological and physical -chemical stability) of the formula after storage meet the
+previously specified characteristics of the product specifications. They confirm a sufficient stability of the tested
+formula.
+
+Based on the tests of accelerated stability program that includes physical stability results (refer to
+55904_15_JSHI_Z1 STAB COMPAT Piramida 72 test results), analytical results  (refer  to  Testing report  Fresh
+baby wet wipes 60-1 Lotion) and microbiological results (refer to 55904_15_JSHI_Z1 STAB COMPAT Piramida 72
+test results): The shelf life for the fin al product is 24 months. The final product is released with a date of
+minimum durability (DOMD) of 24 months. Based on the above mentioned physico‐chemical and microbiological
+test results the product is rated as safe.
+
+Packaging information
+The packaging of the product is made to protect the product during shelf life and use and to enable the safe use
+of the product. Based on that the packaging is rated to be suitable and safe for this specific product type. The
+package consists of a Printed foil (PET and LDPE) bags. This package does not contain hazardous materials that
+require special markings or labelling on the shippers.
+
+72/1 Printed foil bags
+
+Structure of
+Primary
+packaging
+description
+
+Thickness (µm)
+
+Weight (g/m2)
+
+Suppliers
+ DIN 53370 DIN 53352
+         PET 12 +/- 1,0 16,8 +/- 0,84
+            Papir Print d.o.o.
+Fabrika fleksibilne ambalaže
+Korčaginova br.65
+32300 Gornji Milanovac
+     Colour  Blue;Pink Blue;Pink
+        Glue 2,5-2,6
+
+2,5-2,6
+   PE white                         60 +/- 3,0
+
+60 +/- 3,0
+
+24/1 Printed foil bags
+
+Structure of
+Primary
+packaging
+description
+
+Thickness (µm)
+
+Weight (g/m2)
+
+Suppliers
+ DIN 53370 DIN 53352
+         PET 12 +/- 1,0 16,8 +/- 0,84
+            Papir Print d.o.o.
+Fabrika fleksibilne ambalaže
+Korčaginova br.65
+32300 Gornji Milanovac
+     Colour  Blue;Pink Blue;Pink
+        Glue 2,5-2,6
+
+2,5-2,6
+   PE white                         60 +/- 3,0
+
+60 +/- 3,0
+===== PAGE 50/60 =====
+Normal and reasonably foreseeable use
+The labelling as “Wet Wipes Lotion” in combination with the brand name “Fresh”, the directions for use and the
+general description of the product on the label indicate the explicit use of the finished product as a leave on wet
+wipes for babies. A reasonably foreseeable mistaken use, (not a misuse) is not recognizable.
+
+Exposure to the cosmetic product and the substances
+The calculation of the exposition to the product and the single ingredients was carried out according to the
+„SCCS’s Notes of Guidance for the testing of cosmetic ingredients and their safety evaluation, 8th revision 2012”.
+Specific exposure consideration for the targeted consumer group (babies) have been taken into account as
+documented in the exposure and MoS calculation. All ingredients (where the NOAEL value was available) have a
+sufficiently large MoS (>100), which is supporting the safety of the finished product.
+
+Raw materials (impurities, traces, toxicological profile)
+All raw materials used in the finished product meet the purity -requirements for cosmetic ingredients and were
+assessed as safe for the use as cosmetic ingredients, if necessary for the safety of the finished product, with
+limited conditions.
+===== PAGE 51/60 =====
+* Concerning to the safety of the ingredients the following parameters were taken into a ccount for the safety
+assessment:
+a) the kind of cosmetic product,
+b) the pH-value of the cosmetic product,
+c) the conditions for use of the cosmetic product,
+d) the degree of exposition of the assessed ingredient,
+e) the permissible maximum concentration of the assessed ingredient and
+f) possible indications, directions, and/or warnings due to the toxicological profile of single ingredients.
+
+On the basis of the calculation of the exposition of every single ingredient carried out, taken into account the
+conditions for use and the calculation of the exposition of the finished product, all ingredients can be assessed
+as safe and harmless, as single ingredients as well as in the current combination in the finished product. The
+assessments were drawn up based on the recent level of knowledge.
+
+Perfume Fragrance  431177 (Drom fragrances GmbH & Co. KG Oberdiller Straße 18, D -82065 Baierbrunn ) has
+been evaluated for safety when used up to 33.7% (W/W) in this kind of product. In the product is used up to 0.15%.
+Perfume Fragrance  431177 conforms to 47th Amendment,  the currently applicable Standard of the International
+Fragrance Association (IFRA).
+
+Undesirable effects and serious undesirable effects
+Data about undesirable effects and serious undesirable effects to cosmetic products in the EU are stored in the
+Consumer Response System (CRS) of the manufacturer of Consumer Companies.
+From the market launch as Wet Wipes Lotion until today the complaint statistics as documented in the
+Consumer Response System (CRS) of the manufacturer of Consumer Companies of this product show no
+remarkable raised consumer complaints regarding undesirable effects or serious undesirable effects in general.
+
+Information on the cosmetic product
+The product wet wipes may be used on daily basis.
+
+The packaging of cosmetic product should include the following information in indelible, easily legible and visible
+lettering
+- Brand name
+- Name of the product
+- Function of the cosmetic product (unless it is clear from its presentation)
+- Particular precautions for use
+- Date of minimum durability (for products with a minimum durability ≤ 30 months) or PAO   (for products
+with a minimum durability > 30 months)
+- Nominal quantity  (except  for packaging  containing less than 5 grams or 5 milliliters, free    samples and
+single-application packs)
+- Batch number or the reference for identifying the cosmetic product
+- Responsible person name and address
+- Manufacturer name and address
+- Products’ country of origin
+===== PAGE 52/60 =====
+The following ingredients must be written on the packaging of the product (ingredients present in more than 1% in
+the end product should follow in the same order as here):
+
+Ingredients (INCI)
+: Aqua, Phenoxyethanol, Sorbitan Caprylate, Parfum, Polysorbate  20,  Glycerin,  Caprylic/Capric
+Triglyceride,  Ethylhexyl  Palmitate,  Glyceryl  Stearate,  Paraffinum Liquidum, Ceteareth -20, Disodium EDTA,
+Cetearyl alcohol, Ceteareth-12, Cetyl Palmitate, Polyquaternium-10, Citric Acid.
+
+Concerning the skin  tolerance, the final product is expected to be well tolerated and to have a good cosmetic
+acceptability.
+===== PAGE 53/60 =====
+
+===== PAGE 54/60 =====
+
+===== PAGE 55/60 =====
+
+===== PAGE 56/60 =====
+
+===== PAGE 57/60 =====
+
+===== PAGE 58/60 =====
+
+===== PAGE 59/60 =====
+Belgrade, 15.04.2016.
+
+S T A T E M E N T
+
+We declare that Stevan N Blagojevi ć, work in the Institute of general and physical chemistry (IGPC), Belgrade,
+Serbia, form october 1993 (www.iofh.bg.ac.rs)
+Mr Blagojević, is Bachelor of Science in physical chemistry, Faculty of physical chemistry, University of
+Belgrade, Serbia 1993, 4 years academic study,
+After BSc diploma he study for Master of Science in physical chemistry, Faculty  of physical chemistry, University
+of Belgrade, Serbia 1997, 2 years academic study In 2014 Mr Blagojevi ć defended his PhD thesis in physical
+chemistry, and had a PhD in Science on University of Belgrade, Serbia.
+Working experience in this moment is 23.5 years in the Institute of general and physical chemistry, Belgrade,
+Serbia. He is more than 14 years Head of detegent lab in IGPC and from January 2016, General manager of the
+IGPC.
+Also, he is a Certified Teacher from Serbian Chemicals Agency, in the field of labeling chemicals, detergents,
+biocides and DSD/DPD and GHS labeling and a Certified chemical advisor from Serbian Chemicals Agency in the
+field of regulation  for chemicals.
+
+Head of IGPC lab
+
+Divna Majstorović, PhD phys.chem.
+===== PAGE 60/60 =====

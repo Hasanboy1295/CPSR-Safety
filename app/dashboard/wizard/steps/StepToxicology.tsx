@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useWizardText } from "@/lib/i18n";
+import { useLanguage, useWizardText, translateError } from "@/lib/i18n";
 import type { ExposureParams, IngredientRow, INCIComponent, ToxicologyProfile, ToxEndpointStatus, ProductInfo } from "@/lib/wizard-types";
 import { calcSED, calcMoS, judge } from "@/lib/calc";
 import { ttcScreen, type CramerClass } from "@/lib/ttc";
@@ -46,6 +46,7 @@ export function StepToxicology({
   exposure: ExposureParams;
   onExposureChange: (next: ExposureParams) => void;
 }) {
+  const { lang } = useLanguage();
   const t = useWizardText();
   const [expanded, setExpanded] = useState<string | null>(null);
   const childTargeted = isChildTargeted(productInfo.targetUser);
@@ -78,7 +79,7 @@ export function StepToxicology({
     formData.append("knownComponents", JSON.stringify(knownComponents));
     const res = await fetch("/api/extract/toxicology", { method: "POST", body: formData });
     const json = await res.json();
-    if (!res.ok) throw new Error(json.error || t("extractFailed"));
+    if (!res.ok) throw new Error(translateError(json.error_code, json.error, lang));
 
     const updates: ToxExtractUpdate[] = json.updates ?? [];
     onIngredientsChange(

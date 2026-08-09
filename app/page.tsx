@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useLanguage } from "@/lib/i18n";
+import { useLanguage, translateError } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { AuthStatus } from "@/components/AuthStatus";
 
@@ -18,6 +18,8 @@ type ApiResponse = {
   model?: string;
   demo?: boolean;
   error?: string;
+  error_code?: string;
+  message?: string;
 };
 
 const STEP_STATUS: Record<string, "live" | "planned"> = {
@@ -62,7 +64,7 @@ function Section({
 }
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ApiResponse | null>(null);
@@ -80,7 +82,7 @@ export default function Home() {
       const json = (await res.json()) as ApiResponse;
       setResult(json);
     } catch (err) {
-      setResult({ error: err instanceof Error ? err.message : String(err) });
+      setResult({ error_code: "generic", error: err instanceof Error ? err.message : String(err) });
     } finally {
       setLoading(false);
     }
@@ -239,7 +241,7 @@ export default function Home() {
 
           {result?.error && (
             <p style={{ color: "var(--danger)", marginTop: 16, fontSize: 14 }}>
-              Error: {result.error}
+              {translateError(result.error_code, result.error, lang)}
             </p>
           )}
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type DragEvent } from "react";
+import { useLanguage } from "@/lib/i18n";
 import { dropzone } from "@/lib/wizard-ui";
 
 export function FileDropzone({
@@ -14,6 +15,7 @@ export function FileDropzone({
   loadingLabel: string;
   onFile: (file: File) => Promise<void>;
 }) {
+  const { t } = useLanguage();
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -26,7 +28,7 @@ export function FileDropzone({
     // Katta faylni serverga umuman yubormaymiz — Vercel bunday so'rovni
     // bizning kodimizga yetkazmasdan, JSON bo'lmagan xato bilan rad etadi.
     if (file.size > MAX_BYTES) {
-      setError(`Fayl hajmi ${(file.size / 1024 / 1024).toFixed(1)}MB — 4MB dan kichik fayl tanlang.`);
+      setError(t("errFileSize").replace("{size}", (file.size / 1024 / 1024).toFixed(1)));
       if (inputRef.current) inputRef.current.value = "";
       return;
     }
@@ -35,7 +37,7 @@ export function FileDropzone({
     try {
       await onFile(file);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Xato yuz berdi");
+      setError(err instanceof Error ? err.message : t("errGeneric"));
     } finally {
       setBusy(false);
       if (inputRef.current) inputRef.current.value = "";

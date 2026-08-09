@@ -4,6 +4,7 @@ import { getSupabaseServerAuthClient } from "@/lib/supabase-server-auth";
 import { buildEvidencePack } from "@/lib/evidence-pack";
 import { buildCPSRPdf } from "@/lib/pdf-report";
 import { uploadArtifact } from "@/lib/storage";
+import { apiError, clientError } from "@/lib/errors";
 import type { CPSRReportDraft } from "@/lib/report";
 
 /**
@@ -11,18 +12,26 @@ import type { CPSRReportDraft } from "@/lib/report";
  * OLINMAYDI — server o'zi, hozir login qilgan foydalanuvchining haqiqiy
  * ismidan oladi (profiles.full_name). Shuning uchun hech kim "men X assessorman"
  * deb boshqa birovning nomidan imzo qo'ya olmaydi.
+ *
+ * assessorPosition/assessorQualification esa assessor'ning O'Z malaka
+ * ma'lumotlari (PDF'da ko'rsatiladi) — assessor-o'zi kiritadi, qoida bo'yicha
+ * CPSR'da baholovchining lavozimi va malakasi yozilishi shart.
  */
 export async function PUT(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   const assessor = await requireRole("assessor");
-  if (!assessor) return NextResponse.json({ error: "Assessor access only" }, { status: 403 });
+  if (!assessor) return clientError("assessor_only", undefined, 403);
 
   const { id } = await params;
-  const body = (await req.json()) as { finalConclusion?: string };
+  const body = (await req.json()) as {
+    finalConclusion?: string;
+    assessorPosition?: string;
+    assessorQualification?: string;
+  };
   if (!body.finalConclusion?.trim()) {
-    return NextResponse.json({ error: "'finalConclusion' shart" }, { status: 400 });
+    return clientError("invalid_request");
   }
 
   const supabase = await getSupabaseServerAuthClient();
@@ -35,8 +44,8 @@ export async function PUT(
 
   const certification = {
     assessorName: profile?.full_name ?? assessor.email ?? "assessor",
-    assessorPosition: "",
-    assessorQualification: "",
+    assessorPosition: body.assessorPosition?.trim() ?? "",
+    assessorQualification: body.assessorQualification?.trim() ?? "",
     reviewDate: new Date().toISOString().slice(0, 10),
     draftNotes: body.finalConclusion,
     selfCertified: true,
@@ -55,7 +64,7 @@ export async function PUT(
     })
     .eq("id", id);
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (error) return apiError(error, 500);
 
   // Imzolangandan keyin — yakuniy (imzolangan) PDF+ZIP'ni QAYTA yaratamiz,
   // chunki draft vaqtida saqlangan versiyada hali "not_reviewed" bo'lgan.

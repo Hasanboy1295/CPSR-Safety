@@ -1,3 +1,4 @@
+import "./server-websocket";
 import { createClient } from "@supabase/supabase-js";
 
 // Bu klient faqat server-side kodda (API route, script) import qilinadi.

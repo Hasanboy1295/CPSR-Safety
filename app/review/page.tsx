@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useLanguage, useWizardText } from "@/lib/i18n";
+import { useLanguage, useWizardText, translateError } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { AuthStatus } from "@/components/AuthStatus";
 import type { WizardData } from "@/lib/wizard-types";
@@ -26,11 +26,13 @@ type ProjectDetail = {
 };
 
 export default function ReviewPage() {
-  const { t: tBrand } = useLanguage();
+  const { t: tBrand, lang } = useLanguage();
   const t = useWizardText();
   const [list, setList] = useState<ProjectListItem[] | null>(null);
   const [selected, setSelected] = useState<ProjectDetail | null>(null);
   const [conclusion, setConclusion] = useState("");
+  const [position, setPosition] = useState("");
+  const [qualification, setQualification] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -38,14 +40,20 @@ export default function ReviewPage() {
     fetch("/api/review")
       .then((r) => r.json())
       .then((d) => setList(d.projects ?? []))
-      .catch((e) => setError(String(e)));
-  }, []);
+      .catch(() => setError(translateError("generic", undefined, lang)));
+  }, [lang]);
 
   async function openProject(id: string) {
     setSelected(null);
     setConclusion("");
+    setPosition("");
+    setQualification("");
     const res = await fetch(`/api/projects/${id}`);
     const json = await res.json();
+    if (json.error_code) {
+      setError(translateError(json.error_code, json.message, lang));
+      return;
+    }
     if (json.project) {
       setSelected({
         id: json.project.id,
@@ -65,9 +73,17 @@ export default function ReviewPage() {
       const res = await fetch(`/api/review/${selected.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ finalConclusion: conclusion }),
+        body: JSON.stringify({
+          finalConclusion: conclusion,
+          assessorPosition: position,
+          assessorQualification: qualification,
+        }),
       });
       const json = await res.json();
+      if (json.error_code) {
+        setError(translateError(json.error_code, json.message, lang));
+        return;
+      }
       if (json.error) throw new Error(json.error);
       setList((prev) => prev?.filter((p) => p.id !== selected.id) ?? null);
       setSelected(null);
@@ -154,6 +170,27 @@ export default function ReviewPage() {
               value={conclusion}
               onChange={(e) => setConclusion(e.target.value)}
             />
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <div style={field}>
+              <label style={label}>{t("assessorPosition")}</label>
+              <input
+                style={input}
+                value={position}
+                onChange={(e) => setPosition(e.target.value)}
+                placeholder="e.g. Head of R&D · Certified Safety Assessor"
+              />
+            </div>
+            <div style={field}>
+              <label style={label}>{t("assessorQualification")}</label>
+              <input
+                style={input}
+                value={qualification}
+                onChange={(e) => setQualification(e.target.value)}
+                placeholder="e.g. MSc Toxicology / RAC"
+              />
+            </div>
           </div>
 
           <div style={{ display: "flex", gap: 10 }}>
