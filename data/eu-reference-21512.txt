@@ -1,0 +1,248 @@
+SOURCE: EU reference CPSR #1 - BTI Marketing Ltd., Cosmetic Product Safety Report (Face/Body Paints), 2014, UK. Basis for the strict "MoS > 100" threshold wording and Part A/B layout.
+
+===== PAGE 1/7 =====
+BTI Marketing Ltd.    Telephone 0044 (0)1403 733962
+24 Crockhurst  e-mail: adrianmellor@btconnect.com
+Southwater
+West Sussex
+RH 13 9XA
+England
+VAT No. GB 992 6906 66
+
+Cosmetic Product Safety Report
+Product(s): Face/Body Paints
+Formation Reference: T3152, T3153, T3154, T3155,T3156, T3157, T3158
+Date: 27th March 2014
+CPSR Reference: BTI CPSR0072
+Customer/ Sponsor: UV Glow Ltd
+Part A
+Section 1 Quantitative & Qualitative Composition of the Product
+INGREDIENTS CAS Number
+%
+Weight
+AQUA (WATER)  7732-18-5  73.7468
+BENZOGUANAMINE/ FORMALDEHYDE/ MELAMINE CROSSPOLYMER  9.5
+TALC  14807-96-6  5
+DIMETHICONE  9006-65-9/63148-62-9  2
+TRIETHANOLAMINE  102-71-6  1.251
+ACRYLATES/STEARETH-20 METHACRYLATE COPOLYMER   0.9
+PROPYLENE GLYCOL  57-55-6  0.86
+AMMONIUM ACRYLATES COPOLYMER   0.24
+DMDM HYDANTOIN  6440-58-0  0.22
+METHYLPARABEN  99-76-3  0.2004
+CAMELIA SINENSIS (GREEN TEA) LEAF EXTRACT  84650-60-2  0.2
+TOCOPHERYL ACETATE  7695-91-2  0.2
+PROPYLPARABEN  94-13-3  0.10002
+CENTAUREA CYANUS (CORNFLOWER) FLOWER EXTRACT  84012-18-0  0.04
+CUCUMIS SATIVUS (CUCUMBER) FRUIT EXTRACT  89998-01-6  0.04
+SODIUM BENZOATE  532-32-1  0.0008
+PHENOXYETHANOL  122-99-6  0.00072
+SORBIC ACID  110-44-1  0.00016
+ETHYLPARABEN  120-47-8  0.00004
+BUTYLPARABEN  94-26-8  0.00004
+ISOBUTYLPARABEN  4247-02-3 0.00002
+MAY CONTAIN +/-
+CI 45161  3068-39-1 0.25
+CI 45174  73398-89-7 0.25
+CI 74160   147-14-8  0.25
+===== PAGE 2/7 =====
+CI 74260   1328-53-6  0.25
+CI 77891  13463-67-7  5
+DIETHYLAMINOMETHYLCOUMARIN   91-44-1  0.5
+SOLVENT YELLOW 172  68427-35-0 0.4
+ TOTAL 100%
+
+Section 2 Physical/Chemical Characteristics & Stability of the Cosmetic
+Product
+The individual ingredients used in the preparation of this Cosmetic Product are
+manufactured and purchased to agreed quality specifications which meet the
+Cosmetic Regulations EU1223/2009
+The finished Cosmetic Product is produced to an agreed specification and
+quality that meets the Cosmetic Regulations EU1223/2009
+The Stability of the Cosmetic Product has been demonstrated with Stability
+Tests conducted at 50C, Room Temperature & Elevated Temperature over a
+minimum period of three months and compared to the parameters of the
+specifications. This was sufficient to determine a shelf life of 30months
+unopened and a Period After Opening of 12months.
+
+Section 3 Microbial Quality
+The individual ingredients used in the preparation of this Cosmetic Product are
+manufactured and purchased to agreed Microbial Quality which meet the
+Cosmetic Regulations EU1223/2009
+The Microbial Quality of the finished Cosmetic Product has been tested
+following the Ph Eur Preservative Efficacy test and meets the requirements of
+the Cosmetic Regulations EU1223/2009
+
+Section 4 Impurities, Traces, Information about the Packaging Material
+The individual ingredients used in the preparation of this Cosmetic Product are
+manufactured and purchased to agreed Quality which does not contain any
+relevant toxicologically impurities or traces and meet the Cosmetic Regulations
+EU1223/2009
+The finished Cosmetic Product does not contain any relevant toxicological
+impurities or traces and meets the requirements of the Cosmetic Regulations
+EU1223/2009
+===== PAGE 3/7 =====
+The Primary Packaging used for the finished Cosmetic Product has been tested
+using against the specifications with a Compatibility Test and determined to be
+suitable.
+
+Section 5 Normal & Reasonable Foreseeable Use
+The Cosmetic Product is intended to be applied to the Face in sufficient quantity
+to perform the function of its intended use.
+
+Section 6 Exposure to the Cosmetic Product
+SCCS Notes of Guidance 7th Revision (Face Cream closest to Product)
+Application Area:   Face
+Assumed Amount Used:  1.54grams
+Frequency of Use:   2.14per day
+Default Body weight:  60kg
+Rinse Off/ Leave On  Leave On
+The Exposure to the Face Paint is 25.6667mg/kg bw/day.
+
+Section 7 Exposure to the Substances
+Calculation of MoS (Margin of Safety) all values must be greater than 100
+The Cosmetic Product is not expected to be used on a daily basis but
+infrequently.
+Restricted Ingredients:
+CI 77891   Annex IV/143 Purity Criteria as E171
+Methylparaben  Annex V/12  Maximum 0.4% Complies
+Ethylparaben  Annex V/12  Maximum 0.4% Complies
+Isobutylparaben  Annex V/12  Maximum 0.4% Complies
+Propylparaben  Annex V/12  Maximum 0.19% Complies
+Butylparaben  Annex V/12  Maximum 0.19% Complies
+Phenoxyethanol  Annex V/29  Maximum 1% Complie
+Sorbic Acid   Annex V/4  Maximum 0.6% Complies
+Sodium Benzoate  Annex V/1(c) Maximum 0.5% Complies
+===== PAGE 4/7 =====
+DMDM Hydantoin  Annex V/33  Maximum 0.6% below Free
+Formaldehyde Declaration Level
+Trithenolamine  Annex III/62 Purity Criteria & Not used with
+Nitrosating System
+
+See Section 10 below for remaining colour ingredients.
+
+Section 8 Toxicological Profile of the Substances
+The Toxicological Profiles of all Substances have been considered and are
+attached in the Appendix 1.
+Consideration is given to the main route of absorption for this Cosmetic Product
+with respect to its normal use. The calculation of the Margin of Safety in
+Section 7 gives confidence to a reasonable margin of safety that there are no
+toxicological concerns for this Cosmetic Product.
+Safety Data has been sourced from Cosing, CIR Safety Reports, SCCS
+Opinions, EFSA, TOXNET and INCHEM
+
+Section 9 Undesirable Effects & Serious Undesirable Effect
+The Cosmetic Product will be reviewed for serious undesirable effects and any
+adverse reactions will be reported back to the Safety Assessor for evaluation.
+
+Section 10 Information on the Cosmetic Product:
+The colour ingredients in these formulations are entrapped in the solid
+Benzoguanamine/ Formaldehyde/ Melamine Crosspolymer matrix, similar to
+that of glitters. The crosspolymer is only in contact with the skin. The polymer
+matrix is designed to be leach resistant and to encapsulate completely the
+colours.
+===== PAGE 5/7 =====
+PART B
+
+Section 1 CPSR Conclusion
+The Cosmetic Product Safety Assessment concludes that this product is safe for
+its intended use according to the data provided and meets the Regulation
+EU1223/2009. The Assessment has been conducted based on the information
+currently available and is subject to reviewed in light of regulatory changes or
+significant adverse reactions. It is recommended that the CPSR should be
+reviewed after two years.
+Section 2 Labelling Warnings & Instruction of Use
+The Label has been reviewed and is acceptable for this Cosmetic Product. No
+statutory warnings are required to be added.
+Section 3 Reasoning
+All ingredients are well known for Cosmetics Products and regularly used for
+this purpose. The Toxicological profile and Safety Evaluation concludes that the
+Cosmetic Product is suitable for the purpose intended if used in the manner
+intended.
+Section 4 Assessor’s Credentials & Approval of Part B
+The above Cosmetic Product is approved for use and conforms to the
+Regulation EU1223/2009 and may be placed on the market in Europe.
+
+Signed:
+
+Adrian P Mellor MRSC
+(Qualifications & Experience of the Safety Assessor is given in Appendix 2)
+
+Dated 27th March 2014
+===== PAGE 6/7 =====
+Appendix 1 References
+BENZOGUANAMINE/ FORMALDEHYDE/ MELAMINE CROSSPOLYMER
+Listed on Cosing
+
+CI 45161    3068-39-1
+Listed on Cosing
+
+CI 45174    73398-89-7
+Listed on Cosing
+
+SOLVENT YELLOW 172    68427-35-0
+Listed on Cosing
+
+CI 74160     147-14-8
+Permitted under Annex IV/105 EU1223/2009
+
+CI 74260     1328-53-6
+Listed on Cosing
+
+DIETHYLAMINOMETHYLCOUMARIN     91-44-1
+Listed on Cosing
+
+CI 77891 Titanium Dioxide  13463-67-7
+Titanium Dioxide is an Opacifying/ Colour Ingredient. It is permitted under Annex IV/1
+EU1223/2009 Maximum 25%. SCCNFP/0005/98 24/10/2000
+
+Water (Aqua) 7732-18-5
+Water has no Toxicological significance in this formulation
+
+Dimethicone 63148-62-9/ 9006-65-9
+CIR Final Report, International Journal Of Toxicology 2003, 22 (Suppl 2)211-315 Safe as used in
+Cosmetics
+
+Triethanolamine 102-71-6
+CIR Final Report Spet 26-27, 2011 Safe when used without Nitrosamine forming products
+
+Acrylates/ Steareth-20 Methacrylates Copolymer
+CIR Final Report Safe for Cosmetics, 25 June 2002
+
+Cucumis Sativus (Cucumber) Fruit Extract 89998-01-6
+Listed on Cosing
+
+Centaurea Cyanus (Cornflower) Flower Extract 84012-18-0
+Listed on Cosing
+
+Sodium Benzoate 532-32-1
+SCCP Opinion, Safe in Cosmetics at Specified levels 21st June 2005
+===== PAGE 7/7 =====
+Phenoxyethanol 122-99-6 Preservative pernitted
+under Annex VI EU1223/2009
+
+Sorbic Acid 110-44-1 Declared under Annex
+V/4 EU1223/2009
+
+Propylene Glycol 57-55-6
+EFSA Journal 2011:9(12) Doc 2482 Safe for Food
+
+Ammonium Acrylates Copolymer
+CIR Final Report Safe for Cosmetics, 25 June 2002
+
+DMDM Hydantoin 6440-58-0
+Preservative permitted under EU1223/2009 Annex V/33. SCCNFP/587/02 Final Opinion
+
+Camellia Sinensis (Green Tea) Leaf Extract 84650-60-2
+Listed on Cosing used as antioxidant
+
+Parabens (All)
+Listed under Annex VI/12 EU1223/2009, International Journal of Toxicology Suppl4:1-82, Safe in
+Cosmetics, SCCS Opinion on Parabens 2013
+
+Tocopheryl Acetate 7695-91-2
+CIR Expert Panel Final Report Safe For Cosmetics, International Journal of Toxicology Nov 2002
+Vol21 no3 51-116
+
+Talc    14807-96-6
+CIR Tenative Report, Safe for Cosmetics December 18, 2012

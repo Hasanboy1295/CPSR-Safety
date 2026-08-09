@@ -1,0 +1,1732 @@
+SOURCE: EU reference CPSR #3 - VENEKS cosmetic product safety report, Slovenia; Safety Assessor Matej Strelec; Ref L4613; Issue 2020-05-27. Standard EC 1223/2009 Annex I Part A + Part B structure.
+
+===== PAGE 1/41 =====
+C
+OSMETIC PRODUCT SAFETY REPORT
+According to EC Regulation 1223/2009
+VENEKS
+ISSUE DATE: May 27, 2020
+SAFETY ASSESSMENT REFERENCE NO.: L4613
+VERSION: IIS
+AFETY ASSESSOR
+Matej Strelec
+===== PAGE 2/41 =====
+PART A - COSMETIC PRODUCT SAFETY INFORMATION
+Product name Veneks
+Shade names /
+Product type Skin care product
+Formula number /
+Category of the product Body care product
+Physical form of the product Gel
+Target population Adults
+Primary site of application Body area
+Packaging type and size 200ml PP airless bottle
+Manufacturer name and
+addressBiovis d.o.o., Slovenija
+Producer name and address Premium marketing d.o.o., Slovenija
+1. QUANTITATIVE AND QUALITATIVE COMPOSITION OF THE COSMETIC PRODUCTINCI
+name Trade name CAS EINECS/ELINCS % active in the
+raw materialConcentration in
+the final productFunction
+AQUA 7732-18-5 231-791-2 100 85,9 SolventPROPYLENE GLYCOL
+GLICOLE
+PROPILENICO EP57-55-6
+200-338-01
+003
+Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingALOE BARBADENSIS
+LEAF JUICEALOE
+BARBADENSIS GEL
+1:185507-69-3
+/
+94349-62-9287-390-8 /
+305-181-21
+001
+Skin Conditioning
+PROPYLENE GLYCOL
+AESCULUS
+HIPPOCASTANUM
+GLYCOLIC
+EXTRACT57-55-6
+200-338-070-100
+1
+ Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingAQUA
+7732-18-5 231-791-2 2-5 Solvent
+AESCULUSH
+IPPOCASTANUM
+SEED EXTRACT8
+053-39-2 232-497-75
+-10SKIN CONDITIONING
+PROPYLENE GLYCOL
+E.G. RUSCO 1:2 PE
+57-55-6
+200-338-01
+0-500,6
+Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingRUSCUS ACULEATUS
+ROOT EXTRACT8
+4012-38-4 281-682-91
+0-50ASTRINGENT,
+REFRESHING, SKIN
+CONDITIONING,
+SOOTHING,
+STABILISING, TONICPROPYLENE GLYCOL
+E.G. CONSOLIDA
+MAGGIORE 1:2 PE57-55-6
+200-338-01
+0-500,7
+Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+Controlling2
+===== PAGE 3/41 =====
+SYMPHYTUM
+OFFICINALE ROOT
+EXTRACT8
+4696-05-9 283-625-31
+0-50ANTIDANDRUFF,
+SKIN CONDITIONING,
+SOOTHINGPROPYLENE GLYCOL
+E.G. VITE ROSSA
+1:2 PE57-55-6
+200-338-01
+0-500,7 Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingVITIS VINIFERA LEAF
+EXTRACT8
+5594-37-2
+/ 84929-27-
+12287-896-9 / 84
+-
+511-61
+00SKIN CONDITIONING
+AQUA
+BUCKWHEAT
+HYDROGLYCOLIC
+EXTRACT7
+732-18-5 231-791-2 25-500,6
+Solvent
+PROPYLENE GLYCOL
+57-55-6
+200-338-02
+5-50Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingPOLYGONUM
+FAGOPYRUM SEED
+EXTRACT8
+9
+958-09-8289-631-2
+0
+,1-1SKIN CONDITIONING
+PROPYLENE GLYCOL
+E.G. SOPHORA
+JAPONICA 1:2 PE57-55-6
+200-338-01
+0-500,6 Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingSOPHORA JAPONICA
+FLOWER EXTRACT9
+0131-19-4 290-329-81
+0-50SKIN PROTECTING,
+SOOTHINGPROPYLENE GLYCOL
+E.G. MIRTILLO
+BACCHE 1:1 PE57-55-6
+200-338-09
+3-980,4 Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingVACCINIUM
+MYRTILLUS FRUIT
+EXTRACT8
+4082-34-8 281-983-55
+-10SKIN CONDITIONING
+AQUA
+PINUS PINASTER
+HYDROGLYCOLIC
+EXTRACT7
+732-18-5 231-791-2 25-500,4
+Solvent
+PROPYLENE GLYCOL
+57-55-6
+200-338-02
+5-50Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingPINUS PINASTER
+LEAF/TWIG OILNot
+availableNot available
+0
+,1-1A
+NTIMICROBIAL,
+ANTIPERSPIRANT,
+DEODORANTMENTHOL
+MENTHOL,
+NATURAL PH.
+EUR.1
+490-04-6 /
+2216-51-5 /
+89-78-1 /
+15356-70-4216-074-4 / 218
+-
+690-9 / 201-939-0
+/ 239-388-31
+000,3
+DENATURANT,
+MASKING,
+REFRESHING,
+SOOTHINGALCOHOL
+64-17-5
+200-578-6 1000,7
+ANTIFOAMING,
+ANTIMICROBIAL,
+ASTRINGENT,
+MASKING, SOLVENT,
+VISCOSITY
+CONTROLLING3
+===== PAGE 4/41 =====
+MENTHA PIPERITA
+OILMENTHA PIPERITA
+ESSENTIAL OIL8
+006-90-4 /
+84082-70-2-
+/ 282-015-4 1000,1
+MASKING,
+PERFUMING,
+REFRESHING, TONICPROPYLENE GLYCOL
+E.G. GINKGO
+BILOBA 1:2 PE57-55-6
+200-338-01
+0-500,6 Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingGINKGO BILOBA LEAF
+EXTRACT9
+0045-36-6 289-896-41
+0-50SKIN CONDITIONING
+P
+ROPYLENE GLYCOL CHAMOMILLA
+RECUTITA
+GLYCOLIC
+EXTRACT57-55-6
+200-338-070-100
+0,5 Humectant, Skin
+Conditioning,
+Solvent, Viscosity
+ControllingAQUA
+7732-18-5 231-791-2 2-5 Solvent CHAMOMILLA
+RECUTITA EXTRACT8
+4082-60-0 282-006-55
+-10SKIN CONDITIONING
+CALENDULA
+OFFICINALIS FLOWER
+EXTRACTCALENDULA
+OFFICINALIS
+GLYCOLIC
+EXTRACT8
+4776-23-8 283-949-51
+000,5
+MASKING,
+PERFUMING, SKIN
+CONDITIONINGSODIUM HYDROXIDE
+SODIUM
+HYDROXIDE
+FLAKES1
+310-73-2 215-185-51
+00,5 Buffering,
+DenaturantAQUA
+7732-18-5 231-791-2 90 SolventC
+ARBOMER CARBOMER9
+007-20-9 /
+9003-01-4 /
+76050-42-5
+/ 9062-04-8
+/ 9007-16-3
+/ 9007-17-4Not available
+1
+000,5
+EMULSION
+STABILISING, GEL
+FORMING, VISCOSITY
+CONTROLLINGPANTHENOL
+PANTENOLO D
+75W81-13-0 /
+16485-10-2201-327-3 / 240
+-
+540-61
+000,2
+ANTISTATIC, HAIR
+CONDITIONING, SKIN
+CONDITIONINGPEG-40
+HYDROGENATED
+CASTOR OILPEG 40 OLIO
+RICINO
+IDROGENATO6
+1788-85-0 Not available1
+000,3
+EMULSIFYING,
+SURFACTANTBENZYL ALCOHOL
+CALDISTAT DB
+100-51-6
+202-859-95
+0-900,9 Perfuming,
+Preservative
+Solvent, Viscosity
+ControllingD
+EHYDROACETIC
+ACID520-45-6 /
+771-03-9 /
+16807-48-0208-293-9 / 212
+-
+227-4 / -5
+-10PRESERVATIVE
+4
+===== PAGE 5/41 =====
+2
+. PHYSICAL/CHEMICAL CHARACTERISTICS AND STABILITY OF THE COSMETIC PRODUCT
+a. PHYSICAL/CHEMICAL CHARACTERISTICS AND STABILITY OF SUBSTANCES OR MIXTURESS
+ubstance (INCI) / Mixture Chemical NAME Physical formM olecular weight
+(g/mol)W
+ater Solubility
+/SolubilityP artition coefficientA bsorption spectra
+(UV absorbers)A
+QUA Water Liquid 18.02 g/mol Soluble in alcohol Not availableN ot applicableP
+ROPYLENE GLYCOL Propane-1,2-diol Liquid 76.09Fully miscible
+(100%) with water
+in all proportions at
+20 ˚C and pH = 7.1-
+7.8; miscible with
+alcohol and many
+organic solvents.l
+og POW = -1.07 at
+20°CN ot applicableA
+LOE BARBADENSIS
+LEAF JUICEN ot applicable Liquid Not available Not available Not availableN ot applicableBENZYL
+ALCOHOL Benzyl alcohol Liquid 108.14Very soluble in
+water as 1 g is
+dissolved in 25 mL
+water at 25 °C.l
+og POW = 1.1 at 20 °C Not applicableV
+ITIS VINIFERA LEAF
+EXTRACTN ot availableRed to brown
+powder or liquidN ot available SolubleN ot availableN ot availableALCOHOL
+Ethanol Liquid 46.07 Solublel og POW = -0.31 Not applicableCALENDULA
+OFFICINALIS FLOWER
+EXTRACTN
+ot available Liquid Not available Not available Not availableA
+bsorb in the UVC
+region of the
+spectrum and in
+the visible
+spectrumC
+ARBOMER Not available Liquid Not available Not available Not available Not applicable
+SYMPHYTUMOFFICINALE ROOT
+EXTRACTN
+ot availableS lightly opalescent
+liquidN ot available SolubleNot available Not availableR
+USCUS ACULEATUS
+ROOT EXTRACTN ot applicable Liquid Not available SolubleN ot availableN ot applicableS
+OPHORA JAPONICA
+FLOWER EXTRACTN ot available Liquid Not available SolubleN ot availableN ot availableMENTHOL
+C
+yclohexanol, 5-
+methyl-2-(1-
+methylethyl)-P
+owder 156.27420-508 mg/l at
+20°Clog POW = 3.4 N ot applicableGINKGO BILOBA LEAF
+EXTRACTN ot applicable Liquid Not available Not available Not availableN ot applicablePEG-40
+HYDROGENATED
+CASTOR OILN
+ot available Liquid Not available Not available Not availableN ot applicableP
+ANTHENOLB
+utanamide, 2,4-
+dihydroxy-N-(3-
+hydroxypropyl)-
+3,3-dimethyl-,
+(2R)-; dl-
+PanthenolL
+iquid 205.25Freely soluble in
+water and alcoholl
+og POW = -1.06 at
+22°CN ot applicableAESCULUS
+HIPPOCASTANUM
+SEED EXTRACTN
+ot available Liquid Not available Not availableNot
+available Not availableMENTHA
+PIPERITA OIL Not applicable Liquid Not available Not available Not availableN ot applicableDEHYDROACETIC ACID
+3-Acetyl-6
+-
+methyl-2H-pyran-
+2,4(3H)-dioneP
+owder 168.16 < 1 g/l at 25°C Not availableN ot applicable5
+===== PAGE 6/41 =====
+CHAMOMILLA
+RECUTITA EXTRACTN ot available Liquid Not available SolubleNot available Not availableS
+ODIUM HYDROXIDESodium
+hydroxideS olid 40.00Miscible at all
+proportions but
+solidifies at 20°C if
+the concentration
+is higher than 52%
+(by weight).Not relevant for
+ionisable compounds.N ot applicableVACCINIUM
+MYRTILLUS FRUIT
+EXTRACTN
+ot available Liquid Not available Not solubleNot available Not availablePOLYGONUM
+FAGOPYRUM SEED
+EXTRACTNot
+available LiquidNot
+available Not available Not available Not availableP
+INUS PINASTER
+LEAF/TWIG OILN ot applicable Liquid Not available Not available Not availableN ot applicableb
+. PHYSICAL/CHEMICAL CHARACTERISTICS OF THE FINISHED COSMETIC PRODUCTc
+. STABILITY OF THE COSMETIC PRODUCTT
+he physical stability of the finished product is justified on the basis of the Stability report document,
+which is ensuring that no changes in physical state of the finished product occur during transport,
+storage or handling of the product.
+The stability testing was performed according to the accelerated method (12 weeks ate 5°C, room
+temperature and 40°C; product stored in original packaging and glass container), results below were
+obtained:6
+===== PAGE 7/41 =====
+B
+ased on the test results, a period after opening (PAO) of 12 M is currently assigned to this product.
+.
+3. MICROBIOLOGICAL QUALITY
+a. MICROBIOLOGICAL QUALITY OF SUBSTANCES AND MIXTURES S
+ubstances and mixtures susceptible to microbial
+growth (water based mixtures, protein - rich
+materials, plant or animal raw materials)P
+resentR
+aw materials which do not support microbial
+growth (organic solvents)N
+ot presentb
+. MICROBIOLOGICAL QUALITY OF THE FINISHED COSMETIC PRODUCT
+According to the 'Guidelines on Microbiological Quality of the finished product' (SCCS Notes of Guidance),
+the following limits apply:
+Category 1: Products specifically intended for children under 3 years, eye area and mucous membranes.
+Category 2: Other cosmetic products.7
+===== PAGE 8/41 =====
+(
+Source: The SCCS Notes of Guidance for testing of cosmetic ingredients and their safety evaluation,
+SCCS/1602/18, October 2018)
+This product was evaluated according to the category 2, and the following results were obtained:The results show, that the microbiological purity of the product is acceptable and meets the criteria
+listed above.
+The efficacy of the preservation of a finished cosmetic product was assessed experimentally in order to
+ensure microbial stability and preservation during storage and use. The challenge test was performed
+according to the ISO 11930 method and meets the industry requirements specified in the Notes of
+guidance for testing of cosmetic ingredients for their safety evaluation, 10th revision (SCCS/1602/18,
+October 2018)8
+===== PAGE 9/41 =====
+4
+. IMPURITIES, TRACES, INFORMATION ABOUT THE PACKAGING MATERIAL
+a. IMPURITIES AND TRACES
+The test stability and compatibility test was performed according to the generally acceptable method.
+This product is manufactured according to Good Manufacturing Practice (ISO 22716). Ingredients used
+throughout must be of a high quality and (where specified) they have to meet purity criteria listed in the
+Cosmetics legislation. Information provided on ingredient purity and representative certificates of analysis
+are held in the PIF and are acceptable.
+b. THE RELEVANT CHARACTERISTICS OF PACKAGING MATERIAL
+The product is packaged in a 200ml PP airless bottle. These packaging components are widely used for
+consumer products. They are non-porous to inks and adhesives and are unlikely to react chemically with
+this product. They are considered to be safe since there is no evidence of a possible migration of packaging
+components into the product.5
+. NORMAL AND RESONABLY FORSEEABLE USE
+This product is a leave on body care product intended to be used by adults on daily basis.
+Instructions for use written on the label Veneks Forte Plus zjutraj in pred spanjem s krožnimi gibi, od
+spodaj navzgor, vmasirajte na želena mesta. Izdelek je
+prijetnega vonja, nelepljiv in se hitro vpije. Po uporabi si
+umijte roke.
+Precautions for use written on the label Pazite da ne pride v stik z očmi ali sluznico. Hranite izven
+dosega otrok, lahko na sobni temperature.A
+clear explanation of the normal intended use and the reasonably foreseeable use is provided on the
+product label and therefore a mistaken use (not a misuse) is not recognisable.9
+===== PAGE 10/41 =====
+6
+. EXPOSURE TO THE COSMETIC PRODUCTProduct Type:
+B ody lotionTargeted Population:
+A dultsEstimated daily amount applied (g):
+7,82* Skin Surface Area of Application/cm
+2 :1 5670*Calculated daily exposure (g/day)
+7,82* Calculated relative daily exposure (mg/kg
+bw/day):1 23,2*Amount Per Unit Area of Skin per day
+mg/cm2/day:0,5
+Exposure time:
+1 2h**Frequency of application:
+2,28* Part of the body exposed:
+Area body, area hands *
+* SCCS Body lotion; ** RIVM, body lotion10
+===== PAGE 11/41 =====
+7
+. EXPOSURE TO THE SUBSTANCES
+INCI Retention factor POD SED MoS
+AQUA 1 Not available 57,933 /P
+ROPYLENE
+GLYCOL1 1700 5,930 286,6698519ALOE
+BARBADENSIS
+LEAF JUICE1
+1500 0,652 2301,790281 B
+ENZYL ALCOHOL 1 200 0,652 306,9053708 V
+ITIS VINIFERA
+LEAF EXTRACT1 1780 0,587 3034,953112 ALCOHOL
+1 2400 0,587 4092,071611
+CALENDULAOFFICINALIS
+FLOWER EXTRACT1
+160 (NOEL) 0,456 350,7489953 C
+ARBOMER 1 Not available 0,456 /
+SYMPHYTUMO
+FFICINALE ROOT
+EXTRACT1
+Not available 0,456 /RUSCUS
+ACULEATUS ROOT
+EXTRACT1
+Not available 0,391 /SOPHORA
+JAPONICA
+FLOWER EXTRACT1
+Not available 0,391 / M
+ENTHOL 1 200 0,391 511,5089514 G
+INKGO BILOBA
+LEAF EXTRACT1 7,4 0,391 /PEG-40
+HYDROGENATED
+CASTOR OIL1
+Not available 0,326 / P
+ANTHENOL 1 200 0,326 613,8107417
+AESCULUSH
+IPPOCASTANUM
+SEED EXTRACT1
+Not available 0,326 /MENTHA
+PIPERITA OIL1 200 0,326 613,8107417D
+EHYDROACETIC
+ACID1 100 0,261 383,6317136C
+HAMOMILLA
+RECUTITA
+EXTRACT1
+Not available 0,261 /SODIUM
+HYDROXIDE1 Not available 0,196 /11
+===== PAGE 12/41 =====
+VACCINIUM
+MYRTILLUS FRUIT
+EXTRACT1
+Not available 0,196 /POLYGONUM
+FAGOPYRUM
+SEED EXTRACT1
+Not available 0,130 /P
+INUS PINASTER
+LEAF/TWIG OIL1 Not available 0,065 /Calculations of Margin of Safety (MoS) have been determined for all ingredients where this is possible
+from published toxicity information. The method used to do this is:
+SED (whole product)*% ingredient = SED (ingredient)
+MoS = POD (ingredient)/SED (ingredient).
+In every case, the MoS is >100 which is considered to be acceptable. In addition, calculations are also
+presented to show by how much each ingredient is below the recommendations of industry (CTFA) and
+those required by European cosmetic legislation. All ingredients fall below any recommended maxima.12
+===== PAGE 13/41 =====
+8
+. TOXICOLOGICAL PROFILE OF THE SUBSTANCES
+INCI name AQUA
+Restriction None
+General descriptionSimply water unlikely to cause irritation, allergy
+or harm. Used in many cosmetic products as a
+solvent and necessary to sustain biological life.
+The source of water should be known, monitored
+to GMP and either a deionised or high purity
+grade free from toxins, pollutants and
+bacteriological contamination should be used in
+cosmetic products.
+Acute toxicity via relevant routes of exposure Not toxic. The actual or estimated LD50 value:
+100000 mg/kg. Oral Rat LD50: >90 mL/kg.
+Skin irritation and skin corrosivity Not irritating
+Mucous membrane irritation (eye irritation) Not irritating
+Skin Sensitization Not sensitizing
+Dermal/ percutaneous absorption Non-permeator by skin R
+epeated dose toxicity (normally 28- or 90-day
+studies)N
+ot available M
+utagenicity/ genotoxicity Not available
+Carcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+Nanomaterials Not applicable
+Reference (1) Dweck A. C. Handbook of Cosmetics
+Ingredients - their use, safety and toxicology.
+Third edition, 2012.
+INCI name PROPYLENE GLYCOL
+Restriction None
+General descriptionP ropylene Glycol is an organic alcohol. It is one of
+the most widely used ingredients in cosmetics
+and personal care products. Propylene Glycol is
+used in many types of cosmetic formulations
+including fragrances. It can act as a penetration
+enhancer for some chemicals and under some
+conditions. Often, it works synergistically with
+other enhancers; mechanism has not been
+definitively identified. The safety of Propylene
+Glycol has been assessed by the CIR Expert Panel.13
+===== PAGE 14/41 =====
+T
+he CIR Expert Panel evaluated the scientific data
+and concluded that Propylene Glycol is safe for
+use in cosmetic products at concentrations up to
+50%. Not considered to be acute or chronic
+toxicant in oral or dermal studies, not genotoxic
+or carcerogenic, not reproductive or
+developmental toxicant.
+Acute toxicity via relevant routes of exposure Oral LD50 (rat): 20000 mg/kg; Oral LD50 (mouse):
+22000 mg/kg; Oral LD59 (rabbit): 18500 mg/kg;
+Dermal LD50 (rabbit) > 2000 mg/kg.
+Skin irritation and skin corrosivity Not irritating to rabbit skin. Undiluted Propylene
+Glycol minimally irritating to mice.
+Mucous membrane irritation (eye irritation) Undiluted Propylene Glycol less than marginally
+irritating to the eyes of rabbits.S
+kin SensitizationNot sensitizing. In a provocative study in which
+the sensitization potential of Propylene Glycol
+(PG) was evaluated in patients with contact
+dermatitis, 5% PG in petrolatum did not cause any
+positive reactions in a patch test.Dermal/
+percutaneous absorption Dermal penetration of propylene glycol from a
+ternary cosolvent solution through hairless mouse
+skin was 57% ove a 24-hour period. Propylene
+glycol molecules did not reach the dermis in
+human skin.R
+epeated dose toxicity (normally 28- or 90-day
+studies)In long-term (2-year) oral toxicity study of
+propylene glycol in rats there were no adverse
+effects noted at the highest dose tested: NOAEL
+(male, rat) = 1700 mg/kg bw/day (actual dose
+received); NOAEL (female, rat) = 2100 mg/kg
+bw/day (actual dose received). In this study next
+to histopathological examinations and gross
+necropsy haematological examination and
+urinalysis were performed.M
+utagenicity/ genotoxicity Not genotoxic
+CarcinogenicityThere was no evidence of carcinogenicity in rats
+treated by repeated oral administration, and
+more limited skin-painting studies in mice and
+rabbits also failed to detect carcinogenic
+potential.
+Reproduction toxicity Not reproductive or developmental toxicant
+Toxicokinetics (ADME studies)Available data indicate rapid and extensive
+absorption in humans as well as animals. The
+distribution in total body water is rapid. The
+excretion of propylene glycol is species-14
+===== PAGE 15/41 =====
+d
+ependent. Humans clear about 45% of
+propylene glycol via kidney.
+Phototoxicity / Photosensitization No data
+Nanomaterials Not applicable
+Reference(1) ECHA. Retrieved from
+http://echa.europa.eu/information-on-
+chemicals/registered-substances
+(2) Gaunt et al. Long-term toxicity of propylene
+glycol in rats. Fd Cosmet Toxicol, 10, 151-162,
+1972.(NOAEL)
+(3) CIR Expert Panel, Fiume et al.Safety
+assessment of propylene glycol, tripropylene
+glycol, and PPGs as used in cosmetics.
+International Journal of Toxicology. 31(5):245-
+260, 2012.
+(4) Dweck A. C. Handbook of Cosmetics
+Ingredients - Their Use, Safety and Toxicology.
+Third edition, 2012.
+INCI name ALOE BARBADENSIS LEAF JUICE
+Restriction  NoneG
+eneral descriptionThere are more than 200 compounds found in
+Aloe Barbadensis, about 75 of which have
+biological activity. The prominent components
+are anthraquinones, Aloin, Aloe emodine
+polysaccharides, enzymes, reducing sugars,
+organic acids, metallic cations. Aloe barbadensis-
+derived ingredients were not toxic in acute
+animal oral studies. The US FDA reviewed the
+safety of Aloe barbadensis and determined that it
+may be used as natural flavoring substance for
+direct addition to food. Aloe Barbadensis Leaf
+Juice has been reviewed by the CIR Expert Panel
+and deemed safe as cosmetic ingredient, if
+anthraquinone levels do not exceed 50 ppm.A
+cute toxicity via relevant routes of exposure Aloe barbadensis-derived ingredients were not
+toxic in acute animal oral studies. Oral LD50 (rat):
+16000 mg/kg. In parenteral studies, the LD50
+using mice was > 200 mg/kg, rats  > 50 mg/kg,
+and dogs > 50 mg/kg. In intravenous studies the
+LD50 using mice was > 80 mg/kg, rats > 15 mg/kg,
+and dogs > 10 mg/kgSkin
+irritation and skin corrosivity Not irritating15
+===== PAGE 16/41 =====
+Mucous
+membrane irritation (eye irritation) Not available
+Skin Sensitization Not sensitizing
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-days
+tudies)The 14-day no observed effect level (NOEL) for
+the Aloe polysaccharide, acemannan, in the diet
+of Sprague-Dawley rats, was 4100 - 4600 mg/kg
+day.M
+utagenicity/ genotoxicityBoth negative and positive results were found in
+bacterial and mammalian cell genotoxicity assays
+using Aloe barbadensis-dervied material, Aloe
+Ferox-derived material, and various
+anthraquinones derived from Aloe.
+Carcinogenicity Animal data suggest that components of Aloe
+inhibit tumor growth.
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies)Oral administration of various anthraquinone
+components resulted in a rise in blood
+concentrations, wide systemic distribution,
+accumulation in the liver and kidneys, and
+excretion in urine and feces. Intravenous
+injection or oral administration of aloemannan (a
+polysaccharide component) resulted in systemic
+distribution and metabolism into smaller
+molecules.
+Phototoxicity / Photosensitization Not available
+Nanomaterials Not applicable
+Reference(1) CIR Expert Panel. Final Report on the Safety
+Assessment of Aloe (various forms). International
+Journal of Toxicology 26(Suppl. 2):1-50, 2007.
+(2) Dweck A. C. Handbook of Cosmetics
+Ingredients - their use, safety and toxicology.
+Third edition, 2012.
+INCI name AESCULUS HIPPOCASTANUM SEED EXTRACT
+Restriction NoneG
+eneral descriptionAesculus Hippocastanum Seed Extract is an
+extract of the nut of the Horse Chestnut,
+Aesculus hippocastanum L., Hippocastanaceae
+Historically the seeds and bark of horse chestnut
+were used for the treatment of piles
+(haemorrhoids) and as an external application to
+slow healing ulcers. In addition, the plant
+contains a material called aescin, which is very
+useful for the treatment of16
+===== PAGE 17/41 =====
+oedema, varicose veins and the swelling in
+bruises. There is good evidence to show that it
+helps remove the dark circles under eyes.
+Acute toxicity via relevant routes of exposure The actual or estimated LD50 value: 5,000 mg/kg
+body weight.
+Skin irritation and skin corrosivity Not available
+Mucous membrane irritation (eye irritation) Not available
+Skin Sensitization Not available
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-day
+studies)Not available
+Mutagenicity/ genotoxicity Not available
+Carcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+NanomaterialsR
+eference(1) Dweck A. C. Handbook of Cosmetics
+Ingredients - Their Use, Safety and Toxicology.
+Third edition, 2012.I
+NCI name RUSCUS ACULEATUS ROOT EXTRACT
+Restriction NoneG
+eneral descriptionR uscus Aculeatus Root Extract is an extract of the
+roots of the Butcheerbroom, Ruscus aculeatus,
+Liliaceae. Ruscus extract is considered safe and
+effective tratement for patients suffering from
+chronic venous insufficiency in recommended
+daily dosage.A
+cute toxicity via relevant routes of exposure The actual or estimated LD50 value: 5000 mg/kg
+Skin irritation and skin corrosivity Not available
+Mucous membrane irritation (eye irritation) Not available
+Skin Sensitization Not available
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-day
+studies)Not available
+Mutagenicity/ genotoxicity Not available
+Carcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+Nanomaterials Not applicable17
+===== PAGE 18/41 =====
+R
+eference(1) Dweck A. C. Handbook of Cosmetics
+Ingredients - Their Use, Safety and Toxicology.
+Third edition, 2012.I
+NCI name SYMPHYTUM OFFICINALE ROOT EXTRACT
+Restriction NoneG
+eneral descriptionSymphytum Officinale Root Extract is the extract
+of the roots of the Comfrey, Symphytum
+officinale L., Boraginaceae. Comfrey has
+traditionally been both applied to the skin
+(topically) for inflammation, pain and wound
+healing, and taken by mouth (orally) for
+gastrointestinal, respiratory and gynecological
+concerns. Although evidence supporting oral use
+of comfrey is lacking, clinical trials suggest topical
+comfrey may be advantageous for pain and
+inflammation associated with injuries. Although
+comfrey has been traditionally used both orally
+and topically, recent evidence suggesting
+carcinogenic and hepatotoxic effects has led to
+withdrawal of oral products from the market in
+many countries and warnings to avoid use on
+open wounds. These uses have been tested in
+humans or animals. Safety and effectiveness have
+not always been proven. Some of these
+conditions are potentially serious, and should be
+evaluated by a qualified healthcare provider.A
+cute toxicity via relevant routes of exposure The actual or estimated LD50 value: 300 mg/kg
+body weight.
+Skin irritation and skin corrosivity Not available
+Mucous membrane irritation (eye irritation) Not available
+Skin Sensitization Not available
+Dermal/ percutaneous absorption Not available R
+epeated dose toxicity (normally 28- or 90-day
+studies)N
+ot available M
+utagenicity/ genotoxicity Not available
+Carcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+NanomaterialsR
+eference(1) Dweck A. C. Handbook of Cosmetics
+Ingredients - Their Use, Safety and Toxicology.
+Third edition, 2012.18
+===== PAGE 19/41 =====
+I
+NCI name VITIS VINIFERA LEAF EXTRACT
+Restriction NoneG
+eneral descriptionVitis Vinifera Leaf Extract is an extract of the
+leaves of the Grape, Vitis Vinifera L., Vitaceae.
+Antioxidative properties of red wine/ grapes
+believed to be due to the content of phenolic
+components. In comparison to red wine, white
+wine has a much lower antioxidant capacity.A
+cute toxicity via relevant routes of exposure The actual or estimated LD50 value: 5,000 mg/kg
+body weight
+Skin irritation and skin corrosivity Not irritant (grape fruit extract, dermal irritation
+test in human skin)
+Mucous membrane irritation (eye irritation) Not irritaing (EpiOcular MTT)
+Skin Sensitization Not sensitizing (HRIPT)
+Dermal/ percutaneous absorption Not availableR
+epeated dose toxicity (normally 28- or 90-day
+studies)In 90 day dietary repeated dose studies in rats,
+the NOAEL of grape seed extract and grape skin
+extract were approximately 2150 and 1780mg/kg
+bw/day for male and female rats respectively.M
+utagenicity/ genotoxicity Not mutagenic (grape seed extract, in vitro
+Amnes)
+Carcinogenicity Not carcinogenic
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+NanomaterialsR
+eference(1) CIR Expert Panel. Safety Assessment of Vitis
+Vinifera (Grape)-Derived Ingredients as Used in
+cosmetics. IJT 33(3),2014I
+NCI name POLYGONUM FAGOPYRUM SEED EXTRACT
+Restriction NoneG
+eneral descriptionP olygonum Fagopyrum Seed Extract is an extract
+of the seeds of the Buckwheat, Polygonum
+fagopyrum L., PolygonaceaeA
+cute toxicity via relevant routes of exposure Not available
+Skin irritation and skin corrosivity Not available
+Mucous membrane irritation (eye irritation) Not available
+Skin Sensitization Not available
+Dermal/ percutaneous absorption Not available19
+===== PAGE 20/41 =====
+R
+epeated dose toxicity (normally 28- or 90-day
+studies)N
+ot available M
+utagenicity/ genotoxicity Not available
+Carcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+Nanomaterials Not avilable
+Reference (1)
+https://plants.ces.ncsu.edu/plants/all/fagopyrum-
+esculentum-f-sagittatum-polygonum-fa/
+INCI name SOPHORA JAPONICA FLOWER EXTRACT
+Restriction  Not availableG
+eneral descriptionSophora Japonica Flower Extract is an extract of the
+flowers of the Chinese Scholar Tree or the Japanese
+Pagoda Tree, Sophora japonica L., Leguminosae. An
+herbal medicine, kushen, is obtained from the roots of
+Sophora japonica (Sophora flavescens) and is used as
+an anti-inflammatory and bitter-tasting stomachic.
+The principal component of kushen is the piperidine
+alkaloid matrine.A
+cute toxicity via relevant routes of
+exposureN
+ot availableSkin
+irritation and skin corrosivity Not expected to cause itrritation
+Mucous membrane irritation (eye irritation) Not available
+Skin Sensitization Not available
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-d
+ay studies)N
+ot available M
+utagenicity/ genotoxicity Not available
+Carcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+Nanomaterials Not available
+Reference (1)
+https://www.sciencedirect.com/topics/pharmacology-
+toxicology-and-pharmaceutical-science/sophora-
+flavescensI
+NCI name VACCINIUM MYRTILLUS FRUIT EXTRACT20
+===== PAGE 21/41 =====
+Restriction
+None
+General descriptionVaccinium Myrtillus Fruit Extract is an extract of
+the fruit of the Myrtle, Vaccinium myrtillus L.,
+Ericaceae.
+Pharmacological and clinical studies have
+involved the isolated anthocyanosides used in
+injectable forms. More studies, with more
+patients using oral dosage forms are needed for
+acceptable claims in bilberry fruit extracts.
+Although more studies are needed to prove
+effectiveness, safety is well-established. A post-
+marketing retrospective study followed
+2,295 patients with 36% anthocyanoside
+standardized extract showed positive results:
+improvement of symptoms associated with lower
+limb venous insufficiency, capillary fragility and
+altered permeability of blood capillaries, disease-
+related changes in microcirculation of the retina,
+and to reduce itching, inflammation and swelling
+following surgical removal of hemorrhoids. No
+adverse effects were reported even for
+prolonged use of the extract. The German
+Commission E monograph on bilberry fruits lists
+no known contraindication, interactions with
+other drugs, or side effects. Given its long history
+of food use, and clinical experience with extracts
+over a sixty year period, safety is not at issue.
+Acute toxicity via relevant routes of exposure The actual or estimated LD50 value: 5,000 mg/kg
+body weight.
+Skin irritation and skin corrosivity Not available
+Mucous membrane irritation (eye irritation) Not available
+Skin Sensitization Not available
+Dermal/ percutaneous absorption Not available R
+epeated dose toxicity (normally 28- or 90-day
+studies)N
+ot available M
+utagenicity/ genotoxicity Not available
+Carcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+NanomaterialsR
+eference(1) Dweck A. C. Handbook of Cosmetics
+Ingredients - Their Use, Safety and Toxicology.
+Third edition, 2012.21
+===== PAGE 22/41 =====
+I
+NCI name PINUS PINASTER LEAF/TWIG OIL
+Restriction III/113G
+eneral descriptionP inus Pinaster Leaf Twig Oil is the volatile oil
+obtained from the leaves and twigs of Pinus
+pinasterA
+cute toxicity via relevant routes of exposure Oral LD50 (rat): 3200 mg/kg; Dermal LD50
+(rabbit): 5000 mg/kg
+Skin irritation and skin corrosivity Not irritating (human)
+Mucous membrane irritation (eye irritation) Not available
+Skin Sensitization Not sensitizing (human). Skin sensitizing only if
+oxidized; autoxidation products of constituents
+alpha-pinene and delta-3-carene can cause skin
+sensitization.
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-day
+studies)N
+o appreciable chronic effect was seen within 8
+weeks, when adult male rats were exposed to
+300 ppm of a commercial sample of turpentine
+(consisting of 95% a-pinene) in the ambient air.
+Mutagenicity/ genotoxicity Not available
+CarcinogenicityNo information was found for the oil, but it
+contains no known carcinogens. Alpha-pinene is
+antimutagenic, and is not carcinogenic in rats.
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Non-phototoxic
+Nanomaterials Not applicable
+Reference(1) Tisserand R and Young R. Essential Oil Safety:
+A Guide for Health Care Professionals. 2nd
+edition, 2014.
+INCI name MENTHOL
+Restriction None
+General descriptionFour stereoisomeric forms are known. Natural
+menthol occurs as L-form (CAS 2216-51-
+5), trade products are DL-menthol (CAS 1490-04-
+6). D-form: CAS 89-78-1, racemic:C
+AS 15356-70-4. The menthols were considered
+as a category in the OECD SIDS Assessment
+Report because of their similarity in physico-
+chemical, toxicological, ecotoxicological and
+environmental fate properties. Approved by US
+FDA to be added directly to food - approved22
+===== PAGE 23/41 =====
+either as a food additive or listed or affirmed as
+GRAS (EAFUS list of ingredients). The SCCS report
+lists menthol (mixed isomers) as a human
+allergen based on positive case reports.
+Acute toxicity via relevant routes of exposure Oral LD50 (rat) > 2000 mg/kg
+Skin irritation and skin corrosivity Moderately irritating to the skin.
+Mucous membrane irritation (eye irritation) Slightly irritating to the eye.
+Skin SensitizationThe skin sensitization potency of menthol
+isomers in animals and humans is low. However,
+the SCCS lists menthol (mixed isomers) as a
+human allergen based on positive case reports.
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-day
+studies)No toxicity was observed in rats receiving diets
+providing up to 200 mg/kg/day of either L- or D/L
+menthol for 5.5 weeks. For L-menthol and the
+racemate D/L-menthol a NOAEL of 200
+mg/kg/day was deduced from this study.M
+utagenicity/ genotoxicityThe menthol isomers are considered non -
+genotoxic in in vitro bacterial and mammalian
+test systems. In vivo, L- and D/L-menthol have
+demonstrated no mutagenic potential in
+adequately performed dominant lethal and
+cytogenetic tests and in a bone marrow
+micronucleus test in mice.C
+arcinogenicityD /L-Menthol showed no evidence of carcinogenic
+activity in 2-year studies in rats and mice.R
+eproduction toxicityL -Menthol was not embryo- or fetotoxic and had
+no teratogenic properties in well performed
+gavage studies in various species (rat, mouse,
+rabbit, hamster) at not maternally toxic doses
+(185-425 mg/kg bw/d).T
+oxicokinetics (ADME studies)Well absorbed by the oral route of exposure and
+are mainly excreted as glucuronides. In rats an
+extensive enterohepatic circulation additionally
+leads to various hydroxylated degradation
+products. Glucuronides and degradation products
+are eliminated mainly via urine, minor quantities
+via the faeces.P
+hototoxicity / Photosensitization Not available
+Nanomaterials  Not applicable
+Reference  (1) OECD SIDS. Menthols. May 2003
+(2) SCCS/1459/11. OPINION on Fragrance
+allergens in cosmetic products. June 2012.
+INCI name ALCOHOL23
+===== PAGE 24/41 =====
+Restriction
+None
+General descriptionCIR Expert Panel evaluated the safety of Alcohol
+in cosmetic products and concluded that it is safe
+in the present practices of use and concentration.
+Acute toxicity via relevant routes of exposure Low order of acute toxicity by all routes of
+exposure. Oral LD50 (rat): 7060 and 10600
+mg/kg; (mouse): 3450 mg/kg; (rabbit): 6300
+mg/kg.
+Skin irritation and skin corrosivity Not irritating
+Mucous membrane irritation (eye irritation) Moderate eye irritant
+Skin Sensitization Not sensitizing
+Dermal/ percutaneous absorption No data
+Repeated dose toxicity (normally 28- or 90-days
+tudies)For repeat dose effects, the lowest reported
+NOAEL is approximately 2400 mg/kg bw/day from
+a dietary study with rats.M
+utagenicity/ genotoxicity Not genotoxic
+Carcinogenicity Epidemiological studies assessing the impact of
+alcoholic beverage consumption show no hazard.
+Reproduction toxicity No data
+Toxicokinetics (ADME studies)Readily absorbed by the oral and inhalation
+routes and subsequently, metabolized and
+excreted in humans. Not accumulated in the
+body. Dermal uptake of ethanol is very low.
+Phototoxicity / Photosensitization No data
+Nanomaterials Not applicable
+Reference(1) OECD. SIDS Initial Assessment Report, Ethanol.
+2004. Retrieved from http://www.inchem.org/
+(2) Dweck A. C. Handbook of Cosmetics
+Ingredients - Their Use, Safety and Toxicology.
+Third edition, 2012.
+INCI name MENTHA PIPERITA OIL
+Restriction None
+General descriptionMentha Piperita Oil is the volatile oil obtained
+from the whole plant of the Peppermint, Mentha
+piperita (L.), Labiatae. The US FDA includes
+peppermint on its list of spices and other natural
+seasonings and flavoring considered GRAS.
+Peppermint is also on the list of GRAS essential
+oils, oleoresins and natural extractives. The
+safety of Mentha Piperita (Peppermint) Oil has
+been assessed by the CIR Expert Panel. The CIR24
+===== PAGE 25/41 =====
+Expert Panel evaluated the scientific data and
+concluded that this ingredient is safe as used in
+cosmetics; with the limitation that the
+concentration of pulegone (a natural component)
+in the ingredient should not exceed 1%.
+Acute toxicity via relevant routes of exposure Oral LD50 (rat): 4441 mg/kg; Oral LD50 (mouse):
+2410 mg/kg
+Skin irritation and skin corrosivity Isolated clinical cases of irritation to peppermint
+oil and/or its constituents have been reported.
+Mucous membrane irritation (eye irritation) Not available
+Skin SensitizationNot sensitizing (8% peppermint oil, clinical
+testing). Isolated clinical cases of sensitization to
+peppermint oil and/or its constituents have been
+reported.
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-day
+studies)i
+n a 28-day study with peppermint oil containing
+approximately 4% pulegone and menthofuran, a
+NOAEL of 200 mg/kg bw/d for male rats and a
+NOAEL of 400 mg/kg bw/d for female rats were
+established.M
+utagenicity/ genotoxicityNegative in the Ames test and a mouse
+lymphoma mutagenesis assay but gave equivocal
+results in a Chinese hamster fibroblast cell
+chromosome aberration assay.C
+arcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not phototoxic.
+Nanomaterials Not applicable
+Reference( 1) Handbook of Essential Oils. Sciencs,
+Technology and Applications. Edited by Baser and
+Buchbauer. CRC Press. 2010.(
+2) CIR Review Panel, Nair B. Final report on the
+safety assessment of Mentha Piperita
+(Peppermint) Oil, Mentha Piperita (Peppermint)
+Leaf Extract, Mentha Piperita (Peppermint) Leaf,
+and Mentha Piperita (Peppermint) Leaf Water.
+IJT, 20(3):61-73, 2001.
+(3) Dweck A. C. Handbook of Cosmetics
+Ingredients - Their Use, Safety and Toxicology.
+Third edition, 2012.
+INCI name GINKGO BILOBA LEAF EXTRACT
+Restriction  None25
+===== PAGE 26/41 =====
+G
+eneral descriptionGinkgo leaves and cooked nuts have a safe
+history of use that goes back several thousand
+years. When using a preparation of the whole
+leaves or seeds, it can be safely assumed that
+within a normal dose range there will be no
+danger of negative side effects. It is used in EU in
+herbal pharmaceutical preparations in solid
+dosage forms for oral use. In crude Ginkgo
+extracts a group of alkylphenols (e.g. ginkgolic
+acids, ginkgol, bilobol) has been described to
+exhibit potential contact allergenic and toxic
+properties. A maximum concentration of 5 ppm
+has to be maintained to comply with the Ph. Eur.
+and to ensure safety of use for Ginkgo biloba leaf
+extracts.A
+cute toxicity via relevant routes of exposure Oral LD50 (rat) > 10 g/kg; Oral LD50 (mouse):
+7730 mg/kg
+Skin irritation and skin corrosivity Not available
+Mucous membrane irritation (eye irritation) Not available
+Skin Sensitization Not available
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-day
+studies)Salvador (1995) reported of no chronic toxicity.
+There was no evidence of organ damage or
+impairment of hepatic and renal functions when
+EGb 761 was administered orally to rats and mice
+over a period of 27 weeks in doses ranging from
+100 to 1,600 mg/kg. DeFeudis (1998) stated that
+chronic toxicity studies in the rat (27 weeks) and
+dog (26 weeks), conducted with EGb 761 doses of
+20 and 100 mg/kg/day initially and then gradually
+increased to 300, then 400 and 500 mg/kg/day in
+rats and to 300, then 400 mg/kg/day in dogs,
+showed no evidence of organ damage and no
+impairment of hepatic or renal function.M
+utagenicity/ genotoxicityA Ginkgo biloba leaf extract was tested positive
+for gene mutations in bacteria and equivocal and
+negative for chromosome mutations in two
+separate in vivo tests in peripheral erythrocytes
+and bone marrow cells in mouse.C
+arcinogenicityAt present there is no proof for an increased
+cancer risk identified for patients taking Ginkgo
+medicinal products at their approved posology.R
+eproduction toxicityEimazoudy and Attia (2012) evaluated potential
+anti-implantation and abortifacient effect of EGb
+761 in albino female mice. EGb 761 was orally
+administered in 0 (control), 3.7, 7.4 and 14.8
+mg/kg bw/day for 28 days, from day 1 to day 7 of26
+===== PAGE 27/41 =====
+pregnancy or from the 10th to 18th day of
+pregnancy, respectively. Treatment with 14.8
+mg/kg bw/day dose induced disruption of estrous
+cycle and caused maternal toxicity, in addition to
+fetal toxicity. DeFeudis (1998) reported of studies
+were oral administration of 100, 400 or 1600
+mg/kg/day of EGb 761 to rats and 100, 300 or 900
+mg/kg/day to rabbits did not elicit teratogenic
+effects or affect reproduction.
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+Nanomaterials Not applicable
+Reference(1) EMA, Committee on Herbal Medicinal
+Products. Assessment report on Ginkgo biloba L.,
+folium. EMA/HMPC/321095/2012, January 2014.I
+NCI name CHAMOMILLA RECUTITA EXTRACT
+Restriction NoneG
+eneral descriptionC hamomilla Recutita Extract is the extract of the
+whole plant of the Matricaria, Chamomilla
+recutita (L.), Asteraceae.
+Reactions to German Chamomile are
+exceedingly rare. Severe allergic reactions have
+been seen in a few individuals following
+consumption of chamomile tea, skin reactions
+have occurred after contact with the chamomile
+plants or chamomile-containing ointment and
+conjunctivitis developed in hay fever patients
+following eye washing with chamomile tea.
+Several beneficial pharmacological actions have
+been
+documented for German chamomile, based
+primarily on in vitro and animal studies. Such
+actions include antibacterial, antifungal,
+antiinflammatory, antispasmodic, and-ulcer,
+antiviral, and sedative effects.A
+cute toxicity via relevant routes of exposure The actual or estimated LD50
+value: 5,000 mg/kg body weight.S
+kin irritation and skin corrosivityIt can be concluded that such a quality of
+ingredient (ECOCERT Certified), present in a
+concentration below 0.5% into the cosmetic27
+===== PAGE 28/41 =====
+product can not cause any toxicological effect,
+skin irritation.
+Mucous membrane irritation (eye irritation) Not irritating
+Skin Sensitization Sensitization effect to certain people in general
+population is possible but very low.
+Dermal/ percutaneous absorption Not available R
+epeated dose toxicity (normally 28- or 90-day
+studies)N
+ot availableM
+utagenicity/ genotoxicityN o teratogenicity or developmental abnormalities
+were noted in rats or rabbits after chronic
+administration of bisabolo. Teratogenicity studies
+in rats, rabbits, and dogs have been documented
+for a-bisabolol and no teratogenic effect was
+observed.C
+arcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+Nanomaterials
+Reference (1) Dweck A. C. Handbook of Cosmetics
+Ingredients - Their Use, Safety and Toxicology.
+Third edition, 2012.
+(2) (P. Gardiner: Chamomile (Matricaria recutita,
+Anthemis nobilis), Longwood Herbal Task Force:
+http://www.mcp.edu/herbal/default.htm
+December 30, 1999);
+INCI name CALENDULA OFFICINALIS FLOWER EXTRACT
+Restriction NoneG
+eneral descriptionThe US FDA includes Calendula officinalis on its
+list of substances considered GRAS as a spice and
+natural seasoning/flavoring. Calendula-derived
+ingredients may contain minerals, carbohydrates,
+lipids, phenolic acids, flavonoids, tannins,
+coumarins, sterols and steroids, monoterpenes,
+sesquiterpenes, triterpenes, tocopherols,
+quinones, amino acids, and resins. The safety of
+Calendula Officinalis Flower Extract has been
+assessed by the CIR Expert Panel. The CIR Expert
+Panel evaluated scientific data and concluded
+that this ingredient is safe as used in cosmetics
+and personal care products.A
+cute toxicity via relevant routes of exposure The actual or estimated LD50 value: 2000 mg/kg
+Skin irritation and skin corrosivity Not irritating28
+===== PAGE 29/41 =====
+Mucous
+membrane irritation (eye irritation) May be mild ocular irritant
+Skin Sensitization Not sensitizing
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-days
+tudies)N
+ot available M
+utagenicity/ genotoxicity Not genotoxic
+CarcinogenicityCalendula officinalis flower extract (propylene
+glycol extraction solvent) reportedly was not
+carcinogenic in rats in a 21-month or in hamsters
+in an 18-month feeding study.R
+eproduction toxicityThe absence of reproductive/developmental
+toxicity is inferred from repeat-dose studies of
+coriander oil, with a similar composition. A
+reproductive and developmental toxicity study of
+coriander oil, containing almost 80% linalool and
+approximately 20% of other terpenes reported
+developmental toxicity
+only at maternally toxic levels. The NOEL was
+determined tob
+e 160 mg/kg per day.
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not photosensitizing
+Nanomaterials Not applicable
+Reference( 1) CIR Expert Panel, Andersen et al.Final Report
+of the Cosmetic Ingredient Review Expert Panel
+Amended Safety Assessment of Calendula
+officinalis–Derived Cosmetic Ingredients.
+International Journal of Toxicology. 29(4):221-
+243, 2010.
+(2) Dweck A. C. Handbook of Cosmetics
+Ingredients - their use, safety and toxicology.
+Third edition, 2012.I
+NCI name SODIUM HYDROXIDE
+Restriction Annex III/15a
+General descriptionN aOH has been used for a long time and has wide
+dispersive use and therefore there is information
+on human exposure and effects. The major
+human health hazard of sodium hydroxide is local
+irritation and/or corrosion. In terms of Regulation
+(EC) No 1272/2008 (CLP) the harmonized
+classification of NaOH is as follows: Skin Corr. 1A,29
+===== PAGE 30/41 =====
+H
+314 - Causes severe skin burns and eye damage,
+with specific concentration limits being Skin Corr.
+1B (H314: 2% ≤ C < 5%); Eye Irrit. 2 (H319: 0,5% ≤C
+< 2%); Skin Irrit. 2 (H315: 0,5% ≤ C < 2%); Skin
+Corr. 1A (H314: C ≥ 5%). Sodium hydroxide is
+restricted for use in cosmetics products - see
+Annex III of Regulation (EC) No 1223/2009.
+Acute toxicity via relevant routes of exposure The existing animal and human data on acute
+toxicity show that NaOH has a local effect
+(corrosive substance) and that systemic effects
+are not to be expected. There is no need for
+further acute toxicity testing, as NaOH is a
+corrosive substance.S
+kin irritation and skin corrosivityCorrosive substance. Causes severe skin burns.
+Based on human data concentrations of 0.5–4%
+were irritating for the skin.Mucous
+membrane irritation (eye irritation) Causes serious eye damage.
+Skin SensitizationBased on a negative human skin sensitisation
+study and the fact that no human cases of skin
+and respiratory sensitisation have been reported
+despite the long and widespread use of NaOH, the
+substance is not considered to be a skin and
+respiratory sensitiser.D
+ermal/ percutaneous absorptionThe systemic exposure in all scenarios can be
+considered to be negligible. It should be noted,
+that it is unlikely that sodium ions penetrate the
+skin to a considerable extent. In an extreme worst
+case assumption dermal absorption of these ions
+will be 1-10% following recommendations of the
+TGD. This would lead to a 1 to 2 orders of
+magnitude lower systemic dose then described
+above. This amount is negligible compared to the
+daily dietary intake of sodium ions.R
+epeated dose toxicity (normally 28- or 90-day
+studies)N
+o valid studies available. Under normal handling
+and use conditions NaOH is not expected to be
+systemically available in the body. For this reason
+additional testing for repeated dose toxicity is
+considered unnecessary.M
+utagenicity/ genotoxicityBoth the in vitro and the in vivo genotoxicity
+studies indicated no evidence for a mutagenic
+activity. Furthermore NaOH is not expected to be
+systemically available in the body under
+normal handling and use conditions.C
+arcinogenicity Systemic carcinogenicity is not expected to occur
+because NaOH is not expected to be systemically30
+===== PAGE 31/41 =====
+a
+vailable in the body under normal handling and
+use conditions.R
+eproduction toxicityN aOH is not expected to be systemically available
+in the body under normal handling and use
+conditions and for this reason it can be stated
+that the substance will not reach the foetus nor
+reach male and female reproductive organs.T
+oxicokinetics (ADME studies)Sodium is a normal constituent of the blood and
+an excess is excreted in the urine. A significant
+amount of sodium is taken up via the food
+because the normal uptake of sodium via food is
+3.1-6.0 g per day. Exposure to NaOH could
+potentially increase the pH of the blood.
+However, the pH of the blood is regulated
+between narrow ranges to maintain homeostasis.
+Via urinary excretion of bicarbonate and via
+exhalation of carbon dioxide the pH of blood is
+maintained at the normal physiological pH of 7.4-
+7.5. Therefore, NaOH is not expected to be
+systemically available in the body under normal
+handling and use conditions.P
+hototoxicity / Photosensitization No data
+Nanomaterials Not applicable
+Reference( 1) European Commision (EC). Sodium Hydroxide
+Summary Risk Assessment Report. 2008.
+(2) Dweck A. C. Handbook of Cosmetics
+Ingredients - their use, safety and toxicology.
+Third edition, 2012.
+(3) ECHA. Retrieved from
+http://echa.europa.eu/information-on-
+chemicals/registered-substances
+(4) OECD, SIDS Initial Assessment Report, Sodium
+Hydroxide, 2002.I
+NCI name CARBOMER
+Restriction None
+General descriptionT he safety of Carbomer has been assessed by the
+CIR Expert Panel. The CIR Expert Panel evaluated
+the scientific data and concluded that Carbomer
+polymers were safe as ingredients in cosmetics31
+===== PAGE 32/41 =====
+and personal care products at concentrations up
+to 2%.
+Acute toxicity via relevant routes of exposure Acute oral animal studies showed that carbomers
+have low toxicities when ingested. LD50 values
+fell in the range of 2500 to 10250 mg/kg
+depending on the molecular weight of the
+polymer.S
+kin irritation and skin corrosivityM inimal skin irritation (rabbit). Low potential for
+skin irritation at concentrations up to 100%
+(clinical studies).Mucous
+membrane irritation (eye irritation) Zero to moderate eye irritation (rabbit).
+Carbomer dust (powder) may cause irritation to
+the eyes.
+Skin Sensitization Low potential for sensitization at concentrations
+up to 100% (clinical studies).
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-day
+studies)Subchronic feeding of rats and dogs with
+Carbomer-934 in the diet resulted in lower than
+normal body weights, but no pathological
+changes were observed. Dogs chronically fed
+Carbomer-934P manifested gastrointestinal
+irritation and marked pigment deposition within
+Kupffer cells of the liver.
+Mutagenicity/ genotoxicity Not available
+Carcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Carbomer-934 demonstrated low potential for
+phototoxicity and photocontact allergenicity.
+Nanomaterials Not applicable
+Reference(1) CIR Expert Panel. Final Report on the Safety
+Assessment of Carbomers-934, -910, -934P, -940,
+-941, and -962. JACT 1(2)109-41, 1982.
+INCI name PANTHENOL
+Restriction None
+General descriptionU S FDA includes Panthenol on its list of nutrients and/or
+dietary supplements generally recognized as safe. The
+safety of Pantheol has been assessed by the CIR Expert
+Panel. The CIR Expert Panel evaluated the scientific data
+and concluded that this ingredient is safe as used in
+cosmetics at concentrations up to 25%.32
+===== PAGE 33/41 =====
+A
+cute toxicity via relevant routes of
+exposureO
+ral LD50 (animal) > 10000 mg/kg Skin
+irritation and skin corrosivity Not irritating (undiluted, rabbit) M
+ucous membrane irritation (eye
+irritation)N
+ot irritating (undiluted, rabbit)S
+kin SensitizationN ot sensitizing (0.5%, human and 5%, guinea pig). A survey
+of the published dermatological literature indicates clinical
+reports of allergic contact dermatitits are extremely rare.Dermal/
+percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or9
+0-day studies)No toxicological effects were associated with the
+subchronic and/or chronic oral administration of panthenol
+to rats. A NOAEL of 200 mg/kg bw/day (highest dose
+tested) was determined for panthenol based on a 90-day
+repeated dose oral toxicity study in rats.M
+utagenicity/ genotoxicityN egative in in vitro genotoxicity studies. It is noted that the
+level of panthenol ingredient required by humans exceeds
+the amount that could be absorbed from the low
+concentrations used in cosmetic products. The human
+metabolic requirement would preclude the likelihood of
+genotoxicity.C
+arcinogenicity Not available
+Reproduction toxicityNeither teratogenic nor foetotoxic effects were seen in the
+offspring when rats were fed calcium pantothenate prior to
+mating and throughout gestation.
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization No phototoxic or photoallergic potential (guinea pig)
+Nanomaterials Not applicableR
+eference( 1) ECHA Information on Chemicals. REACH Registered
+Substance CAS 81-13-0. Joint Submission. First published
+27 Feb 2013, Last modified 18 May 2015. Accessed August
+2015 at
+http://apps.echa.europa.eu/registered/data/dossiers/DISS-
+d6b1c29b-71b9-6467-e044-00144f67d031/DISS-d6b1c29b-
+71b9-6467-e044-00144f67d031_DISS-d6b1c29b-71b9-
+6467-e044-00144f67d031.html (NOAEL: Exp Supporting
+Repeated dose toxicity: oral.001)
+(2) CIR Expert Panel. Final report on the safety assessment
+of panthenol and pantothenic acid. JACT 6(1):139-62, 1987
+confirmed 12/04 IJT 25(S2), 2006(
+3) Dweck A. C. Handbook of Cosmetics Ingredients - Their
+Use, Safety and Toxicology. Third edition, 2012.I
+NCI name PEG-40 HYDROGENATED CASTOR OIL
+Restriction None33
+===== PAGE 34/41 =====
+G
+eneral descriptionPEG-40 hydrogenated castor oil (Ricinus
+communis) is a polytehylene glycol derivative of
+hydrogenated castor oil with an average of 40
+moles of ethylene oxide. The safety of PEG-40
+hydrogenated castor oil has been assessed by the
+CIR Expert Panel. The CIR Expert Panel evaluated
+the scientific data and concluded that this
+ingredient is safe for use in concentrations of up
+to 100% without causing irritation, although it
+has been shown to increase the sensitization
+potential of other ingredients. It's molecular
+weight of 40 means that it is minimally absorbed
+by the skin. Products and formulas containing
+PEGs should not be used on broken or irritated
+skin.A
+cute toxicity via relevant routes of exposure Not toxic.
+Skin irritation and skin corrosivity Not irritating (20%, human)
+Mucous membrane irritation (eye irritation) Not available
+Skin Sensitization Not available
+Dermal/ percutaneous absorption Not available
+Repeated dose toxicity (normally 28- or 90-days
+tudies)N
+ot available M
+utagenicity/ genotoxicity Not available
+Carcinogenicity Not available
+Reproduction toxicity Not available
+Toxicokinetics (ADME studies) Not available
+Phototoxicity / Photosensitization Not available
+Nanomaterials Not applicable
+Reference(1) CIR Expert Panel. Safety assessment of
+PEGylated oils as used in cosmetics. IJT 33(Suppl
+4):13-39, 2014.
+INCI name BENZYL ALCOHOL
+Restriction III/45
+V/34G
+eneral descriptionAn US FDA-approved diluent in color additive
+mixtures for external drug use and US FDA-
+approved anesthetic ingredient in OTC drugs.
+Evidence is provided for the safe use of benzyl
+alcohol and the read across substances, since
+they have been used for decades in
+pharmaceuticals, cosmetics and/or food as
+preservatives and flavoring/fragrance agents. In
+terms of Regulation (EC) No 1272/2008 (CLP)34
+===== PAGE 35/41 =====
+benzyl alcohol is classified as Acute Tox. 4. IFRA
+restricted.The CIR Expert Panel evaluated the
+scientific data and concluded that this ingredient
+is safe as used in cosmetics at concentrations up
+to 10%.
+Acute toxicity via relevant routes of exposure Oral LD50 (rat): 1610 mg/kg; Oral LD50 (mouse):
+1580 mg/kg; Dermal LD50 (rabbit): 2000 mg/kg
+Skin irritation and skin corrosivity Slightly irritating (undiluted)
+Mucous membrane irritation (eye irritation) Irritating (4% aq., rabbit).
+Skin SensitizationBoth positive and negative results in animal
+studies. A maximum skin sensitization incidence
+of 1% was reported for benzyl alcohol in human
+patch tests. Occupational exposure to benzyl
+alcohol has not resulted in skin sensitization over
+a period of decades.D
+ermal/ percutaneous absorptionIt is lipophilic and therefore has the potential to
+be readily absorbed through skin. The
+percutaneous absorption through human skin (in
+vitro test) was <80% in 24 hours, and through
+occluded skin of rhesus monkeys (in vivo test)
+was 56-80% in 24 hours. No correlation was seen
+between skin penetration and the octanol-water
+partition coefficient.R
+epeated dose toxicity (normally 28- or 90-day
+studies)F
+or benzyl alcohol the long-term studies indicate
+a NOAEL > 400 mg/kg bw/d for rats and > 200
+mg/kg bw/d for mice. At higher doses effects on
+bodyweights, lesions in the brains, thymus,
+skeletal muscle and kidney were observed.M
+utagenicity/ genotoxicityNo mutagenic activity in in vitro Ames tests. No
+genotoxicity
+in vivo. While some mixed and/or equivocal in
+vitro chromosomal/chromatid responses have
+been observed, no genotoxicity was observed in
+the in vivo cytogenetic, micronucleus, or other
+assays. The weight of evidence of the in vitro and
+in vivo genotoxicity data indicates that this
+chemical is not mutagenic or clastogenic.C
+arcinogenicity Not carcinogenic in long-term carcinogenicity
+studies.
+Reproduction toxicity Not classified as reproductive/developmental
+toxicant in oral and dermal animal studies.
+Toxicokinetics (ADME studies) Rapidly metabolized to benzoic acid via simple
+oxidation. Benzoic acid is rapidly absorbed from35
+===== PAGE 36/41 =====
+t
+he gastrointestinal tract of mammals, conjugated
+with glycine in the liver, and then excreted as
+hippuric acid.
+Phototoxicity / Photosensitization Not available
+Nanomaterials Not applicable
+Reference(1) OECD. SIDS Initial Assessment Report
+Benzoates. November 2001. (NOAEL; also
+available from ECHA website)
+(2) CIR Expert Panel. Amended Final Safety
+Assessment - Benzyl Alcohol, and Benzoic Acid
+and its Salts and Benzyl Ester. October 17,2011.
+(3) Dweck A. C. Handbook of Cosmetics
+Ingredients - Their Use, Safety and Toxicology.
+Third edition, 2012.
+INCI name DEHYDROACETIC ACID
+Restriction V/13
+General descriptionThe US FDA permits Dehydroacetic Acid to be
+used as a preservative in food. The safety of
+Dehydroacetic Acid has been assessed by the CIR
+Expert Panel. The CIR Expert Panel evaluated the
+scientific data and concluded that this ingredient
+is safe as used in cosmetics at concentrations up
+to 0.7%.
+Acute toxicity via relevant routes of exposure Oral LD50 (rat): 500 mg/kg; Oral LD50 (mouse):
+1330 mg/kg; LDLO (rabbits): 5000 mg/kg;
+considered to have low acute dermal toxicity.
+Skin irritation and skin corrosivity Not considered to cause skin irritation.
+Mucous membrane irritation (eye irritation) Considered to cause minimal eye irritation.
+Skin SensitizationMay have some potential to cause skin
+sensitisation in humans when absorbed through
+the broken skin.D
+ermal/ percutaneous absorptionReadily absorbed dermally in rabbits. Dermal
+absorption was high (50 % more) from a washable
+base medium (composition not stated) compared
+with from an aqueous solution.R
+epeated dose toxicity (normally 28- or 90-day
+studies)The short-term repeated dose toxicity studies in
+rats indicate anticoagulant activity and
+haemorrhage from doses around 100 mg/kg
+bw/d. Based on a 34-day oral gavage study in rats,
+a NOAEL value of 100 mg/kg/day was established.M
+utagenicity/ genotoxicity Not available
+Carcinogenicity  Studies indicate no carcinogenic potential.
+Reproduction toxicity Not expected to have developmental toxicity.36
+===== PAGE 37/41 =====
+T
+oxicokinetics (ADME studies)Rapidly absorbed following oral administration in
+humans, monkeys, rats and dogs. Readily
+absorbed dermally in rabbits. Three main
+metabolites: triacetic acid lactone, hydroxy-
+dehydroacetic acid and 'metabolite X' (presumed
+to be the salt of triacetic acid lactone 3-carboxylic
+acid). Rabbits excreted 70–80 % of the 14C label
+in urine, 7–10 % as exhaled carbon dioxide and 2–
+3 % in faeces (after 3–7 days) leaving 8–11 % in
+tissues. Excretion in rats was 20–40 % in urine,
+10–25 % by respiration, 10–20 % in faeces (after
+4–5 days) and 5–26 % in tissues.P
+hototoxicity / Photosensitization Not available
+Nanomaterials Not applicable
+Reference(1) NICNAS (2015). Inventory Multi-tiered
+Assessment and Prioritisation (IMAP): Human
+health Tier II assessment for dehydroacetic acid
+and its sodium salt. Accessed June 2015 at
+http://www.nicnas.gov.au/chemical-
+information/imap-assessments/imap-group-
+assessment-report?assessment_id=1141Perfume compliance to IFRA regulations:
+This product contains fragrances from natural oils/extracts (IFRA not provided).
+9. UNDESIRABLE EFFECTS AND SERIOUS UNDESIRABLE EFFECTS
+The product is available on the market since 2020. No undesirable effects have been reported till now.
+Rarely, reports of skin and eye irritation may be received on this type of product.10.
+ INFORMATION ON THE COSMETIC PRODUCT
+- The product has not been tested on animals
+- The products does (not) contain CMR, nanoparticles...
+- Additional testing: /37
+===== PAGE 38/41 =====
+PART B - COSMETIC PRODUCT SAFETY ASSESSMENT
+1
+. ASSESSMENT CONCLUSION
+The cosmetic product Veneks can be assessed as SAFE for normal and reasonably foreseeable use in
+accordance with the European Cosmetics Regulation (EC) No 1223/2009 (as amended) respectively.
+2. LABELLED WARNINGS AND INSTRUCTIONS FOR USE
+The following instructions for use and warnings are written on both, primary and secondary packaging: I
+nstructions for use written on the
+labelV
+eneks Forte Plus zjutraj in pred spanjem s krožnimi gibi, od
+spodaj navzgor, vmasirajte na želena mesta. Izdelek je
+prijetnega vonja, nelepljiv in se hitro vpije. Po uporabi si
+umijte roke.P
+recautions for use written on the
+labelP
+azite da ne pride v stik z očmi ali sluznico. Hranite izven
+dosega otrok, lahko na sobni temperature.T
+he labelled instructions for use and the general description of the product indicate the explicit use of
+the finished product as a leave on body care product intended for daily use. A reasonably foreseeable
+mistaken use additional to this use (not a misuse) is not recognisable
+3. REASONING
+a. SAFETY EVALUATION OF SUBSTANCES AND/OR MIXTURES
+The margin of safety, which takes into account all systemic toxicity endpoints, has been calculated for
+each of the ingredient used in this cosmetic product. All ingredients (where the NOAEL value was
+available) have a sufficiently large MoS (>100), which is supporting the safety of the finished product.
+Specific exposure consideration for the targeted consumer group (adults) has been taken into account as
+documented in the exposure and MoS calculation.
+b. SAFETY EVALUATION OF COSMETIC PRODUCT
+Stability data
+The stability data (microbiological and physical-chemical stability) of the formula after storage meet the
+previously specified characteristics. They confirm a sufficient stability of the formula. The shelf life for the
+final product is expected to be 36 months. Based on the above mentioned the product is rated as safe.38
+===== PAGE 39/41 =====
+Packaging
+The package consists of a 200ml PP airless bottle. The packaging of the product is made to protect the
+product during shelf life and use and to enable the safe use of the product. No interaction with packaging
+material is expected as the packaging compatibility with the formulation was confirmed during its stability
+test. Based on that the packaging is rated to be suitable and safe for this specific product type. This
+package does not contain hazardous materials that require special markings or labelling on the shippers.
+Normal and reasonably foreseeable use
+A reasonably foreseeable mistaken use (not a misuse), is not recognizable.
+Undesirable effects and serious undesirable effects
+From the market launch until today the complaint statistics as documented in the Consumer Response
+System (CRS) of the manufacturer of this product show no remarkable consumer complaints regarding
+undesirable effects or serious undesirable effects in general.
+Information on the cosmetic product
+The product is a leave on body care product intended to be used by adults on daily basis.
+The packaging of cosmetic product should include the following information in indelible, easily legible and
+visible lettering:
+- Brand name
+- Name of the product
+- Function of the cosmetic product (unless it is clear from its presentation)
+- Ingredients list (ingredients present in more than 1% in the end product should follow in the same
+order as here): AQUA, PROPYLENE GLYCOL, ALOE BARBADENSIS LEAF JUICE, BENZYL ALCOHOL,
+VITIS VINIFERA LEAF EXTRACT, ALCOHOL, CALENDULA OFFICINALIS FLOWER EXTRACT,
+CARBOMER, SYMPHYTUM OFFICINALE ROOT EXTRACT, RUSCUS ACULEATUS ROOT EXTRACT,
+SOPHORA JAPONICA FLOWER EXTRACT, MENTHOL, GINKGO BILOBA LEAF EXTRACT, PEG-40
+HYDROGENATED CASTOR OIL, PANTHENOL, AESCULUS HIPPOCASTANUM SEED EXTRACT,
+MENTHA PIPERITA OIL, DEHYDROACETIC ACID, CHAMOMILLA RECUTITA EXTRACT, SODIUM
+HYDROXIDE, VACCINIUM MYRTILLUS FRUIT EXTRACT, POLYGONUM FAGOPYRUM SEED EXTRACT,
+PINUS PINASTER LEAF/TWIG OIL
+- Particular precautions for use: Pazite da ne pride v stik z očmi ali sluznico. Hranite izven dosega
+otrok, lahko na sobni temperature.39
+===== PAGE 40/41 =====
+-
+ Instructions for use: Veneks Forte Plus zjutraj in pred spanjem s krožnimi gibi, od spodaj navzgor,
+vmasirajte na želena mesta. Izdelek je prijetnega vonja, nelepljiv in se hitro vpije. Po uporabi si
+umijte roke.
+- Date of minimum durability (for products with a minimum durability ≤ 30 months) or PAO (for
+products with a minimum durability > 30 months)
+- Nominal quantity (except for packaging containing less than 5 grams or 5 millilitres, free samples
+and single-application packs)-
+ Batch number or the reference for identifying the cosmetic product
+- Responsible person name and address
+- Manufacturer name and address
+- Products’ country of origin40
+===== PAGE 41/41 =====
+SUMMARY
+The safety assessment is based on the chemical specification and toxicological profile of the ingredients
+as supplied at the time of assessment and an assessment of the final cosmetic product.
+All statements in this safety assessment were elaborated on the recent level of knowledge. Every change
+in the formulation or changes and/or additional information of relevant data respectively will require an
+immediate re-evaluation of this safety assessment.
+Concerning the skin tolerance, the final product is expected to be well tolerated and to have a good
+cosmetic acceptability.S
+afety assessor: Matej Strelec, MPharm
+Signature:W
+e confirm that the product is safe in the stated application when used under normal and reasonably
+foreseeable use. Its composition complies with EC Regulation 1223/2009 and all its annexes.41
