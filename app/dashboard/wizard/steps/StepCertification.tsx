@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useWizardText } from "@/lib/i18n";
+import { useLanguage, useWizardText, translateError } from "@/lib/i18n";
 import type { WizardData, Certification } from "@/lib/wizard-types";
 import { flattenIngredients } from "@/lib/wizard-types";
 import { calcSED, calcMoS, judge } from "@/lib/calc";
@@ -18,6 +18,9 @@ type ReportResult = {
   sources?: RetrievedChunk[];
   integrity?: { runId: string; createdAt: string; inputCsvSha: string; configHash: string };
   error?: string;
+  error_code?: string;
+  message?: string;
+  saved?: boolean;
 };
 
 export function StepCertification({
@@ -33,6 +36,7 @@ export function StepCertification({
   projectStatus: string;
   onStatusChange: (next: string) => void;
 }) {
+  const { lang } = useLanguage();
   const t = useWizardText();
   const [report, setReport] = useState<ReportResult | null>(null);
   const [generating, setGenerating] = useState(false);
@@ -50,6 +54,7 @@ export function StepCertification({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          projectId: projectId ?? undefined,
           productInfo: data.productInfo,
           ingredients: data.ingredients,
           productQuality: data.productQuality,
@@ -59,21 +64,16 @@ export function StepCertification({
       const json = (await res.json()) as ReportResult;
       setReport(json);
 
-      // Login qilingan bo'lsa — natijani saqlab, baholovchi navbatiga qo'shadi
-      // (status: draft -> draft_generated). Demo rejimda buni qilmaymiz.
-      // MUHIM: bu yerda hech qachon "submission_ready" o'rnatilmaydi — bu
-      // faqat /api/review orqali, haqiqiy baholovchi tomonidan qilinadi.
-      if (projectId && !json.error && !json.demo) {
-        await fetch(`/api/projects/${projectId}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ report_result: json, status: "draft_generated" }),
-        });
+      // MUHIM XAVFSIZLIK: qoralama endi mijoz orqali SAQLANMAYDI — /api/generate-report
+      // server tomonidan o'zi saqlaydi (status -> draft_generated) va json.saved=true
+      // qaytaradi. Bu yerda hech qachon "submission_ready" o'rnatilmaydi — faqat
+      // /api/review orqali, haqiqiy baholovchi tomonidan.
+      if (json.saved) {
         setSubmitted(true);
         onStatusChange("draft_generated");
       }
     } catch (err) {
-      setReport({ error: err instanceof Error ? err.message : String(err) });
+      setReport({ error_code: "generic", error: err instanceof Error ? err.message : String(err) });
     } finally {
       setGenerating(false);
     }
@@ -205,7 +205,9 @@ export function StepCertification({
         </button>
 
         {report?.error && (
-          <p style={{ color: "var(--danger)", fontSize: 13.5, marginTop: 14 }}>Error: {report.error}</p>
+          <p style={{ color: "var(--danger)", fontSize: 13.5, marginTop: 14 }}>
+            {translateError(report.error_code, report.error, lang)}
+          </p>
         )}
 
         {submitted && (
