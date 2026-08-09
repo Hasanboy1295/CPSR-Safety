@@ -40,13 +40,16 @@ function getClient() {
 }
 
 function ragSystemPrompt(lang: Lang): string {
+  const other = LANG_NAME[lang === "ko" ? "en" : "ko"];
   return `You are a cosmetic safety (CPSR) assistant.
 Strict rules:
 1. Use ONLY the information in the "Context" section below.
 2. If the context does not contain enough information to answer, state exactly:
    "Not enough information found in the provided documents." — never invent.
 3. Cite every claim with its source as [source: <source_name>] so the user can verify.
-4. Write the ENTIRE answer in ${LANG_NAME[lang]}.`;
+4. Write the ENTIRE answer BILINGUALLY: first the full answer in ${LANG_NAME[lang]},
+   then the identical answer in ${other}. Keep the two versions clearly separated
+   (e.g. with a blank line and a language tag).`;
 }
 
 export type GroundedAnswer = {
@@ -88,6 +91,7 @@ export async function generateGroundedAnswer(
 // ---- CPSR Part A / Part B qoralama yozuvchi (report.ts orqali chaqiriladi) ----
 
 function cpsrDraftSystemPrompt(lang: Lang): string {
+  const other = LANG_NAME[lang === "ko" ? "en" : "ko"];
   return `You draft ONLY two sections of a CPSR (화장품 안전성 평가 자료) document:
 - Part A: an OBJECTIVE DESCRIPTION of the product, its composition, and its physical/chemical,
   microbiological, and packaging characteristics (a structured restatement of the given data —
@@ -111,7 +115,9 @@ STRICT RULES (taken verbatim from the CPSR_KR_dossier source document):
    highlight it EXPLICITLY in Part A and Part B — it is the most important safety signal,
    never hide or soften it.
 
-Write ALL output text in ${LANG_NAME[lang]}.
+Write ALL output text BILINGUALLY: each section first in ${LANG_NAME[lang]}, then the
+identical version in ${other}. Keep the two language versions clearly separated
+(e.g. with a blank line and a language tag).
 
 Output EXACTLY this format (two sections, nothing else):
 ### PART A
