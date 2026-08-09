@@ -77,7 +77,7 @@ export default function Home() {
       const res = await fetch("/api/rag", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question }),
+        body: JSON.stringify({ question, lang }),
       });
       const json = (await res.json()) as ApiResponse;
       setResult(json);

@@ -11,8 +11,34 @@ import type { RagResult, RetrievedChunk } from "./rag";
 import type { ProductInfo } from "./wizard-types";
 import type { CalcRow } from "./calc";
 import type { CPSRDraft } from "./llm";
+import type { Lang } from "./i18n";
 
 const DATA_DIR = join(process.cwd(), "data");
+
+function demoText(lang: Lang, key: "banner" | "answer" | "draft" | "conclusion"): string {
+  if (lang === "ko") {
+    switch (key) {
+      case "banner":
+        return "[DEMO 모드 — 실제 AI가 아닌 키워드 매칭]";
+      case "answer":
+        return "당신의 질문";
+      case "draft":
+        return "[DEMO 모드 — 실 AI가 아닌 템플릿 텍스트]";
+      case "conclusion":
+        return "최종 결론: 검토필요 — 이 부분은 안전성 평가자가 작성합니다 (자동 아님).";
+    }
+  }
+  switch (key) {
+    case "banner":
+      return "[DEMO MODE — keyword matching, not a real AI]";
+    case "answer":
+      return "Your question";
+    case "draft":
+      return "[DEMO MODE — template text, not a real AI]";
+    case "conclusion":
+      return "Final conclusion: review needed — this section is written by the safety assessor (not automatic).";
+  }
+}
 
 function tokenize(text: string): string[] {
   return text
@@ -67,24 +93,34 @@ export function mockRetrieveChunks(query: string, matchCount = 3): RetrievedChun
   }));
 }
 
-export function mockAnswerWithRag(question: string, matchCount = 3): RagResult {
+export function mockAnswerWithRag(question: string, matchCount = 3, lang: Lang = "en"): RagResult {
   const sources = mockRetrieveChunks(question, matchCount);
   const best = sources[0];
   const answer = best
     ? [
-        `[DEMO REJIMI — haqiqiy AI emas, kalit so'z mosligi]`,
+        demoText(lang, "banner"),
         ``,
-        `Savolingiz "${question}" bo'yicha data/ papkasidagi hujjatlardan eng yaqin topilgan qism:`,
+        `${lang === "ko" ? "당신의 질문" : "Your question"}: "${question}" — ${
+          lang === "ko"
+            ? "data/ 폴더의 문서 중 가장 가까운 부분:"
+            : "closest part found in the data/ folder documents:"
+        }`,
         ``,
         `"${best.content.slice(0, 400)}${best.content.length > 400 ? "..." : ""}"`,
         ``,
-        `[manba: ${best.source_name}]`,
+        `[source: ${best.source_name}]`,
         ``,
-        `Bu haqiqiy AI javobi emas — real AI+RAG javobi uchun .env fayliga`,
-        `OPENAI_API_KEY, NEXT_PUBLIC_SUPABASE_URL va`,
-        `SUPABASE_SERVICE_ROLE_KEY qo'shing (README.md'ga qarang).`,
+        lang === "ko"
+          ? "이것은 실제 AI 답변이 아닙니다 — 실제 AI+RAG 답변을 보려면 .env 파일에"
+        : "This is not a real AI answer — to see the real AI+RAG answer, add",
+        lang === "ko"
+          ? "OPENAI_API_KEY, NEXT_PUBLIC_SUPABASE_URL 및"
+        : "OPENAI_API_KEY, NEXT_PUBLIC_SUPABASE_URL and",
+        lang === "ko" ? "SUPABASE_SERVICE_ROLE_KEY를 설정하세요 (README.md 참조)." : "SUPABASE_SERVICE_ROLE_KEY to the .env file (see README.md).",
       ].join("\n")
-    : `[DEMO REJIMI] data/ papkasida hech qanday .txt fayl topilmadi.`;
+    : lang === "ko"
+      ? "[DEMO 모드] data/ 폴더에 .txt 파일이 없습니다."
+      : "[DEMO MODE] No .txt files found in the data/ folder.";
 
   return { answer, sources, model: "demo-mock (real LLM emas)" };
 }
@@ -92,30 +128,45 @@ export function mockAnswerWithRag(question: string, matchCount = 3): RagResult {
 /** Part A/B qoralamasining demo (LLM'siz) versiyasi. */
 export function mockDraftCPSRSections(
   productInfo: ProductInfo,
-  calcRows: CalcRow[]
+  calcRows: CalcRow[],
+  lang: Lang = "en"
 ): CPSRDraft {
   const partA = [
-    `[DEMO REJIMI — bu Claude emas, shablon matn]`,
+    demoText(lang, "draft"),
     ``,
-    `Mahsulot: ${productInfo.productName || "검토필요"} (${productInfo.productType || "검토필요"})`,
-    `Foydalanuvchi: ${productInfo.targetUser || "검토필요"} · Qo'llash: ${productInfo.rinseType}`,
-    `Ishlab chiqaruvchi: ${productInfo.manufacturer || "검토필요"}`,
+    `${lang === "ko" ? "제품" : "Product"}: ${productInfo.productName || (lang === "ko" ? "검토필요" : "review needed")} (${
+      productInfo.productType || (lang === "ko" ? "검토필요" : "review needed")
+    })`,
+    `${lang === "ko" ? "사용 대상" : "Target user"}: ${productInfo.targetUser || (lang === "ko" ? "검토필요" : "review needed")} · ${
+      lang === "ko" ? "용법" : "Application"
+    }: ${productInfo.rinseType}`,
+    `${lang === "ko" ? "제조업자" : "Manufacturer"}: ${productInfo.manufacturer || (lang === "ko" ? "검토필요" : "review needed")}`,
     ``,
-    `Tarkib (${calcRows.length} ta ingredient):`,
-    ...calcRows.map((r) => `- ${r.inciName || "검토필요"} — ${r.percentInProduct}%`),
+    `${lang === "ko" ? "성분" : "Composition"} (${calcRows.length} ${lang === "ko" ? "개 성분" : "ingredients"}):`,
+    ...calcRows.map((r) => `- ${r.inciName || (lang === "ko" ? "검토필요" : "review needed")} — ${r.percentInProduct}%`),
   ].join("\n");
 
   const partBReasoning = [
-    `[DEMO REJIMI]`,
+    demoText(lang, "draft"),
     ``,
-    ...calcRows.map(
-      (r) =>
-        `- ${r.inciName || "검토필요"}: MoS=${r.mos === null ? "검토필요 (NOAEL yo'q)" : r.mos.toFixed(1)} → ${
-          r.judgment === "pass" ? "hisob-kitob bo'yicha ≥100" : r.judgment === "review" ? "검토필요 (<100)" : "검토필요 (ma'lumot yetarli emas)"
-        }`
-    ),
+    ...calcRows.map((r) => {
+      const review = lang === "ko" ? "검토필요" : "review needed";
+      const judgment =
+        r.judgment === "pass"
+          ? lang === "ko"
+            ? "계산상 ≥100"
+            : "≥100 by calculation"
+          : r.judgment === "review"
+            ? lang === "ko"
+              ? "검토필요 (<100)"
+              : "review needed (<100)"
+            : lang === "ko"
+              ? "검토필요 (자료 부족)"
+              : "review needed (insufficient data)";
+      return `- ${r.inciName || review}: MoS=${r.mos === null ? review : r.mos.toFixed(1)} → ${judgment}`;
+    }),
     ``,
-    `Yakuniy xulosa: 검토필요 — bu qism xavfsizlik baholovchisi tomonidan yoziladi (avtomatik emas).`,
+    demoText(lang, "conclusion"),
   ].join("\n");
 
   return { partA, partBReasoning, model: "demo-mock (real LLM emas)" };

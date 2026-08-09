@@ -55,6 +55,7 @@ export function StepCertification({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           projectId: projectId ?? undefined,
+          lang,
           productInfo: data.productInfo,
           ingredients: data.ingredients,
           productQuality: data.productQuality,

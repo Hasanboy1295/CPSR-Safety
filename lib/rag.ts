@@ -2,6 +2,7 @@ import { getSupabaseServerClient } from "./supabase";
 import { embedQuery } from "./embeddings";
 import { generateGroundedAnswer } from "./llm";
 import { mockAnswerWithRag, mockRetrieveChunks } from "./mock";
+import type { Lang } from "./i18n";
 
 export type RetrievedChunk = {
   id: number;
@@ -64,14 +65,15 @@ export async function retrieveChunks(
  */
 export async function answerWithRag(
   question: string,
-  matchCount = 5
+  matchCount = 5,
+  lang: Lang = "en"
 ): Promise<RagResult> {
   if (!hasRealCredentials()) {
-    return { ...mockAnswerWithRag(question, matchCount), demo: true };
+    return { ...mockAnswerWithRag(question, matchCount, lang), demo: true };
   }
 
   const { chunks } = await retrieveChunks(question, matchCount);
-  const { answer, model } = await generateGroundedAnswer(question, chunks);
+  const { answer, model } = await generateGroundedAnswer(question, chunks, lang);
 
   return { answer, sources: chunks, model };
 }

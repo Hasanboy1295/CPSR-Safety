@@ -10,6 +10,7 @@ import { retrieveChunks, hasRealCredentials, type RetrievedChunk } from "./rag";
 import { draftCPSRSections } from "./llm";
 import { mockDraftCPSRSections } from "./mock";
 import { stampIntegrity, type IntegrityStamp } from "./integrity";
+import type { Lang } from "./i18n";
 
 export type CPSRReportDraft = {
   status: "draft_generated"; // CPSR_KR_dossier'dagi haqiqiy status qiymati
@@ -21,6 +22,11 @@ export type CPSRReportDraft = {
   sources: RetrievedChunk[];
   integrity: IntegrityStamp;
   notReviewedNotice: string;
+};
+
+const NOT_REVIEWED_NOTICE: Record<Lang, string> = {
+  en: "not_reviewed — this document has not yet been reviewed and signed by a licensed safety assessor. The software does not auto-generate the final safety conclusion.",
+  ko: "not_reviewed — 본 문서는 아직 자격을 갖춘 안전성 평가자의 검토와 서명을 받지 않았습니다. 소프트웨어는 최종 안전성 결론을 자동 생성하지 않습니다.",
 };
 
 function toCalcRows(ingredients: IngredientRow[], exposure: ExposureParams): CalcRow[] {
@@ -71,6 +77,7 @@ export async function generateCPSRReport(input: {
   ingredients: IngredientRow[];
   productQuality: ProductQuality;
   exposure: ExposureParams;
+  lang: Lang;
 }): Promise<CPSRReportDraft> {
   // 1-QADAM: deterministik hisob-kitob (AI EMAS)
   const calcRows = toCalcRows(input.ingredients, input.exposure);
@@ -87,8 +94,8 @@ export async function generateCPSRReport(input: {
 
   // 3-QADAM: LLM — FAQAT Part A tavsif + Part B mulohaza
   const draft = demo
-    ? mockDraftCPSRSections(input.productInfo, calcRows)
-    : await draftCPSRSections(input.productInfo, input.productQuality, calcRows, chunks);
+    ? mockDraftCPSRSections(input.productInfo, calcRows, input.lang)
+    : await draftCPSRSections(input.productInfo, input.productQuality, calcRows, chunks, input.lang);
 
   // 7-QADAM: Data Integrity (ALCOA+) — input_csv_sha, config_hash, run_id
   const integrity = stampIntegrity(
@@ -105,7 +112,6 @@ export async function generateCPSRReport(input: {
     demo: demo || !hasRealCredentials(),
     sources: chunks,
     integrity,
-    notReviewedNotice:
-      "not_reviewed — bu hujjat hali xavfsizlik baholovchisi tomonidan ko'rib chiqilmagan va imzolanmagan. Software yakuniy xavfsizlik xulosasini avtomatik yozmaydi.",
+    notReviewedNotice: NOT_REVIEWED_NOTICE[input.lang],
   };
 }
