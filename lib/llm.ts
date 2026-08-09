@@ -2,8 +2,34 @@ import OpenAI from "openai";
 import type { RetrievedChunk } from "./rag";
 import type { ProductInfo, ProductQuality } from "./wizard-types";
 import type { CalcRow } from "./calc";
+import type { Lang } from "./i18n";
 
 const MODEL = "gpt-4o";
+
+const LANG_NAME: Record<Lang, string> = {
+  en: "English",
+  ko: "Korean",
+};
+
+const PLACEHOLDER: Record<Lang, string> = {
+  en: "review needed",
+  ko: "검토필요",
+};
+
+const RESTRICTED_LABEL: Record<Lang, string> = {
+  en: "restricted ingredient",
+  ko: "제한성분",
+};
+
+const FINAL_MARKER: Record<Lang, string> = {
+  en: "Review needed — assessor confirmation required",
+  ko: "검토필요 — 평가자 확인 필요",
+};
+
+const SAFE_WORDS: Record<Lang, string> = {
+  en: "SAFE / compliant",
+  ko: "SAFE / 적합",
+};
 
 function getClient() {
   const apiKey = process.env.OPENAI_API_KEY;
@@ -13,14 +39,15 @@ function getClient() {
   return new OpenAI({ apiKey });
 }
 
-const SYSTEM_PROMPT = `Sen kosmetika xavfsizligi (CPSR) bo'yicha yordamchisan.
-Qat'iy qoidalar:
-1. FAQAT quyida berilgan "Kontekst" bo'limidagi ma'lumotdan foydalan.
-2. Agar kontekstda javob uchun yetarli ma'lumot bo'lmasa, aniq shuni yoz:
-   "Berilgan hujjatlarda bu savolga javob topilmadi." — hech narsani o'ylab topma.
-3. Har bir da'voning yonida qaysi manbadan olinganini [manba: <source_name>]
-   formatida ko'rsat — bu foydalanuvchiga xulosani tekshirish imkonini beradi.
-4. O'zbek tilida, aniq va qisqa javob ber.`;
+function ragSystemPrompt(lang: Lang): string {
+  return `You are a cosmetic safety (CPSR) assistant.
+Strict rules:
+1. Use ONLY the information in the "Context" section below.
+2. If the context does not contain enough information to answer, state exactly:
+   "Not enough information found in the provided documents." — never invent.
+3. Cite every claim with its source as [source: <source_name>] so the user can verify.
+4. Write the ENTIRE answer in ${LANG_NAME[lang]}.`;
+}
 
 export type GroundedAnswer = {
   answer: string;
@@ -29,24 +56,25 @@ export type GroundedAnswer = {
 
 export async function generateGroundedAnswer(
   question: string,
-  chunks: RetrievedChunk[]
+  chunks: RetrievedChunk[],
+  lang: Lang
 ): Promise<GroundedAnswer> {
   const client = getClient();
 
   const context = chunks
     .map(
       (c, i) =>
-        `[${i + 1}] manba: ${c.source_name} (o'xshashlik: ${c.similarity.toFixed(2)})\n${c.content}`
+        `[${i + 1}] source: ${c.source_name} (similarity: ${c.similarity.toFixed(2)})\n${c.content}`
     )
     .join("\n\n---\n\n");
 
-  const userMessage = `Kontekst:\n${context || "(hech narsa topilmadi)"}\n\nSavol: ${question}`;
+  const userMessage = `Context:\n${context || "(nothing found)"}\n\nQuestion: ${question}`;
 
   const response = await client.chat.completions.create({
     model: MODEL,
     max_tokens: 1024,
     messages: [
-      { role: "system", content: SYSTEM_PROMPT },
+      { role: "system", content: ragSystemPrompt(lang) },
       { role: "user", content: userMessage },
     ],
   });
@@ -59,36 +87,39 @@ export async function generateGroundedAnswer(
 
 // ---- CPSR Part A / Part B qoralama yozuvchi (report.ts orqali chaqiriladi) ----
 
-const CPSR_DRAFT_SYSTEM_PROMPT = `Sen CPSR (화장품 안전성 평가 자료) hujjatining FAQAT ikki bo'limini yozasan:
-- Part A: mahsulot, tarkib, HAMDA fizik-kimyoviy/mikrobiologiya/qadoqlash xususiyatlari
-  haqida OBYEKTIV TAVSIF matni (berilgan ma'lumotlarni tartibli bayon qilish — bu real CPSR
-  hujjatining 2-6-bo'limlariga mos: mahsulot, tarkib, fizik-kimyoviy barqarorlik, mikrobiologik
-  sifat, ifloslik/qadoqlash)
-- Part B "Weight-of-Evidence" MULOHAZA: berilgan MoS/hisob-kitob natijalaridan qanday xulosaga
-  yaqinlashish mumkinligi haqidagi muhokama (dalil -> mulohaza yo'li, lekin YAKUNIY QAROR emas)
+function cpsrDraftSystemPrompt(lang: Lang): string {
+  return `You draft ONLY two sections of a CPSR (화장품 안전성 평가 자료) document:
+- Part A: an OBJECTIVE DESCRIPTION of the product, its composition, and its physical/chemical,
+  microbiological, and packaging characteristics (a structured restatement of the given data —
+  corresponds to sections 2-6 of a real CPSR document).
+- Part B "Weight-of-Evidence" REASONING: a discussion of what conclusion the given MoS /
+  calculation results point toward (evidence -> reasoning path, but NOT the final decision).
 
-QAT'IY TAQIQLAR (CPSR_KR_dossier original hujjatidan, so'zma-so'z amal qil):
-1. Yakuniy "안전성 결론" (xavfsiz/xavfsiz emas degan tugal xulosa) YOZMA. Bu inson
-   (xavfsizlik baholovchisi) vazifasi. Buning o'rniga "검토필요 — 평가자 확인 필요" deb yoz.
-2. "SAFE" / "적합" / "xavfsiz" degan tasdiqловчи so'zlarni avtomatik yozma.
-3. Baholovchi ismi, imzo, sertifikat raqamini TO'QIMA.
-4. Mavjud bo'lmagan test raqami, DOI, sertifikat raqamini O'YLAB TOPMA. Manba yo'q
-   bo'lsa "검토필요" deb belgila.
-5. Har bir raqamli da'vo (MoS, SED va h.k.) berilgan hisob-kitob natijasidan olinishi
-   kerak — o'zing raqam to'qima.
-6. Har bir reglament/ilmiy da'voning yonida [manba: <source_name>] ko'rsat, faqat
-   pastdagi "Kontekst" bo'limidagi manbalardan foydalanib.
-7. Kontekstda yo'q narsani "검토필요" deb qoldir, o'ylab topma.
-8. Agar hisob-kitob natijasida biror ingredient yonida "⚠ 제한성분" belgisi
-   bo'lsa, buni Part A tavsifida va Part B mulohazasida ALOHIDA, ANIQ ta'kidla —
-   bu eng muhim xavfsizlik signali, uni yashirma yoki yumshatma.
+STRICT RULES (taken verbatim from the CPSR_KR_dossier source document):
+1. Do NOT write a final safety conclusion (safe / not safe). That is the human safety
+   assessor's task. Instead mark: "${FINAL_MARKER[lang]}".
+2. Do not automatically assert ${SAFE_WORDS[lang]}.
+3. Do not invent an assessor name, signature, or certificate number.
+4. Do not invent test numbers, DOIs, or certificate numbers. If no source exists,
+   mark "${PLACEHOLDER[lang]}".
+5. Every numeric claim (MoS, SED, etc.) must come from the calculation results given
+   below — never invent numbers.
+6. Cite each regulatory / scientific claim with [source: <source_name>], using ONLY the
+   sources in the "Context" section below.
+7. Anything not present in the context: mark "${PLACEHOLDER[lang]}", do not invent.
+8. If an ingredient is flagged as a ${RESTRICTED_LABEL[lang]} in the calculation results,
+   highlight it EXPLICITLY in Part A and Part B — it is the most important safety signal,
+   never hide or soften it.
 
-Chiqishni ANIQ shu formatda ber (ikkita bo'lim, boshqa hech narsa qo'shma):
+Write ALL output text in ${LANG_NAME[lang]}.
+
+Output EXACTLY this format (two sections, nothing else):
 ### PART A
-<matn>
+<text>
 
 ### PART B — WEIGHT OF EVIDENCE
-<matn>`;
+<text>`;
+}
 
 export type CPSRDraft = {
   partA: string;
@@ -100,57 +131,58 @@ export async function draftCPSRSections(
   productInfo: ProductInfo,
   productQuality: ProductQuality,
   calcRows: CalcRow[],
-  context: RetrievedChunk[]
+  context: RetrievedChunk[],
+  lang: Lang
 ): Promise<CPSRDraft> {
   const client = getClient();
 
   const contextText = context
-    .map((c, i) => `[${i + 1}] manba: ${c.source_name}\n${c.content}`)
+    .map((c, i) => `[${i + 1}] source: ${c.source_name}\n${c.content}`)
     .join("\n\n---\n\n");
 
   const calcText = calcRows
     .map(
       (r) =>
-        `- ${r.inciName || "(nomsiz)"} (CAS ${r.cas || "검토필요"}, ${r.percentInProduct}%): ` +
-        `SED=${r.sed.toFixed(6)} mg/kg/gün, NOAEL=${r.noael ?? "검토필요"}, ` +
-        `MoS=${r.mos === null ? "검토필요" : r.mos.toFixed(1)}, holat=${r.judgment}` +
-        (r.toxSummary ? ` | 독성 프로필: ${r.toxSummary}` : "") +
-        (r.restrictedNote ? ` | ⚠ 제한성분: ${r.restrictedNote}` : "")
+        `- ${r.inciName || PLACEHOLDER[lang]} (CAS ${r.cas || PLACEHOLDER[lang]}, ${r.percentInProduct}%): ` +
+        `SED=${r.sed.toFixed(6)} mg/kg/day, NOAEL=${r.noael ?? PLACEHOLDER[lang]}, ` +
+        `MoS=${r.mos === null ? PLACEHOLDER[lang] : r.mos.toFixed(1)}, status=${r.judgment}` +
+        (r.toxSummary ? ` | toxicology profile: ${r.toxSummary}` : "") +
+        (r.restrictedNote ? ` | ${RESTRICTED_LABEL[lang]}: ${r.restrictedNote}` : "")
     )
     .join("\n");
 
   const userMessage = [
-    `Mahsulot ma'lumoti:`,
-    `- Nomi: ${productInfo.productName || "검토필요"}`,
-    `- Turi: ${productInfo.productType || "검토필요"}`,
-    `- Foydalanuvchi: ${productInfo.targetUser || "검토필요"}`,
-    `- Qo'llash: ${productInfo.rinseType}`,
-    `- Ishlab chiqaruvchi: ${productInfo.manufacturer || "검토필요"}`,
+    `Product information:`,
+    `- Name: ${productInfo.productName || PLACEHOLDER[lang]}`,
+    `- Type: ${productInfo.productType || PLACEHOLDER[lang]}`,
+    `- Target user: ${productInfo.targetUser || PLACEHOLDER[lang]}`,
+    `- Application: ${productInfo.rinseType}`,
+    `- Manufacturer: ${productInfo.manufacturer || PLACEHOLDER[lang]}`,
     ``,
-    `Fizik-kimyoviy/mikrobiologiya/qadoqlash ma'lumoti (laboratoriya natijasi, foydalanuvchi kiritgan — o'zgartirma, faqat bayon qil):`,
-    `- 성상 (ko'rinish): ${productQuality.physicalForm || "검토필요"}`,
-    `- pH: ${productQuality.ph || "검토필요"}`,
-    `- 점도 (yopishqoqlik): ${productQuality.viscosityRange || "검토필요"}`,
-    `- 안정성 시험 (barqarorlik): ${productQuality.stabilityResult || "검토필요"}`,
-    `- PAO: ${productQuality.paoMonths ? `${productQuality.paoMonths}개월` : "검토필요"}`,
-    `- 미생물한도: ${productQuality.microbialLimitResult || "검토필요"}`,
-    `- 보존력 시험: ${productQuality.challengeTestResult || "검토필요"}`,
-    `- 중금속 등: ${productQuality.heavyMetalsResult || "검토필요"}`,
-    `- 포장재: ${productQuality.packagingMaterial || "검토필요"} (${productQuality.packagingSafetyNote || "검토필요"})`,
-    `- 알레르기 성분: ${productQuality.allergenNote || "검토필요"}`,
+    `Physical/chemical, microbiological and packaging data (laboratory results entered by the user — do not modify, only describe):`,
+    `- Appearance: ${productQuality.physicalForm || PLACEHOLDER[lang]}`,
+    `- pH: ${productQuality.ph || PLACEHOLDER[lang]}`,
+    `- Viscosity: ${productQuality.viscosityRange || PLACEHOLDER[lang]}`,
+    `- Stability test: ${productQuality.stabilityResult || PLACEHOLDER[lang]}`,
+    `- PAO: ${productQuality.paoMonths ? `${productQuality.paoMonths} months` : PLACEHOLDER[lang]}`,
+    `- Microbial limit: ${productQuality.microbialLimitResult || PLACEHOLDER[lang]}`,
+    `- Preservation (challenge) test: ${productQuality.challengeTestResult || PLACEHOLDER[lang]}`,
+    `- Heavy metals: ${productQuality.heavyMetalsResult || PLACEHOLDER[lang]}`,
+    `- Packaging: ${productQuality.packagingMaterial || PLACEHOLDER[lang]} (${productQuality.packagingSafetyNote || PLACEHOLDER[lang]})`,
+    `- Fragrance allergens: ${productQuality.allergenNote || PLACEHOLDER[lang]}`,
     ``,
-    `Hisob-kitob natijalari (deterministik, sen bularni o'zgartirmaysan):`,
-    calcText || "(tarkib kiritilmagan)",
+    `Calculation results (deterministic — do not modify them):`,
+    calcText || "(no composition entered)",
     ``,
-    `Kontekst (faqat shundan foydalan):`,
-    contextText || "(manba topilmadi — barchasini 검토필요 deb belgila)",
+    `Context (use only this):`,
+    contextText || `(no sources found — mark everything as "${PLACEHOLDER[lang]}")`,
   ].join("\n");
 
   const response = await client.chat.completions.create({
     model: MODEL,
     max_tokens: 1536,
     messages: [
-      { role: "system", content: CPSR_DRAFT_SYSTEM_PROMPT },
+      { role: "system", content: cpsrDraftSystemPrompt(lang) },
       { role: "user", content: userMessage },
     ],
   });

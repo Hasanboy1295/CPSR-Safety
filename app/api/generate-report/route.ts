@@ -22,12 +22,13 @@ export async function POST(req: NextRequest) {
     return clientError("invalid_json");
   }
 
-  const { projectId, productInfo, ingredients, productQuality, exposure } = body as {
+  const { projectId, productInfo, ingredients, productQuality, exposure, lang } = body as {
     projectId?: string;
     productInfo?: ProductInfo;
     ingredients?: IngredientRow[];
     productQuality?: ProductQuality;
     exposure?: ExposureParams;
+    lang?: string;
   };
 
   if (!productInfo || !ingredients || !exposure) {
@@ -54,6 +55,7 @@ export async function POST(req: NextRequest) {
       ingredients,
       productQuality: productQuality ?? emptyProductQuality(),
       exposure,
+      lang: lang === "ko" ? "ko" : "en",
     });
 
     let saved = false;

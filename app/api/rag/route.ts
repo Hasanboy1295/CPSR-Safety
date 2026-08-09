@@ -13,13 +13,13 @@ export async function POST(req: NextRequest) {
     return clientError("invalid_json");
   }
 
-  const question = (body as { question?: unknown }).question;
+  const { question, lang } = body as { question?: unknown; lang?: unknown };
   if (typeof question !== "string" || question.trim().length === 0) {
     return clientError("invalid_request");
   }
 
   try {
-    const result = await answerWithRag(question.trim());
+    const result = await answerWithRag(question.trim(), 5, lang === "ko" ? "ko" : "en");
     return NextResponse.json(result);
   } catch (err) {
     return apiError(err, 500);
