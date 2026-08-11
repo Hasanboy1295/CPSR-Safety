@@ -1,13 +1,19 @@
-// Namuna (demo) CPSR PDF yaratadi — CPSR_KR_dossier_v7_3 (kitob) dagi
+// Namuna CPSR PDF yaratadi — CPSR_KR_dossier_v7_3 (kitob) dagi
 // "Example Serum" ma'lumotlari bilan. Kompaniyaga ko'rsatish uchun:
 //   npm run sample-pdf  →  sample-cpsr.pdf (bitta fayl)
-// Hech qanday API kalit talab qilinmaydi (demo rejim).
+// .env da kalitlar bo'lmasa demo (mock) rejimda, bo'lsa real RAG+LLM rejimida.
 
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { generateCPSRReport } from "@/lib/report";
 import { buildCPSRPdf } from "@/lib/pdf-report";
 import { sampleProductWizard } from "./sample-data";
+
+// tsx .env ni avtomatik yuklamaydi — e2e kabi o'zi o'qiydi.
+for (const line of readFileSync(".env", "utf8").split("\n")) {
+  const m = line.match(/^([A-Z0-9_]+)=(.*)$/);
+  if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
+}
 
 const sample = sampleProductWizard;
 

@@ -11,6 +11,7 @@ import { createClient } from "@supabase/supabase-js";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { PDFDocument } from "pdf-lib";
 import { sampleProductWizard } from "./sample-data";
+import "@/lib/server-websocket";
 
 function loadEnv(): Record<string, string> {
   const out: Record<string, string> = {};
@@ -45,7 +46,7 @@ function ok(cond: boolean, label: string) {
 async function rawReq(
   path: string,
   opts: { method?: string; body?: unknown; cookie?: string } = {}
-): Promise<{ status: number; headers: Headers; text: string }> {
+): Promise<{ status: number; headers: Headers; buf: Buffer }> {
   const headers: Record<string, string> = {};
   if (opts.cookie) headers["Cookie"] = opts.cookie;
   if (opts.body !== undefined) headers["Content-Type"] = "application/json";
@@ -54,14 +55,15 @@ async function rawReq(
     headers,
     body: opts.body === undefined ? undefined : JSON.stringify(opts.body),
   });
-  return { status: res.status, headers: res.headers, text: await res.text() };
+  const buf = Buffer.from(await res.arrayBuffer());
+  return { status: res.status, headers: res.headers, buf };
 }
 
 async function req(
   supabase: SupabaseClient,
   path: string,
   opts: { method?: string; body?: unknown } = {}
-): Promise<{ status: number; headers: Headers; text: string }> {
+): Promise<{ status: number; headers: Headers; buf: Buffer }> {
   const {
     data: { session },
   } = await supabase.auth.getSession();
@@ -80,7 +82,7 @@ async function main() {
   // ============ A. Anonim yo'l (auth shart emas) ============
   console.log("— Anonim: POST /api/generate-report (projectId yo'q) —");
   const anon = await rawReq("/api/generate-report", { method: "POST", body: genBody });
-  const anonJson = anon.status === 200 ? JSON.parse(anon.text) : {};
+  const anonJson = anon.status === 200 ? JSON.parse(anon.buf.toString("utf8")) : {};
   ok(anon.status === 200, `generate-report (anon) → ${anon.status}`);
   ok(anonJson.minMos === 125, `minMoS=125 (haqiqiy: ${anonJson.minMos})`);
   ok(Array.isArray(anonJson.calcRows) && anonJson.calcRows.length === 5, `calcRows=5 (haqiqiy: ${anonJson.calcRows?.length})`);
@@ -109,13 +111,23 @@ async function main() {
   const { data: signIn, error: signInErr } = await user.auth.signInWithPassword({ email, password });
   if (signInErr || !signIn.session) throw new Error(`signIn: ${signInErr?.message}`);
 
+  // Assessor oqimini sinash uchun test foydalanuvchiga "assessor" roli beriladi
+  // (e2e test uchun — haqiqiy oqimda rol faqat admin tomonidan beriladi).
+  const { error: profErr } = await admin.from("profiles").upsert({
+    id: created.user.id,
+    role: "assessor",
+    full_name: "E2E Assessor",
+    company: "E2E Company",
+  });
+  if (profErr) throw new Error(`profile upsert: ${profErr.message}`);
+
   let projectId = "";
 
   try {
     // 3. Loyiha yaratish
     const createdRes = await req(user, "/api/projects", { method: "POST", body: {} });
     ok(createdRes.status === 200, `POST /api/projects → ${createdRes.status}`);
-    projectId = JSON.parse(createdRes.text).id;
+    projectId = JSON.parse(createdRes.buf.toString("utf8")).id;
 
     // 4. Namuna ma'lumotni saqlash
     const putRes = await req(user, `/api/projects/${projectId}`, {
@@ -135,7 +147,7 @@ async function main() {
       method: "POST",
       body: { projectId, ...genBody },
     });
-    const gen = JSON.parse(genRes.text);
+    const gen = JSON.parse(genRes.buf.toString("utf8"));
     ok(genRes.status === 200, `POST /api/generate-report → ${genRes.status}`);
     ok(gen.saved === true, "qoralama saqlangan (saved=true)");
     ok(gen.minMos === 125, `minMoS=125 (haqiqiy: ${gen.minMos})`);
@@ -145,7 +157,7 @@ async function main() {
     ok(pdfRes.status === 200, `GET /api/projects/[id]/pdf → ${pdfRes.status}`);
     ok((pdfRes.headers.get("content-type") ?? "").includes("application/pdf"), "PDF content-type");
     if (pdfRes.status === 200) {
-      const bytes = Buffer.from(pdfRes.text, "binary");
+      const bytes = pdfRes.buf;
       const doc = await PDFDocument.load(bytes);
       ok(doc.getPageCount() >= 10, `PDF sahifalari ≥ 10 (haqiqiy: ${doc.getPageCount()})`);
     }
@@ -156,14 +168,43 @@ async function main() {
     const zipType = zipRes.headers.get("content-type") ?? "";
     ok(zipType.includes("zip") || zipType.includes("octet-stream"), `ZIP content-type (${zipType})`);
 
-    // 8. Review ma'lumotlari
-    const reviewRes = await req(user, `/api/review/${projectId}`);
-    ok(reviewRes.status === 200, `GET /api/review/[id] → ${reviewRes.status}`);
-    const review = JSON.parse(reviewRes.text);
-    const rd = review.report ?? review;
+    // 8. Assessor tasdiqi (imzo) — PUT /api/review/[id]
+    const reviewPut = await req(user, `/api/review/${projectId}`, {
+      method: "PUT",
+      body: {
+        finalConclusion: "E2E sinovi: mahsulot xavfsiz, MoS>=100 tasdiqlandi.",
+        assessorPosition: "안전성 평가자 (E2E)",
+        assessorQualification: "E2E-DEGREE",
+      },
+    });
+    ok(reviewPut.status === 200, `PUT /api/review/[id] (imzo) → ${reviewPut.status}`);
+
+    // 9. Loyiha holati: draft_generated → submission_ready + certification
+    const projRes = await req(user, `/api/projects/${projectId}`);
+    ok(projRes.status === 200, `GET /api/projects/[id] → ${projRes.status}`);
+    const proj = JSON.parse(projRes.buf.toString("utf8")).project;
+    const rd = proj.report_result ?? {};
+    ok(proj.status === "submission_ready", `status=submission_ready (haqiqiy: ${proj.status})`);
+    ok(proj.certification?.selfCertified === true, "certification.selfCertified=true");
+    ok(proj.certification?.assessorName === "E2E Assessor", `assessorName (haqiqiy: ${proj.certification?.assessorName})`);
     ok(Array.isArray(rd.calcRows) && rd.calcRows.length === 5, `calcRows=5 (haqiqiy: ${rd.calcRows?.length})`);
     ok(rd.partA && rd.partBReasoning, "partA / partBReasoning mavjud");
     ok(Array.isArray(rd.warnings) && rd.warnings.length >= 0, "warnings mavjud");
+
+    // 10. Imzolangan PDF — sarlavhada submission_ready belgisi chiqishi kerak
+    const signedPdf = await req(user, `/api/projects/${projectId}/pdf`);
+    ok(signedPdf.status === 200, `GET PDF (imzolangan) → ${signedPdf.status}`);
+    if (signedPdf.status === 200) {
+      const { PDFParse } = await import("pdf-parse");
+      const parser = new PDFParse({ data: new Uint8Array(signedPdf.buf) });
+      try {
+        const { text } = await parser.getText();
+        ok(text.includes("submission_ready"), "PDF footerdagi status: submission_ready");
+        ok(text.includes("E2E Assessor"), "PDFda assessor nomi ko'rsatilgan");
+      } finally {
+        await parser.destroy();
+      }
+    }
   } catch (err) {
     failed += 1;
     console.error("E2E xatosi:", err);
