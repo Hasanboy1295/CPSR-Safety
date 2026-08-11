@@ -7,3 +7,9 @@ node_modules
 tsconfig.tsbuildinfo
 .vercel
 supabase/.temp
+.env*
+
+# Generated artifacts & OS junk
+sample-cpsr.pdf
+.DS_Store
+.ipynb_checkpoints/

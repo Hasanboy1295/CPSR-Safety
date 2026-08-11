@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx --test tests/calc.test.ts tests/shelf-life.test.ts",
-    "ingest": "tsx scripts/ingest.ts"
+    "test": "node --import tsx --test tests/calc.test.ts tests/shelf-life.test.ts tests/pdf-report.test.ts",
+    "ingest": "tsx scripts/ingest.ts",
+    "sample-pdf": "tsx scripts/sample-pdf.ts"
   },
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",

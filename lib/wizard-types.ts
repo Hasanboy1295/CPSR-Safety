@@ -1,3 +1,6 @@
+// CPSR_KR_dossier_v7_3 §1 (표 1-1) bo'yicha mahsulot identifikatsiyasi va
+// boshqaruv ma'lumotlari. Bo'sh maydonlar PDF'da "검토필요" deb ko'rsatiladi
+// (kitob qoidasi: ma'lumot yo'q joyga yozma — uydirma kiritmaymiz).
 export type ProductInfo = {
   productName: string;
   productType: string;
@@ -6,6 +9,18 @@ export type ProductInfo = {
   applicationArea: string;
   manufacturer: string;
   responsibleSeller: string;
+  productCode: string; // 제품 코드 / 품목보고번호
+  batchRef: string; // 처방/배치 참조번호
+  salesMarket: string; // 판매 시장
+  version: string; // 버전 (예: "Rev. 1.3")
+  refNo: string; // CPSR 참조번호 (예: "CPSR-2026-0001")
+  responsiblePerson: string; // 책임자 (Responsible Person, EU)
+  gmpSite: string; // 제조소 GMP (ISO 22716)
+  useInstructions: string; // 사용 방법 (용법·용량) — §2.1.5
+  cmrDeclaration: string; // CMR 선언 (§1 표 1-3)
+  nanoDeclaration: string; // 나노 선언 (§1 표 1-4)
+  hasFragrance: "yes" | "no" | ""; // 향료(PARFUM) 배합 여부
+  hasColorant: "yes" | "no" | ""; // 착색제 배합 여부
 };
 
 export type ToxEndpointStatus = "unknown" | "available" | "not_available";
@@ -50,6 +65,12 @@ export type INCIComponent = {
   noael: string; // mg/kg bw/day — bo'sh bo'lishi mumkin ("검토필요")
   cramerClass: "" | "I" | "II" | "III"; // NOAEL yo'q bo'lganda TTC skrining uchun
   tox: ToxicologyProfile;
+  // §2.1.2 표 2-2 — 성분별 물리·화학적 특성 (kitob talabi; bo'sh bo'lsa 검토필요)
+  molecularWeight: string; // 분자량 (Da)
+  physicalForm: string; // 형태 (예: "담황 고체/오일")
+  solubility: string; // 용해도
+  logKow: string; // log Kow
+  uvAbsorption: string; // UV 흡수 특성
 };
 
 export function newComponent(): INCIComponent {
@@ -63,6 +84,11 @@ export function newComponent(): INCIComponent {
     noael: "",
     cramerClass: "",
     tox: emptyToxicologyProfile(),
+    molecularWeight: "",
+    physicalForm: "",
+    solubility: "",
+    logKow: "",
+    uvAbsorption: "",
   };
 }
 
@@ -123,6 +149,18 @@ export type ProductQuality = {
   packagingMaterial: string; // birlamchi idish materiali
   packagingSafetyNote: string; // moslik/migratsiya testi
   allergenNote: string; // atir tarkibidagi allergen tekshiruvi
+  // §2.1.3 표 2-5 — ISO 17516 kategoriya + 특정세균
+  microCategory: "" | "Cat1" | "Cat2"; // 눈/영유아 → Cat1, 기타 → Cat2
+  specificBacteriaResult: string; // 특정세균 (대장균·녹농균·황색포도상구균)
+  // §2.1.4 표 2-7 — 불순물 실측 (1,4-dioxane, 니트로사민) + 포장 이행
+  impurityDioxaneResult: string; // 1,4-Dioxane
+  impurityNitrosamineResult: string; // N-니트로사민 (정성/정량)
+  packagingMigrationResult: string; // 포장재-내용물 이행 시험 결과
+  // §2.1.2 표 2-4 — 안정성 시험 유형별 결과
+  stabilityAcceleratedResult: string; // 가속 40°C/75%RH
+  stabilityLongTermResult: string; // 장기 25°C
+  stabilityFreezeThawResult: string; // 저온/동결-융해
+  stabilityPhotoResult: string; // 광안정성 (RETINOL kabi fotosensitiv 성분)
 };
 
 export function emptyProductQuality(): ProductQuality {
@@ -138,6 +176,15 @@ export function emptyProductQuality(): ProductQuality {
     packagingMaterial: "",
     packagingSafetyNote: "",
     allergenNote: "",
+    microCategory: "",
+    specificBacteriaResult: "",
+    impurityDioxaneResult: "",
+    impurityNitrosamineResult: "",
+    packagingMigrationResult: "",
+    stabilityAcceleratedResult: "",
+    stabilityLongTermResult: "",
+    stabilityFreezeThawResult: "",
+    stabilityPhotoResult: "",
   };
 }
 
@@ -145,6 +192,7 @@ export type ExposureParams = {
   amountG: string; // A, default "0.8"
   retentionFactor: string; // RF, default "1.0" (leave-on) / "0.01" (rinse-off)
   bodyWeightKg: string; // BW, default "60"
+  frequency: string; // F (적용 빈도), default "1" 회/일
 };
 
 export type Certification = {
@@ -172,12 +220,25 @@ export const emptyProductInfo: ProductInfo = {
   applicationArea: "",
   manufacturer: "",
   responsibleSeller: "",
+  productCode: "",
+  batchRef: "",
+  salesMarket: "",
+  version: "",
+  refNo: "",
+  responsiblePerson: "",
+  gmpSite: "",
+  useInstructions: "",
+  cmrDeclaration: "",
+  nanoDeclaration: "",
+  hasFragrance: "",
+  hasColorant: "",
 };
 
 export const emptyExposure: ExposureParams = {
   amountG: "0.8",
   retentionFactor: "1.0",
   bodyWeightKg: "60",
+  frequency: "1",
 };
 
 export const emptyCertification: Certification = {
@@ -197,4 +258,4 @@ export const emptyWizardData: WizardData = {
   certification: emptyCertification,
 };
 
-export const WIZARD_STORAGE_KEY = "auto-cpsr:wizard-data:v3";
+export const WIZARD_STORAGE_KEY = "auto-cpsr:wizard-data:v4";

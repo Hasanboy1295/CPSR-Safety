@@ -76,6 +76,11 @@ export async function extractIngredientsFromText(rawText: string): Promise<Ingre
       dermalAbsorptionPercent: "100",
       noael: "",
       cramerClass: "" as const,
+      molecularWeight: "",
+      physicalForm: "",
+      solubility: "",
+      logKow: "",
+      uvAbsorption: "",
       tox: {
         acuteToxicity: "unknown",
         skinIrritation: "unknown",

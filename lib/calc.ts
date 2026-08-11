@@ -36,6 +36,15 @@ export function calcSED(
   );
 }
 
+/**
+ * Nisbiy kunlik jami ekspozitsiya E (mg/kg bw/day) — kitob §2.1.6 표 2-8:
+ * E = (A[g/day] × RF × 1000) / BW[kg]
+ * (masalan 0.8 g/day × 1.0 × 1000 / 60 kg = 13.33 mg/kg bw/day).
+ */
+export function calcRelativeDailyExposure(exposure: ExposureParams): number {
+  return (exposure.amountG * 1000 * exposure.retentionFactor) / exposure.bodyWeightKg;
+}
+
 export function calcMoS(noaelMgKgDay: number | undefined, sed: number): number | null {
   if (noaelMgKgDay === undefined || noaelMgKgDay <= 0 || sed <= 0) return null;
   return noaelMgKgDay / sed;

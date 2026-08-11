@@ -1,10 +1,18 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { calcSED, calcMoS, judge, MIN_MOS, type Judgment } from "@/lib/calc";
+import { calcSED, calcMoS, judge, calcRelativeDailyExposure, MIN_MOS, type Judgment } from "@/lib/calc";
 import { ttcScreen } from "@/lib/ttc";
 
 test("MIN_MOS = 100 (kitob: MoS ≥ 100)", () => {
   assert.equal(MIN_MOS, 100);
+});
+
+test("calcRelativeDailyExposure — kitob: E=(A×RF×1000)/BW", () => {
+  // 0.8 g/day × 1.0 × 1000 / 60 kg = 13.33 mg/kg bw/day (kitob 표 2-8)
+  const E = calcRelativeDailyExposure({ amountG: 0.8, retentionFactor: 1.0, bodyWeightKg: 60 });
+  assert.ok(Math.abs(E - 13.33333333) < 1e-6);
+  const Erinse = calcRelativeDailyExposure({ amountG: 10, retentionFactor: 0.01, bodyWeightKg: 60 });
+  assert.ok(Math.abs(Erinse - 1.66666666) < 1e-6);
 });
 
 test("calcSED — kitob formulasi: SED=(A×1000×RF×C×DAp)/BW", () => {
