@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/calc.test.ts tests/shelf-life.test.ts tests/pdf-report.test.ts",
     "ingest": "tsx scripts/ingest.ts",
-    "sample-pdf": "tsx scripts/sample-pdf.ts"
+    "sample-pdf": "tsx scripts/sample-pdf.ts",
+    "e2e": "tsx scripts/e2e-api.ts"
   },
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
