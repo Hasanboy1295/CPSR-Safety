@@ -4,7 +4,11 @@
 // qat'iy ajratilgan — LLM faylning o'zini emas, faqat undan chiqarilgan
 // tekstni ko'radi.
 
-import ExcelJS from "exceljs";
+// NOTE: pdf-parse @2 (pdfjs-dist 5) Vercel/Node'da "Object.defineProperty
+// called on non-object" bilan qulaydi — shuning uchun barqaror @1.1.1
+// (pdfjs 1.10, serverless uchun sinovdan o'tgan) ishlatiladi.
+// Excel uchun esa exceljs o'rniga SheetJS (xlsx) — u ham .xlsx, ham eski
+// .xls (binary OLE) formatini o'qiydi (exceljs faqat .xlsx zip'ni o'qir edi).
 
 export async function parseDocumentToText(buffer: Buffer, filename: string): Promise<string> {
   const ext = filename.toLowerCase().split(".").pop() ?? "";
@@ -32,32 +36,23 @@ async function parseDocx(buffer: Buffer): Promise<string> {
 }
 
 async function parseExcel(buffer: Buffer): Promise<string> {
-  const workbook = new ExcelJS.Workbook();
-  await workbook.xlsx.load(buffer as unknown as ArrayBuffer);
+  const XLSX = (await import("xlsx")).default ?? (await import("xlsx"));
+  const workbook = XLSX.read(buffer, { type: "buffer" });
 
   const lines: string[] = [];
-  workbook.eachSheet((sheet) => {
-    lines.push(`--- varaq: ${sheet.name} ---`);
-    sheet.eachRow((row) => {
-      const cells = (row.values as unknown[]).slice(1).map((v) => {
-        if (v == null) return "";
-        if (typeof v === "object" && "text" in (v as object)) return (v as { text: string }).text;
-        if (typeof v === "object" && "result" in (v as object)) return String((v as { result: unknown }).result);
-        return String(v);
-      });
-      lines.push(cells.join(" | "));
-    });
-  });
+  for (const name of workbook.SheetNames) {
+    lines.push(`--- varaq: ${name} ---`);
+    const csv = XLSX.utils.sheet_to_csv(workbook.Sheets[name], { blankrows: false });
+    for (const row of csv.split("\n")) {
+      if (row.trim()) lines.push(row);
+    }
+  }
   return lines.join("\n");
 }
 
 async function parsePdf(buffer: Buffer): Promise<string> {
-  const { PDFParse } = await import("pdf-parse");
-  const parser = new PDFParse({ data: new Uint8Array(buffer) });
-  try {
-    const result = await parser.getText();
-    return result.text;
-  } finally {
-    await parser.destroy();
-  }
+  // pdf-parse @1 — default eksport funksiyasi; qaytaradi: { text, numpages, ... }
+  const parsePdfBuffer = (await import("pdf-parse")).default;
+  const result = await parsePdfBuffer(buffer);
+  return result.text;
 }
